@@ -12,7 +12,7 @@
   "plugins": [
     {
       "name": "personal",
-      "source": "personal",
+      "source": "./personal",
       "description": "Danny's personal workflow - morning planning, task management commands, and custom agents",
       "version": "1.0.0",
       "author": {
@@ -32,7 +32,7 @@
     },
     {
       "name": "css-expert",
-      "source": "css-expert",
+      "source": "./css-expert",
       "description": "Modern CSS expertise - cascade layers, OKLCH colors, container queries, and defensive patterns",
       "version": "1.0.0",
       "author": {
