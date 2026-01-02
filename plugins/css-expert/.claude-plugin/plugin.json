@@ -1,0 +1,12 @@
+{
+  "name": "css-expert",
+  "version": "1.0.0",
+  "description": "Modern CSS expertise",
+  "author": {
+    "name": "Danny Smith",
+    "url": "https://danny.is"
+  },
+  "repository": "https://github.com/dannysmith/claude-marketplace",
+  "license": "MIT",
+  "keywords": ["css", "styling", "frontend", "design", "container-queries"]
+}

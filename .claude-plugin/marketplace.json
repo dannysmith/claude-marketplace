@@ -1,0 +1,56 @@
+{
+  "name": "dannysmith",
+  "owner": {
+    "name": "Danny Smith",
+    "email": "hi@danny.is"
+  },
+  "metadata": {
+    "description": "Danny's personal Claude Code plugins for productivity and development workflows",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "personal",
+      "source": "personal",
+      "description": "Danny's personal workflow - morning planning, task management commands, and custom agents",
+      "version": "1.0.0",
+      "author": {
+        "name": "Danny Smith"
+      },
+      "homepage": "https://danny.is",
+      "repository": "https://github.com/dannysmith/claude-marketplace",
+      "license": "MIT",
+      "keywords": [
+        "productivity",
+        "personal",
+        "morning-planning",
+        "task-management",
+        "writing"
+      ],
+      "category": "productivity"
+    },
+    {
+      "name": "css-expert",
+      "source": "css-expert",
+      "description": "Modern CSS expertise - cascade layers, OKLCH colors, container queries, and defensive patterns",
+      "version": "1.0.0",
+      "author": {
+        "name": "Danny Smith"
+      },
+      "homepage": "https://danny.is",
+      "repository": "https://github.com/dannysmith/claude-marketplace",
+      "license": "MIT",
+      "keywords": [
+        "css",
+        "styling",
+        "frontend",
+        "design",
+        "cascade-layers",
+        "container-queries",
+        "oklch"
+      ],
+      "category": "development"
+    }
+  ]
+}
