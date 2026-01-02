@@ -206,29 +206,34 @@ A comprehensive morning planning command based on the documented morning briefin
 
 ### Phase 1: Plugin Setup
 
-- [ ] Create plugin folder structure
-- [ ] Write `plugin.json` and `marketplace.json` manifests
-- [ ] Initialize git repository
+- [x] Create plugin folder structure
+- [x] Write `plugin.json` and `marketplace.json` manifests
+- [x] Initialize git repository
 
 ### Phase 2: Migrate Commands & Hooks
 
-- [ ] Move slash commands from `.dotfiles` repo
+- [ ] Move slash commands from `.dotfiles` repo (`~/.dotfiles/claude/commands/)
 - [ ] Update command paths and references
+- [ ] Migrate the two hooks from global settings file (~/.dotfiles/claude/settings.json) and remove from ~/.dotfiles/claude/settings.json
 - [ ] Test each command works in plugin context
-- [ ] Migrate the two hooks from global settings file.
+- [ ] Clean up dotfiles, commit and push dotfiles repo
 
 ### Phase 3: Migrate Agents
 
-- [ ] Move agents from `~/.claude/agents/` repo
+- [ ] Move agents from `~/.claude/agents/`
 - [ ] Review and simplify agents if needed
-- [ ] Ensure all agents work correctly
+- [ ] Ensure all agents work in plugin context
+- [ ] Archive https://github.com/dannysmith/agents on GH and remove `agents` from ~/.claude/`
 
-### Phase 4: Migrate Skills
+### Phase 4: Migrate Skill
 
-- [ ] Move `css-expert` skill (already a repo on GH - I should archive that)
+- [ ] Move `css-expert` skill from `~/.claude/skills/css-expert`
+- [ ] Refactor as nececarry soit works in a plugin context. Update README.
+- [ ] Add chrome-devtools and other MCPs to `mcp.json`.
 - [ ] Ensure skill references work correctly
+- [ ] Trash `~/.claude/skills/css-expert` , archive https://github.com/dannysmith/css-expert and uninstall old skill from CC.
 
-### Phase 5: Create New Components
+### Phase 5: Create New Slash Command
 
 This phase will need to involve some manual work and conversation and reading from the user.
 
@@ -244,11 +249,11 @@ This phase will need to involve some manual work and conversation and reading fr
 
 ### Phase 7: Publish & Test
 
-- [ ] Write README.md with installation instructions. Mention taskdn repo etc.
-- [ ] Create marketplace description
-- [ ] Publish to GitHub
+- [ ] Update README.md with installation instructions. Mention taskdn repo etc.
+- [ ] Publish to GitHub & set up repo properly (description, settings etc)
+- [ ] Check local installation & clean up as needed
 - [ ] Test installation and functionality
-- [ ] Document any issues
+- [ ] Create GH Issues for future plugin ideas.
 
 ---
 
@@ -262,7 +267,6 @@ This phase will need to involve some manual work and conversation and reading fr
 
 ## Future Work
 
-- [ ] Set up marketplace repo properly on GH and archive agents repo
 - [ ] Give the morning command access to my Google Calendar somehow, possibly via an MCP?
 - [ ] Create a compiled Swift binary which can be run and uses Mac OS APIs to get the current weather information and the current location in exactly the same way that it would if I opened Apple Maps or Apple Weather. This can then be Added to my dot files and used by various commands etc.
 
