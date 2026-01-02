@@ -215,8 +215,8 @@ A comprehensive morning planning command based on the documented morning briefin
 - [x] Move slash commands from `.dotfiles` repo (`~/.dotfiles/claude/commands/)
 - [x] Update command paths and references
 - [x] Migrate the two hooks from global settings file (~/.dotfiles/claude/settings.json) and remove from ~/.dotfiles/claude/settings.json
-- [ ] Test each command works in plugin context
-- [ ] Clean up dotfiles, commit and push dotfiles repo
+- [x] Test each command works in plugin context
+- [x] Clean up dotfiles, commit and push dotfiles repo
 
 ### Phase 3: Migrate Agents
 
@@ -227,11 +227,11 @@ A comprehensive morning planning command based on the documented morning briefin
 
 ### Phase 4: Migrate Skill
 
-- [ ] Move `css-expert` skill from `~/.claude/skills/css-expert`
-- [ ] Refactor as nececarry soit works in a plugin context. Update README.
-- [ ] Add chrome-devtools and other MCPs to `mcp.json`.
-- [ ] Ensure skill references work correctly
-- [ ] Trash `~/.claude/skills/css-expert` , archive https://github.com/dannysmith/css-expert and uninstall old skill from CC.
+- [x] Move `css-expert` skill from `~/.claude/skills/css-expert`
+- [x] Refactor as necessary so it works in a plugin context. Update README.
+- [x] Add chrome-devtools and other MCPs to `mcp.json`.
+- [x] Ensure skill references work correctly
+- [x] Trash `~/.claude/skills/css-expert` , archive https://github.com/dannysmith/css-expert and uninstall old skill from CC.
 
 ### Phase 5: Create New Slash Command
 
