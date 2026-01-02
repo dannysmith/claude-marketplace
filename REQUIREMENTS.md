@@ -238,40 +238,31 @@ A comprehensive morning planning command based on the documented morning briefin
 This phase will need to involve some manual work and conversation and reading from the user.
 
 #### Sub-phase 5a: Core Briefing & Task Context
-- [ ] Create `/morning` command with basic structure
-- [ ] Fetch morning briefing from GitHub (`latest.md`)
-- [ ] Run `tdn context --ai` for task overview
-- [ ] Load `task-management` skill
-- [ ] Ask about morning routine completion
-- [ ] Display briefing and task summary
-- [ ] Basic planning conversation flow
+
+- [x] Create `/morning` command with basic structure
+- [x] Fetch morning briefing from GitHub (`latest.md`)
+- [x] Run `tdn context --ai` for task overview
+- [x] Load `task-management` skill
+- [x] Ask about morning routine completion
+- [x] Display briefing and task summary
+- [x] Basic planning conversation flow
 
 #### Sub-phase 5b: Day Notes & Historical Context
-- [ ] Read yesterday's day note (if exists)
-- [ ] Read 2-3 recent day notes for patterns
-- [ ] Create/open today's day note
-- [ ] Ask reflective questions based on yesterday's context
-- [ ] Persist conversation summary to today's day note
 
-#### Sub-phase 5c: Enhanced Planning (Future)
-- [ ] Google Calendar MCP integration (when available)
-- [ ] Areas/Projects overview from Obsidian's `CURRENT.md`
-- [ ] Pattern recognition across days
-- [ ] More sophisticated MIT identification
+- [x] Read yesterday's day note (if exists)
+- [x] Read 2-3 recent day notes for patterns
+- [x] Create/open today's day note
+- [x] Ask reflective questions based on yesterday's context
+- [x] Persist conversation summary to today's day note
 
 ### Phase 6: Review Global CLAUDE.md
 
-- [ ] Identify what can be removed/simplified
-- [ ] Update to reference plugin commands
-- [ ] Ensure rules still work correctly
+- [ ] Update to reference plugin commands as needed
 
 ### Phase 7: Publish & Test
 
-- [ ] Update README.md with installation instructions. Mention taskdn repo etc.
-- [ ] Publish to GitHub & set up repo properly (description, settings etc)
+- [x] Publish to GitHub & set up repo properly (description, settings etc)
 - [ ] Check local installation & clean up as needed
-- [ ] Test installation and functionality
-- [ ] Create GH Issues for future plugin ideas.
 
 ---
 
@@ -282,11 +273,6 @@ This phase will need to involve some manual work and conversation and reading fr
 2. **Morning Command Dependencies:** Fail gracefully if dependencies unavailable (Obsidian vault, tdn CLI, internet).
 
 3. **Agent Review:** Keep all 7 agents. Built-in agents (general-purpose, plan, explore) don't overlap significantly with custom agents which provide specialized domain expertise.
-
-## Future Work
-
-- [ ] Give the morning command access to my Google Calendar somehow, possibly via an MCP?
-- [ ] Create a compiled Swift binary which can be run and uses Mac OS APIs to get the current weather information and the current location in exactly the same way that it would if I opened Apple Maps or Apple Weather. This can then be Added to my dot files and used by various commands etc.
 
 ---
 
