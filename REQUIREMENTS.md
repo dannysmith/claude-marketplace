@@ -220,10 +220,10 @@ A comprehensive morning planning command based on the documented morning briefin
 
 ### Phase 3: Migrate Agents
 
-- [ ] Move agents from `~/.claude/agents/`
-- [ ] Review and simplify agents if needed
-- [ ] Ensure all agents work in plugin context
-- [ ] Archive https://github.com/dannysmith/agents on GH and remove `agents` from ~/.claude/`
+- [x] Move agents from `~/.claude/agents/`
+- [x] Review and simplify agents if needed (fixed fact-checker MCP tool reference)
+- [x] Ensure all agents work in plugin context
+- [x] Archive https://github.com/dannysmith/agents on GH and remove `agents` from ~/.claude/`
 
 ### Phase 4: Migrate Skill
 
