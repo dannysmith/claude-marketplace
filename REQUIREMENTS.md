@@ -237,9 +237,27 @@ A comprehensive morning planning command based on the documented morning briefin
 
 This phase will need to involve some manual work and conversation and reading from the user.
 
-- [ ] Create `/morning` command
-- [ ] Integrate with task-management skill
-- [ ] Test morning workflow end-to-end
+#### Sub-phase 5a: Core Briefing & Task Context
+- [ ] Create `/morning` command with basic structure
+- [ ] Fetch morning briefing from GitHub (`latest.md`)
+- [ ] Run `tdn context --ai` for task overview
+- [ ] Load `task-management` skill
+- [ ] Ask about morning routine completion
+- [ ] Display briefing and task summary
+- [ ] Basic planning conversation flow
+
+#### Sub-phase 5b: Day Notes & Historical Context
+- [ ] Read yesterday's day note (if exists)
+- [ ] Read 2-3 recent day notes for patterns
+- [ ] Create/open today's day note
+- [ ] Ask reflective questions based on yesterday's context
+- [ ] Persist conversation summary to today's day note
+
+#### Sub-phase 5c: Enhanced Planning (Future)
+- [ ] Google Calendar MCP integration (when available)
+- [ ] Areas/Projects overview from Obsidian's `CURRENT.md`
+- [ ] Pattern recognition across days
+- [ ] More sophisticated MIT identification
 
 ### Phase 6: Review Global CLAUDE.md
 
