@@ -212,9 +212,9 @@ A comprehensive morning planning command based on the documented morning briefin
 
 ### Phase 2: Migrate Commands & Hooks
 
-- [ ] Move slash commands from `.dotfiles` repo (`~/.dotfiles/claude/commands/)
-- [ ] Update command paths and references
-- [ ] Migrate the two hooks from global settings file (~/.dotfiles/claude/settings.json) and remove from ~/.dotfiles/claude/settings.json
+- [x] Move slash commands from `.dotfiles` repo (`~/.dotfiles/claude/commands/)
+- [x] Update command paths and references
+- [x] Migrate the two hooks from global settings file (~/.dotfiles/claude/settings.json) and remove from ~/.dotfiles/claude/settings.json
 - [ ] Test each command works in plugin context
 - [ ] Clean up dotfiles, commit and push dotfiles repo
 
