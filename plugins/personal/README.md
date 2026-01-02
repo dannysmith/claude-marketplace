@@ -40,7 +40,10 @@ None
 
 ## Hooks
 
-None
+| Event          | Action                                                              |
+| -------------- | ------------------------------------------------------------------- |
+| `Notification` | macOS notification when Claude needs input (via `terminal-notifier`) |
+| `Stop`         | macOS notification when Claude finishes a task                      |
 
 ## Output Styles
 
