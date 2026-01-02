@@ -25,41 +25,6 @@ Context7 is typically pre-installed with Claude Code. No additional setup needed
 
 ---
 
-#### CSS MCP (`@stolinski/css-mcp`)
-
-**Purpose**: Current MDN documentation and browser compatibility data.
-
-**Installation**:
-```bash
-npm install -g @stolinski/css-mcp
-```
-
-**Configure in Claude Desktop** (`~/Library/Application Support/Claude/claude_desktop_config.json`):
-```json
-{
-  "mcpServers": {
-    "css": {
-      "command": "npx",
-      "args": ["-y", "@stolinski/css-mcp"]
-    }
-  }
-}
-```
-
-**Tools** (3 total):
-- `get-css-docs`: Fetch MDN documentation for properties/selectors/functions
-- `get-browser-compat`: Check browser support for CSS features
-- `analyze-css-project`: Analyze all CSS files in a project
-
-**Use for**:
-- Verifying browser support for modern features
-- Getting current syntax for new CSS features
-- Analyzing existing CSS before modifications
-
-**Note**: Uses intelligent caching (~100ms for cached lookups)
-
----
-
 #### Chrome DevTools MCP (`chrome-devtools-mcp`)
 
 **Purpose**: Browser automation and DevTools Protocol access for visual verification and debugging.
@@ -227,21 +192,21 @@ npm install --save-dev stylelint-plugin-logical-css
 ## Usage Notes
 
 **For AI agents using the css-expert skill**:
-- The skill automatically has access to `context7`, `css`, and `chrome-devtools` MCPs
-- Use `css` MCP to verify browser support before recommending modern features
+- The skill automatically has access to `context7` and `chrome-devtools` MCPs
 - Use `chrome-devtools` MCP to screenshot implementations and verify visual results
 - Use `a11y-color-contrast` MCP if available; otherwise provide WCAG minimums
+- Use Context7 or web search for browser compatibility checks
 - These tools complement the guidelines, they don't replace judgment
 
 **For projects**:
-- Install the three included MCPs for full skill functionality
+- Install `chrome-devtools-mcp` for full skill functionality
 - Consider adding `a11y-color-contrast` MCP for color-heavy projects
 - Add stylelint plugins to enforce patterns automatically
 - Run stylelint in CI to catch issues before deployment
 - Configure rules as warnings initially, then errors once team is familiar
 
 **Setup priority**:
-1. **Essential**: Install `@stolinski/css-mcp` and `chrome-devtools-mcp`
+1. **Essential**: Install `chrome-devtools-mcp`
 2. **Recommended**: Install `a11y-color-contrast-mcp` for color work
 3. **Optional**: Add stylelint plugins for automated enforcement
 
@@ -250,7 +215,6 @@ npm install --save-dev stylelint-plugin-logical-css
 ## Additional Resources
 
 - [Chrome DevTools MCP on GitHub](https://github.com/ChromeDevTools/chrome-devtools-mcp)
-- [@stolinski/css-mcp on npm](https://www.npmjs.com/package/@stolinski/css-mcp)
 - [a11y-color-contrast-mcp on npm](https://www.npmjs.com/package/a11y-color-contrast-mcp)
 - [stylelint-plugin-defensive-css on GitHub](https://github.com/yuschick/stylelint-plugin-defensive-css)
 - [Defensive CSS article by Ahmad Shadeed](https://defensivecss.dev/)

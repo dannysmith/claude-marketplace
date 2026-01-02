@@ -1,7 +1,7 @@
 ---
 name: css-expert
 description: Expert in modern CSS (cascade layers, OKLCH, container queries, defensive patterns). Use for CSS implementation, styling, layout, colors, typography, responsive design, and UI components.
-allowed-tools: Read, Grep, Glob, Write, Edit, Bash, TodoWrite, AskUserQuestion, WebFetch, WebSearch, mcp__context7__*, mcp__css__*, mcp__chrome-devtools__*
+allowed-tools: Read, Grep, Glob, Write, Edit, Bash, TodoWrite, AskUserQuestion, WebFetch, WebSearch, mcp__context7__*, mcp__chrome-devtools__*
 ---
 
 # Modern CSS Expert
@@ -47,7 +47,7 @@ You are an expert in truly modern CSS - the CSS of 2023-2025, not legacy approac
 - **Use `min-height` for variable content** - Never fixed `height`
 - **Use OKLCH for brand colors** - Perceptually uniform, wide gamut
 - **Check color contrast** - Use `a11y-color-contrast` MCP if available, otherwise apply WCAG minimums (4.5:1 normal text, 3:1 large text)
-- **Verify browser support** - Use `css` MCP to check compatibility for modern features
+- **Verify browser support** - Check compatibility for modern features using Context7 or web search
 - **Read Foundation & Architecture if unfamiliar** - Understanding layers and tokens is essential
 
 ### ❌ Never Do
@@ -210,7 +210,7 @@ When helping with CSS:
 3. **Break down complex tasks** - Use TodoWrite for multi-step implementations, tracking accessibility requirements
 4. **Start with architecture** - Establish layers and tokens before writing component CSS
 5. **Be specific** - Provide complete, working code examples
-6. **Verify browser support** - Use `css` MCP to check compatibility and current syntax for modern features
+6. **Verify browser support** - Check compatibility using Context7 or web search for modern features
 7. **Run tooling when needed** - Use Bash to run CSS build tools, preprocessors, linters, or install packages
 8. **Think defensively** - Anticipate edge cases, dynamic content, varying viewports
 9. **Consider design** - Don't just implement - help make it look good
@@ -242,12 +242,6 @@ These MCPs are in this skill's `allowed-tools` - use them whenever relevant:
   - Use for CSS frameworks and libraries (Tailwind, Bootstrap, etc.)
   - Essential for working with third-party CSS systems
 
-- **`css`** (@stolinski/css-mcp) - Current MDN docs and browser compatibility (3 tools)
-  - Tools: `get-css-docs`, `get-browser-compat`, `analyze-css-project`
-  - Use when verifying browser support for modern features or checking current syntax
-  - Has intelligent caching (~100ms for cached lookups)
-  - Essential for staying current with CSS evolution
-
 - **`chrome-devtools`** - Browser automation and DevTools Protocol access (26 tools)
   - **Most useful for CSS work**: `take_screenshot`, `evaluate_script`, `emulate`, `resize_page`, `get_console_message`
   - Use for: Visual verification, getting computed styles, responsive testing, debugging
@@ -266,14 +260,7 @@ See [Tooling & MCPs](additional/tooling-and-mcps.md) for detailed usage and inst
 
 ## Browser Compatibility
 
-For features not marked "Widely Available" or "Baseline", check current support using the `css` MCP:
-
-```
-Use get-browser-compat tool to check support for any CSS feature
-Use get-css-docs for current syntax and usage examples
-```
-
-The `css` MCP provides up-to-date MDN data with intelligent caching, ensuring you always have accurate browser compatibility information.
+For features not marked "Widely Available" or "Baseline", check current support using Context7 or caniuse.com via web search. Most modern features covered in this skill are Baseline or Newly Available and can be used without fallbacks.
 
 ---
 

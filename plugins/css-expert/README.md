@@ -11,7 +11,6 @@ claude plugin add /path/to/claude-marketplace/plugins/css-expert
 ## What's Included
 
 - **Skill**: `css-expert` - Activates automatically for CSS, styling, layout, color, typography questions
-- **MCP**: `css` - MDN docs and browser compatibility (`@stolinski/css-mcp`)
 - **MCP**: `chrome-devtools` - Visual verification and responsive testing
 
 ## Core Guidelines

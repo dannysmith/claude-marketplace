@@ -1,9 +1,5 @@
 {
   "mcpServers": {
-    "css": {
-      "command": "npx",
-      "args": ["-y", "@stolinski/css-mcp"]
-    },
     "chrome-devtools": {
       "command": "npx",
       "args": ["-y", "chrome-devtools-mcp@latest"]
