@@ -1,6 +1,6 @@
 # Claude Marketplace - dannysmith
 
-My personal collection of Claude Code plugins for productivity and development workflows.
+My personal collection of Claude Code plugins.
 
 ## Installation
 
@@ -18,10 +18,10 @@ Then install individual plugins:
 
 ## Available Plugins
 
-| Plugin | Description | For Others? |
-|--------|-------------|-------------|
-| `personal` | Morning planning, task management commands, and custom agents tailored to my workflow | No |
-| `css-expert` | Modern CSS expertise - cascade layers, OKLCH, container queries, defensive patterns | Yes |
+| Plugin       | Description                                                                           | For Others? |
+| ------------ | ------------------------------------------------------------------------------------- | ----------- |
+| `personal`   | Morning planning, task management commands, and custom agents tailored to my workflow | No          |
+| `css-expert` | Modern CSS expertise - cascade layers, OKLCH, container queries, defensive patterns   | Yes         |
 
 ### personal
 
@@ -31,6 +31,7 @@ My daily driver plugin with:
 - **Agents**: danny-voice-writer, code-refactorer, designer, fact-checker, security-auditor, technical-docs-writer, user-guide-writer
 
 This plugin is configured for my specific workflow and integrates with:
+
 - [taskdn](https://github.com/dannysmith/taskdn) - my CLI task manager
 - My Obsidian vault for notes and day planning
 
@@ -48,7 +49,3 @@ A skill for modern CSS development, useful for anyone. Covers:
 
 - [taskdn](https://github.com/dannysmith/taskdn) - CLI task manager (required for `personal` plugin task commands)
 - [tdn-marketplace](https://github.com/dannysmith/tdn-marketplace) - Claude Code plugin for taskdn integration
-
-## License
-
-MIT

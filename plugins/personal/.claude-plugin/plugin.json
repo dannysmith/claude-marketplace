@@ -2,6 +2,7 @@
   "name": "personal",
   "version": "1.0.0",
   "description": "Danny's personal Claude Code customizations - commands and agents for productivity and development workflows",
+  "outputStyles": "./output-styles/",
   "author": {
     "name": "Danny Smith",
     "url": "https://danny.is"
