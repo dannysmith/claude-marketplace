@@ -7,7 +7,7 @@ My personal collection of Claude Code plugins.
 Add this marketplace to Claude Code:
 
 ```
-/plugin marketplace add dannysmith github:dannysmith/claude-marketplace
+/plugin marketplace add dannysmith/claude-marketplace
 ```
 
 Then install individual plugins:
