@@ -34,7 +34,7 @@
       "name": "css-expert",
       "source": "./plugins/css-expert",
       "description": "Modern CSS expertise - cascade layers, OKLCH colors, container queries, and defensive patterns",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "Danny Smith"
       },
