@@ -11,7 +11,7 @@ claude plugin add /path/to/claude-marketplace/plugins/css-expert
 ## What's Included
 
 - **Skill**: `css-expert` - Activates automatically for CSS, styling, layout, color, typography questions
-- **MCP**: `chrome-devtools` - Visual verification and responsive testing
+- **Recommended**: Install `playwright-cli` plugin for visual verification (`claude plugin add microsoft/playwright-cli`)
 
 ## Core Guidelines
 
@@ -95,10 +95,11 @@ These guidelines follow a consistent philosophy:
 4. **Progressive enhancement** - Solid foundations with modern enhancements
 5. **Defensive coding** - Anticipate edge cases and dynamic content
 
-## Requirements
+## Recommended Tools
 
-- Node.js v20.19+ (for chrome-devtools MCP)
-- Chrome browser (for visual testing)
+- **playwright-cli** - For visual verification and responsive testing
+  - Install: `claude plugin add microsoft/playwright-cli`
+  - Or: `npm install -g @playwright/cli@latest`
 
 ## License
 

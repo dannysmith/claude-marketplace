@@ -1,14 +1,12 @@
-# Tooling and MCPs for Modern CSS
+# Tooling for Modern CSS
 
-This guide covers tools that help AI agents write better CSS. Some MCPs are included in the css-expert skill's allowed-tools, while others are optional but recommended.
+This guide covers tools that help AI agents write better CSS. Some tools are included in the css-expert skill, while others are optional but recommended.
 
 ---
 
 ## MCP Servers
 
 ### Included in css-expert Skill
-
-These MCPs are in the skill's `allowed-tools` and should be installed for full functionality.
 
 #### Context7 (`mcp-context7`)
 
@@ -22,48 +20,6 @@ Context7 is typically pre-installed with Claude Code. No additional setup needed
 - `get-library-docs`: Fetch current documentation for a library
 
 **Use for**: Tailwind CSS, Bootstrap, Sass, PostCSS, and other CSS frameworks
-
----
-
-#### Chrome DevTools MCP (`chrome-devtools-mcp`)
-
-**Purpose**: Browser automation and DevTools Protocol access for visual verification and debugging.
-
-**Installation**:
-```bash
-npm install -g chrome-devtools-mcp
-```
-
-**Configure in Claude Desktop**:
-```json
-{
-  "mcpServers": {
-    "chrome-devtools": {
-      "command": "npx",
-      "args": ["-y", "chrome-devtools-mcp@latest"]
-    }
-  }
-}
-```
-
-**Requirements**: Node.js v20.19+, current Chrome stable
-
-**Tools** (26 total - most useful for CSS highlighted):
-- **`take_screenshot`** - Visual verification of implementations
-- **`evaluate_script`** - Get computed styles, inspect DOM
-- **`emulate`** - Test responsive designs (device emulation)
-- **`resize_page`** - Test different viewport sizes
-- **`get_console_message`** / `list_console_messages` - Check for CSS errors
-- Plus: Navigation, input automation, performance tracing, network inspection
-
-**Use for**:
-- Taking screenshots to verify CSS implementations
-- Testing responsive behavior across device sizes
-- Inspecting computed styles and cascade
-- Debugging CSS issues in live browsers
-- Performance testing of CSS
-
-**GitHub**: https://github.com/ChromeDevTools/chrome-devtools-mcp
 
 ---
 
@@ -105,6 +61,85 @@ npm install -g a11y-color-contrast-mcp
 - Ensuring WCAG compliance (AA: 4.5:1, AAA: 7:1 for normal text)
 
 **Why it matters**: AI agents frequently miscalculate WCAG contrast ratios. This MCP provides accurate calculations using proper algorithms.
+
+---
+
+## Browser Automation with Playwright CLI
+
+For visual verification, responsive testing, and inspecting live implementations, we recommend using **playwright-cli** - Microsoft's official CLI for browser automation.
+
+### Installation
+
+Install the playwright-cli plugin:
+
+```bash
+claude plugin add microsoft/playwright-cli
+```
+
+Or install globally:
+
+```bash
+npm install -g @playwright/cli@latest
+```
+
+### Why Playwright CLI for CSS Work?
+
+- **Visual verification** - Screenshot implementations to verify CSS renders correctly
+- **Responsive testing** - Test layouts at different viewport sizes
+- **Computed styles** - Inspect what the browser actually computes
+- **Interactive debugging** - Fill forms, click elements, test hover states
+
+### Key Commands for CSS Work
+
+All commands run via Bash tool. Playwright CLI is headless by default (use `--headed` to see browser).
+
+**Take a snapshot** (see available elements):
+```bash
+playwright-cli snapshot https://example.com
+```
+
+**Screenshot** (visual verification):
+```bash
+playwright-cli screenshot https://example.com --output screenshot.png
+```
+
+**Screenshot at specific viewport**:
+```bash
+playwright-cli screenshot https://example.com --viewport 375x667 --output mobile.png
+```
+
+**Evaluate JavaScript** (get computed styles):
+```bash
+playwright-cli eval "getComputedStyle(document.querySelector('.card')).display"
+```
+
+**Full page screenshot**:
+```bash
+playwright-cli screenshot https://example.com --full-page --output full.png
+```
+
+### Workflow Pattern
+
+1. Open a page or navigate to a URL
+2. Take a snapshot to see available elements with their references (e15, e3, etc.)
+3. Interact using element references from the snapshot
+4. Take new snapshots after page changes
+5. Screenshot to verify visual results
+
+### Sessions
+
+Sessions persist cookies and storage state between calls. Use for sites requiring login:
+
+```bash
+playwright-cli open https://example.com --session myproject
+playwright-cli snapshot --session myproject
+playwright-cli screenshot --session myproject --output result.png
+```
+
+### Resources
+
+- [playwright-cli GitHub](https://github.com/microsoft/playwright-cli)
+- [Playwright documentation](https://playwright.dev/)
 
 ---
 
@@ -192,21 +227,21 @@ npm install --save-dev stylelint-plugin-logical-css
 ## Usage Notes
 
 **For AI agents using the css-expert skill**:
-- The skill automatically has access to `context7` and `chrome-devtools` MCPs
-- Use `chrome-devtools` MCP to screenshot implementations and verify visual results
+- The skill automatically has access to `context7` MCP
+- Use `playwright-cli` (if installed) for visual verification and responsive testing
 - Use `a11y-color-contrast` MCP if available; otherwise provide WCAG minimums
 - Use Context7 or web search for browser compatibility checks
 - These tools complement the guidelines, they don't replace judgment
 
 **For projects**:
-- Install `chrome-devtools-mcp` for full skill functionality
+- Install `playwright-cli` plugin for full visual testing capabilities
 - Consider adding `a11y-color-contrast` MCP for color-heavy projects
 - Add stylelint plugins to enforce patterns automatically
 - Run stylelint in CI to catch issues before deployment
 - Configure rules as warnings initially, then errors once team is familiar
 
 **Setup priority**:
-1. **Essential**: Install `chrome-devtools-mcp`
+1. **Essential**: Install `playwright-cli` plugin for visual verification
 2. **Recommended**: Install `a11y-color-contrast-mcp` for color work
 3. **Optional**: Add stylelint plugins for automated enforcement
 
@@ -214,7 +249,7 @@ npm install --save-dev stylelint-plugin-logical-css
 
 ## Additional Resources
 
-- [Chrome DevTools MCP on GitHub](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+- [playwright-cli on GitHub](https://github.com/microsoft/playwright-cli)
 - [a11y-color-contrast-mcp on npm](https://www.npmjs.com/package/a11y-color-contrast-mcp)
 - [stylelint-plugin-defensive-css on GitHub](https://github.com/yuschick/stylelint-plugin-defensive-css)
 - [Defensive CSS article by Ahmad Shadeed](https://defensivecss.dev/)

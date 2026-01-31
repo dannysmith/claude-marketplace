@@ -1,7 +1,7 @@
 ---
 name: css-expert
 description: Expert in modern CSS (cascade layers, OKLCH, container queries, defensive patterns). Use for CSS implementation, styling, layout, colors, typography, responsive design, and UI components.
-allowed-tools: Read, Grep, Glob, Write, Edit, Bash, TodoWrite, AskUserQuestion, WebFetch, WebSearch, mcp__context7__*, mcp__chrome-devtools__*
+allowed-tools: Read, Grep, Glob, Write, Edit, Bash, TodoWrite, AskUserQuestion, WebFetch, WebSearch, mcp__context7__*
 ---
 
 # Modern CSS Expert
@@ -216,7 +216,7 @@ When helping with CSS:
 9. **Consider design** - Don't just implement - help make it look good
 10. **Use Read tool for details** - Access full guides when you need comprehensive information
 11. **Check color contrast** - Use `a11y-color-contrast` MCP if available; otherwise apply WCAG minimums (4.5:1) and recommend verification
-12. **Verify visually when helpful** - Use `chrome-devtools` MCP to screenshot implementations, test responsive behavior, or inspect computed styles
+12. **Verify visually when helpful** - Use `playwright-cli` (if installed) to take screenshots, test responsive behavior, or interact with live pages. See [Tooling](additional/tooling-and-mcps.md) for details
 
 ## Design Thinking
 
@@ -231,32 +231,30 @@ You also understand UI design principles (detailed in [UI Design Principles](add
 - **Progressive refinement** - Start low-fidelity, add detail later
 - **Think in systems** - Create reusable patterns, not one-off solutions
 
-## MCP Servers
+## Tools
 
-### Included in This Skill (Use Actively)
+### Included in This Skill
 
-These MCPs are in this skill's `allowed-tools` - use them whenever relevant:
-
-- **`context7`** - Up-to-date library documentation (2 tools)
+- **`context7`** - Up-to-date library documentation (MCP)
   - Tools: `resolve-library-id`, `get-library-docs`
   - Use for CSS frameworks and libraries (Tailwind, Bootstrap, etc.)
   - Essential for working with third-party CSS systems
 
-- **`chrome-devtools`** - Browser automation and DevTools Protocol access (26 tools)
-  - **Most useful for CSS work**: `take_screenshot`, `evaluate_script`, `emulate`, `resize_page`, `get_console_message`
-  - Use for: Visual verification, getting computed styles, responsive testing, debugging
-  - Can inspect live implementations and validate visual results
-  - Particularly valuable for testing responsive behavior and cross-browser rendering
+### Recommended External Tools
 
-### Strongly Recommended (But Optional)
+- **`playwright-cli`** - Browser automation via CLI (install separately)
+  - Install: `claude plugin add microsoft/playwright-cli`
+  - Key commands for CSS work: `snapshot`, `screenshot`, `eval`
+  - Use for: Visual verification, responsive testing, inspecting computed styles
+  - See [Tooling](additional/tooling-and-mcps.md) for usage patterns
 
-- **`a11y-color-contrast`** - Accurate WCAG contrast calculations (3 tools)
+- **`a11y-color-contrast`** - Accurate WCAG contrast calculations (optional MCP)
   - Tools: `get-color-contrast`, `check-color-accessibility`, `light-or-dark-text`
   - **Use if available** before finalizing color combinations
   - Accepts: hex, rgb, hsl, OKLCH, or named colors
   - **If not available**: Apply WCAG minimums (4.5:1 for normal text, 3:1 for large text, 7:1 for AAA) and recommend user verification with a contrast checker
 
-See [Tooling & MCPs](additional/tooling-and-mcps.md) for detailed usage and installation instructions.
+See [Tooling](additional/tooling-and-mcps.md) for detailed setup and usage instructions.
 
 ## Browser Compatibility
 
