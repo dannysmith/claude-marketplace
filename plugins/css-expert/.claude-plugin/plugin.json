@@ -1,6 +1,6 @@
 {
   "name": "css-expert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modern CSS expertise - cascade layers, OKLCH, container queries, defensive patterns",
   "author": {
     "name": "Danny Smith",
