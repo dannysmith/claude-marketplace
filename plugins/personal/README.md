@@ -30,13 +30,7 @@ None
 
 | Agent                   | Description                                                     |
 | ----------------------- | --------------------------------------------------------------- |
-| `code-refactorer`       | Analyzes code for structural improvements and technical debt    |
 | `danny-voice-writer`    | Writing in Danny's conversational, substantive voice            |
-| `designer`              | Visual design and frontend development (React/Next.js/Tailwind) |
-| `fact-checker`          | Information verification using SIFT method                      |
-| `security-auditor`      | Security audit specialist (OWASP Top 10)                        |
-| `technical-docs-writer` | Technical documentation (READMEs, API docs)                     |
-| `user-guide-writer`     | User-facing documentation in plain language                     |
 
 ## Hooks
 

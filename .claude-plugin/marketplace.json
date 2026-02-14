@@ -5,7 +5,7 @@
     "email": "hi@danny.is"
   },
   "metadata": {
-    "description": "Danny's personal Claude Code plugins for productivity and development workflows",
+    "description": "Danny's personal Claude Code plugins",
     "version": "1.0.0",
     "pluginRoot": "./plugins"
   },
@@ -13,8 +13,8 @@
     {
       "name": "personal",
       "source": "./plugins/personal",
-      "description": "Danny's personal workflow - morning planning, task management commands, and custom agents",
-      "version": "1.0.0",
+      "description": "Danny's personal skills, commands and agents",
+      "version": "1.0.1",
       "author": {
         "name": "Danny Smith"
       },
@@ -33,7 +33,7 @@
     {
       "name": "css-expert",
       "source": "./plugins/css-expert",
-      "description": "Modern CSS expertise - cascade layers, OKLCH colors, container queries, and defensive patterns",
+      "description": "Modern CSS expertise",
       "version": "1.0.1",
       "author": {
         "name": "Danny Smith"

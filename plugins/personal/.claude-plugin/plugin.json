@@ -1,6 +1,6 @@
 {
   "name": "personal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Danny's personal Claude Code customizations - commands and agents for productivity and development workflows",
   "outputStyles": "./output-styles/",
   "author": {
