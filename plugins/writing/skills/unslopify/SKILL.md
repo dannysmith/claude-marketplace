@@ -37,6 +37,7 @@ Walk through `nonos.md` and fix every violation:
 - Cut forced cleverness
 - Strengthen weak language
 - Fix structural AI tells (perfect balance, neat summaries, hedge-everything)
+- Fix tonal AI tells (sycophantic validation, performative enthusiasm, verbose repetition, tonal flatness, compulsive summarising)
 
 ### 3. Apply writing-well.md Principles
 - Sharpen clarity — make every sentence clear
