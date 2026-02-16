@@ -1,6 +1,6 @@
 ---
 name: unslopify
-description: Remove AI slop and corporate bullshit from text — produces clean, natural, human-sounding writing
+description: Remove AI slop and corporate bullshit from text — produces clean, natural, human-sounding writing. Use when the user asks to "unslopify", "deslop", "remove slop", "clean up AI text", or wants text cleaned of AI-sounding language without applying Danny's specific voice.
 argument-hint: "[file/dir/text]"
 disable-model-invocation: true
 ---
@@ -19,9 +19,9 @@ Figure out what to deslopify:
 
 ## Load Skill Files
 
-Read these files from the `guide` skill:
-1. `writing-well.md`
-2. `nonos.md`
+Read these files from the [guide](../guide/) skill:
+1. [`writing-well.md`](../guide/writing-well.md)
+2. [`nonos.md`](../guide/nonos.md)
 
 Do NOT load `writing-like-danny.md`. This command is about deslopping, not danifying. Some incidental Danny flavour bleeding through from `writing-well.md` is fine — his principles of good writing are good principles of writing — but the focus is on removing slop, not adding voice.
 

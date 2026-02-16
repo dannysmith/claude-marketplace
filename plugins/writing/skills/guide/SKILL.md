@@ -1,7 +1,7 @@
 ---
 name: guide
 description: >
-  Danny's writing and editing guide. Load when writing, editing, or reviewing text of any kind.
+  Danny's writing and editing guide. Use when writing, editing, or reviewing text of any kind.
   Covers general writing principles, Danny's distinctive voice, style rules, and anti-slop patterns.
   Use for blog posts, docs, emails, proposals, personal essays, knowledge base articles, GitHub issues,
   or any other non-trivial text intended for others to read. Also use for quality checking and deslopping.

@@ -1,6 +1,6 @@
 ---
 name: fullcheck
-description: Comprehensive writing review — spawns analyser agents for thorough quality and voice assessment
+description: Comprehensive writing review — spawns analyser agents for thorough quality and voice assessment. Use when the user asks for a "full check", "thorough review", "comprehensive edit", or wants detailed quality analysis of their writing.
 argument-hint: "[file/dir/text]"
 disable-model-invocation: true
 ---

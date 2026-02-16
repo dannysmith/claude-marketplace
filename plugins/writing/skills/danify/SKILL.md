@@ -1,6 +1,6 @@
 ---
 name: danify
-description: Rewrite text in Danny's distinctive voice — conversational, substantive, cuts through bullshit
+description: Rewrite text in Danny's distinctive voice — conversational, substantive, cuts through bullshit. Use when the user asks to "danify", "rewrite in my voice", "make this sound like me", or wants text transformed into Danny's writing style.
 argument-hint: "[file/dir/text]"
 disable-model-invocation: true
 ---
@@ -19,16 +19,16 @@ Figure out what to danify:
 
 ## Load Skill Files
 
-Read these files from the `guide` skill:
-1. `writing-well.md`
-2. `writing-like-danny.md`
-3. `nonos.md`
+Read these files from the [guide](../guide/) skill:
+1. [`writing-well.md`](../guide/writing-well.md)
+2. [`writing-like-danny.md`](../guide/writing-like-danny.md)
+3. [`nonos.md`](../guide/nonos.md)
 
 Also use judgement on whether to load additional references:
-- For substantial work (long blog post, major document) → read `references/selected-examples.md` for voice calibration
+- For substantial work (long blog post, major document) → read [`references/selected-examples.md`](../guide/references/selected-examples.md) for voice calibration
 - If the text is a specific document type → also read the relevant reference file:
-  - Blog post or personal essay → `references/reference-blog-articles.md`
-  - Internal docs, guides, knowledge base → `references/reference-internal-docs.md`
+  - Blog post or personal essay → [`references/reference-blog-articles.md`](../guide/references/reference-blog-articles.md)
+  - Internal docs, guides, knowledge base → [`references/reference-internal-docs.md`](../guide/references/reference-internal-docs.md)
 - For short/simple text → examples probably aren't needed
 
 ## Process

@@ -1,8 +1,30 @@
 ---
 name: writing-analyser
-description: Systematically analyses documents for writing quality, AI slop, and style compliance. Use when you need a thorough, structured review of text against Danny's writing standards and general quality rules.
-tools: [Read, Glob, Grep, Bash]
-skills: [guide]
+description: >
+  Systematically analyses documents for writing quality, AI slop, and style compliance.
+  Use when a thorough, structured review of text against Danny's writing standards is needed.
+
+  <example>
+  Context: User has a draft and wants detailed quality feedback.
+  user: "Can you do a thorough review of this draft? Check for slop, voice, everything."
+  assistant: "I'll use the writing-analyser agent to systematically review this against Danny's writing standards."
+  <commentary>
+  User wants comprehensive writing analysis — this agent checks systematically against all guide files.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The fullcheck skill needs parallel analysis of a document.
+  user: "/fullcheck my-article.md"
+  assistant: "I'll spawn writing-analyser agents to review in parallel — one for slop and quality, one for voice and structure."
+  <commentary>
+  The fullcheck skill delegates to this agent for systematic analysis work.
+  </commentary>
+  </example>
+model: inherit
+tools: Read, Glob, Grep, Bash
+skills:
+  - guide
 ---
 
 # Writing Analyser

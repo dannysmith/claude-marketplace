@@ -1,6 +1,6 @@
 ---
 name: quickcheck
-description: Quick writing quality check — scans for slop, style issues, spelling/grammar errors
+description: Quick writing quality check — scans for slop, style issues, spelling/grammar errors. Use when the user asks for a "quick check", "quick review", "scan for issues", or wants a fast quality pass without full voice analysis.
 argument-hint: "[file/dir/text]"
 disable-model-invocation: true
 ---
@@ -19,9 +19,9 @@ Figure out what to check:
 
 ## Load Skill Files
 
-Read these files from the `guide` skill:
-1. `nonos.md`
-2. `structure-and-grammar.md`
+Read these files from the [guide](../guide/) skill:
+1. [`nonos.md`](../guide/nonos.md)
+2. [`structure-and-grammar.md`](../guide/structure-and-grammar.md)
 
 Do NOT load `writing-like-danny.md` or examples — this is a quick quality check, not a voice review.
 
