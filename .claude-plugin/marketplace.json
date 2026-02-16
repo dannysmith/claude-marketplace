@@ -25,8 +25,7 @@
         "productivity",
         "personal",
         "morning-planning",
-        "task-management",
-        "writing"
+        "task-management"
       ],
       "category": "productivity"
     },
@@ -51,6 +50,28 @@
         "oklch"
       ],
       "category": "development"
+    },
+    {
+      "name": "writing",
+      "source": "./plugins/writing",
+      "description": "Writing voice, quality checking, deslopping, and style enforcement",
+      "version": "1.0.0",
+      "author": {
+        "name": "Danny Smith"
+      },
+      "homepage": "https://danny.is",
+      "repository": "https://github.com/dannysmith/claude-marketplace",
+      "license": "MIT",
+      "keywords": [
+        "writing",
+        "editing",
+        "voice",
+        "style",
+        "quality",
+        "slop",
+        "deslopping"
+      ],
+      "category": "writing"
     }
   ]
 }

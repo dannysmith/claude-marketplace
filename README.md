@@ -22,18 +22,28 @@ Then install individual plugins:
 | ------------ | ------------------------------------------------------------------------------------- | ----------- |
 | `personal`   | Morning planning, task management commands, and custom agents tailored to my workflow | No          |
 | `css-expert` | Modern CSS expertise - cascade layers, OKLCH, container queries, defensive patterns   | Yes         |
+| `writing`    | Writing voice, quality checking, deslopping, and style enforcement                    | No          |
 
 ### personal
 
 My daily driver plugin with:
 
 - **Commands**: Morning planning, task management (`/tasks:*`), documentation updates
-- **Agents**: danny-voice-writer, code-refactorer, designer, fact-checker, security-auditor, technical-docs-writer, user-guide-writer
+- **Agents**: code-refactorer, designer, fact-checker, security-auditor, technical-docs-writer, user-guide-writer
 
 This plugin is configured for my specific workflow and integrates with:
 
 - [taskdn](https://github.com/dannysmith/taskdn) - my CLI task manager
 - My Obsidian vault for notes and day planning
+
+### writing
+
+Writing plugin with Danny's voice, quality checking, and deslopping. Includes:
+
+- **Skills**: `guide` (core reference), `/danify`, `/unslopify`, `/quickcheck`, `/fullcheck`
+- **Agents**: `writing-analyser` for systematic quality analysis
+
+This plugin is tailored to Danny's writing voice and style preferences (UK English).
 
 ### css-expert
 

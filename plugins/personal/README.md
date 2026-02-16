@@ -28,9 +28,7 @@ None
 
 ## Agents
 
-| Agent                   | Description                                                     |
-| ----------------------- | --------------------------------------------------------------- |
-| `danny-voice-writer`    | Writing in Danny's conversational, substantive voice            |
+None
 
 ## Hooks
 
