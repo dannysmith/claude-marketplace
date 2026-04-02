@@ -46,6 +46,7 @@ Copy and execute this exact bash command:
 
 ```bash
 mkdir -p docs/tasks-done docs/tasks-todo && \
+touch docs/tasks-done/.gitkeep docs/tasks-todo/.gitkeep && \
 if [ -f "package.json" ]; then HAS_PKG=true; else HAS_PKG=false; fi && \
 if [ "$HAS_PKG" = true ]; then \
 cat > docs/tasks.md << 'TASKS_DOC_EOF'
@@ -73,14 +74,13 @@ Examples:
 
 The script will:
 1. Find the matching task in tasks-todo/
-2. Strip the task-NUMBER- prefix
-3. Add todays date prefix: task-YYYY-MM-DD-
+2. Add todays date prefix: YYYY-MM-DD-task-2-...
 4. Move it to tasks-done/
 
 Example transformation:
   tasks-todo/task-2-frontend-performance-optimization.md
   becomes
-  tasks-done/task-2025-11-01-frontend-performance-optimization.md
+  tasks-done/2025-11-01-task-2-frontend-performance-optimization.md
 
 ### Renaming Existing Completed Tasks
 
@@ -102,7 +102,6 @@ cat > docs/tasks.md << 'TASKS_DOC_EOF'
   - Named task-YYYY-MM-DD-name.md with completion date
 TASKS_DOC_EOF
 fi && \
-echo "# Task: Example Task Doc" > docs/tasks-todo/task-1-example.md && \
 if [ -f "CLAUDE.md" ]; then \
   if ! grep -q "@docs/tasks.md" CLAUDE.md; then \
     echo "See @docs/tasks.md for task management" > CLAUDE.md.tmp && \
@@ -145,16 +144,9 @@ function getLastModifiedDate(filePath) {
   return new Date(stats.mtime)
 }
 
-function stripTaskNumber(filename) {
-  let cleaned = filename.replace(/^task-[0-9x]+-/, '')
-  cleaned = cleaned.replace(/^task-/, '')
-  return cleaned
-}
-
 function addDatePrefix(filename, date) {
   const dateStr = formatDate(date)
-  const nameWithoutTaskPrefix = stripTaskNumber(filename)
-  return `task-${dateStr}-${nameWithoutTaskPrefix}`
+  return `${dateStr}-${filename}`
 }
 
 function renameExistingTasks() {
@@ -169,7 +161,7 @@ function renameExistingTasks() {
   taskFiles.forEach(filename => {
     const oldPath = path.join(DONE_DIR, filename)
 
-    if (/^task-\d{4}-\d{2}-\d{2}-/.test(filename)) {
+    if (/^\d{4}-\d{2}-\d{2}-/.test(filename)) {
       console.log(`Skipping (already dated): ${filename}`)
       skippedCount++
       return
@@ -242,7 +234,7 @@ Examples:
 
 Notes:
   - Task name can be partial
-  - Completed tasks are moved to tasks-done/ with format: task-YYYY-MM-DD-description.md
+  - Completed tasks are moved to tasks-done/ with format: YYYY-MM-DD-original-filename.md
   - Existing tasks are renamed using their last modified date
 `)
 }
