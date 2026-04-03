@@ -11,20 +11,20 @@ Danny's personal Claude Code plugin for productivity and development workflows.
 
 ## Skills
 
-None
+| Skill | Description |
+| --- | --- |
+| `/personal:dev <subcommand>` | Project development utilities - init, new, complete, renumber, prime |
+| `/personal:morning` | Morning planning session with briefing, tasks, and day planning |
 
-## Commands
+### `/personal:dev` subcommands
 
-| Command                          | Description                                             |
-| -------------------------------- | ------------------------------------------------------- |
-| `/dannysmith:morning`            | Morning planning workflow with briefing and task review |
-| `/dannysmith:dev:prime-context`  | Prime session with project context                      |
-| `/dannysmith:dev:initai`         | Initialize AI assistant boilerplate files               |
-| `/dannysmith:dev:tasks-init`     | Initialize task management system                       |
-| `/dannysmith:dev:tasks-new`      | Create new unprioritized task                           |
-| `/dannysmith:dev:tasks-newgh`    | Create task from GitHub issue                           |
-| `/dannysmith:dev:tasks-renumber` | Renumber prioritized tasks                              |
-| `/dannysmith:dev:docs-update`    | Update documentation based on recent changes            |
+| Subcommand | Description |
+| --- | --- |
+| `init` | Initialise project with AI boilerplate and task management structure |
+| `new [description or GH issue]` | Create a new task from a description or GitHub issue |
+| `complete <task>` | Complete a task (move to done with date prefix) |
+| `renumber` | Renumber prioritised tasks to start from 1 with no gaps |
+| `prime [focus]` | Prime session with essential project context |
 
 ## Agents
 

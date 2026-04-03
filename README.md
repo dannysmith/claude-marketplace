@@ -28,8 +28,7 @@ Then install individual plugins:
 
 My daily driver plugin with:
 
-- **Commands**: Morning planning, task management (`/tasks:*`), documentation updates
-- **Agents**: code-refactorer, designer, fact-checker, security-auditor, technical-docs-writer, user-guide-writer
+- **Skills**: `/personal:dev` (project init, task management, context priming), `/personal:morning` (day planning)
 
 This plugin is configured for my specific workflow and integrates with:
 
