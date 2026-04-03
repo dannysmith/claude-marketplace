@@ -6,7 +6,13 @@ description: >-
   complete (finish a task), renumber (reorder task priorities), prime (load project context).
 argument-hint: <init|new|complete|renumber|prime> [args]
 disable-model-invocation: true
-allowed-tools: Bash Read Write Edit Glob Grep
+allowed-tools:
+  - "Bash(bash *)"
+  - Read
+  - Write
+  - Edit
+  - Glob
+  - Grep
 ---
 
 # Dev Utilities
