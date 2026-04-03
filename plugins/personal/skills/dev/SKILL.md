@@ -7,7 +7,7 @@ description: >-
 argument-hint: <init|new|complete|renumber|prime> [args]
 disable-model-invocation: true
 allowed-tools:
-  - "Bash(bash *)"
+  - Bash
   - Read
   - Write
   - Edit
@@ -39,7 +39,7 @@ Initialise or update a project's AI boilerplate and task management structure.
 
 Two phases:
 
-1. Run the shell script: `bash scripts/init-project.sh assets`
+1. Run the shell script: `scripts/init-project.sh assets`
 2. Read and follow the AI instructions in [references/init.md](references/init.md)
 
 ### new
@@ -55,7 +55,7 @@ Complete a task by moving it from `docs/tasks-todo/` to `docs/tasks-done/` with 
 
 The task identifier is the word immediately after "complete" in the user input.
 
-Run: `bash scripts/complete-task.sh <task-identifier>`
+Run: `scripts/complete-task.sh <task-identifier>`
 
 Report the result to the user.
 
@@ -63,7 +63,7 @@ Report the result to the user.
 
 Renumber prioritised tasks to start from 1 with no gaps.
 
-Run: `bash scripts/renumber-tasks.sh`
+Run: `scripts/renumber-tasks.sh`
 
 Report the result to the user.
 
