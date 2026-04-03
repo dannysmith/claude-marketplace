@@ -27,6 +27,12 @@ with this system yet, suggest the user runs `/personal:dev init` first.
 
 $ARGUMENTS
 
+## Important: executing bundled scripts
+
+Scripts in `scripts/` are executable with shebangs. Execute them directly — never
+prepend `bash`, `sh`, or any interpreter. For example: `scripts/init-project.sh` not
+`bash scripts/init-project.sh`.
+
 ## Subcommands
 
 The first word of the user input above is the subcommand. Everything after it is context
@@ -39,7 +45,7 @@ Initialise or update a project's AI boilerplate and task management structure.
 
 Two phases:
 
-1. Run the shell script: `scripts/init-project.sh assets`
+1. Execute: `scripts/init-project.sh assets`
 2. Read and follow the AI instructions in [references/init.md](references/init.md)
 
 ### new
@@ -55,7 +61,7 @@ Complete a task by moving it from `docs/tasks-todo/` to `docs/tasks-done/` with 
 
 The task identifier is the word immediately after "complete" in the user input.
 
-Run: `scripts/complete-task.sh <task-identifier>`
+Execute: `scripts/complete-task.sh <task-identifier>`
 
 Report the result to the user.
 
@@ -63,7 +69,7 @@ Report the result to the user.
 
 Renumber prioritised tasks to start from 1 with no gaps.
 
-Run: `scripts/renumber-tasks.sh`
+Execute: `scripts/renumber-tasks.sh`
 
 Report the result to the user.
 
