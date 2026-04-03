@@ -1,6 +1,6 @@
 #!/bin/bash
 # init-project.sh - Phase 1: Deterministic project setup
-# Usage: init-project.sh <assets-dir>
+# Usage: init-project.sh
 #
 # Creates task management directories, migrates CLAUDE.md/AGENTS.md to the
 # standard layout (CLAUDE.md = pointer, AGENTS.md = content), and copies
@@ -8,7 +8,8 @@
 
 set -e
 
-ASSETS_DIR="${1:?Usage: init-project.sh <assets-dir>}"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ASSETS_DIR="$SCRIPT_DIR/../assets"
 PROJECT_NAME="$(basename "$(pwd)")"
 
 # --- Helper ---

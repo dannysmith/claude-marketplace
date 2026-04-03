@@ -45,7 +45,7 @@ Initialise or update a project's AI boilerplate and task management structure.
 
 Two phases:
 
-1. Execute: `scripts/init-project.sh assets`
+1. Execute: `scripts/init-project.sh`
 2. Read and follow the AI instructions in [references/init.md](references/init.md)
 
 ### new
