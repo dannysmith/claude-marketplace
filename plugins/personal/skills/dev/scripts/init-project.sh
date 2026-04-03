@@ -44,8 +44,11 @@ if $CLAUDE_EXISTS && $AGENTS_EXISTS; then
         echo "Both files have content - appending CLAUDE.md to AGENTS.md"
         printf "\n\n---\n\n" >> AGENTS.md
         cat CLAUDE.md >> AGENTS.md
+    else
+        # Both are pointers - circular, delete AGENTS.md so template step creates it fresh
+        echo "Both files are pointers - removing AGENTS.md, will create from template"
+        rm -f AGENTS.md
     fi
-    # else: both are pointers somehow - just recreate from templates
 elif $CLAUDE_EXISTS && ! $AGENTS_EXISTS; then
     if $CLAUDE_IS_POINTER; then
         # Pointer but no AGENTS.md - create from template

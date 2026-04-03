@@ -23,6 +23,11 @@ if [ ! -d "$TODO_DIR" ]; then
     exit 1
 fi
 
+if [ ! -d "$DONE_DIR" ]; then
+    echo "Error: $DONE_DIR not found (has this project been initialised?)"
+    exit 1
+fi
+
 # Find matching file (case-insensitive)
 MATCH=$(ls "$TODO_DIR"/ 2>/dev/null | grep -i "$TASK_ID" | head -1)
 

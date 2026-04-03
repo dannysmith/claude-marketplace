@@ -12,11 +12,20 @@ allowed-tools: Bash Read Write Edit Glob Grep
 # Dev Utilities
 
 Project development utilities for initialisation, task management, and context priming.
+Designed for any dev project. Tasks are tracked as markdown files: todo tasks in
+`docs/tasks-todo/task-NUMBER-name.md`, completed tasks in
+`docs/tasks-done/YYYY-MM-DD-task-NUMBER-name.md`. If this project has not been initialised
+with this system yet, suggest the user runs `/personal:dev init` first.
+
+## Full user input
+
+$ARGUMENTS
 
 ## Subcommands
 
-Route based on the first argument (`$0`). If no argument is provided, list the available
-subcommands and ask the user which they want.
+The first word of the user input above is the subcommand. Everything after it is context
+for that subcommand. If no argument was provided, list the available subcommands and ask
+the user which they want.
 
 ### init
 
@@ -31,15 +40,16 @@ Two phases:
 
 Create a new task file in `docs/tasks-todo/`.
 
-Read and follow [references/new.md](references/new.md), passing all remaining arguments as context.
-
-The user's input: $1
+Read and follow [references/new.md](references/new.md). The context for the new task is
+everything after "new" in the user input above.
 
 ### complete
 
 Complete a task by moving it from `docs/tasks-todo/` to `docs/tasks-done/` with a date prefix.
 
-Run: `bash ${CLAUDE_SKILL_DIR}/scripts/complete-task.sh $1`
+The task identifier is the word immediately after "complete" in the user input.
+
+Run: `bash ${CLAUDE_SKILL_DIR}/scripts/complete-task.sh <task-identifier>`
 
 Report the result to the user.
 
@@ -55,6 +65,5 @@ Report the result to the user.
 
 Prime the current session with essential project context.
 
-Read and follow [references/prime.md](references/prime.md).
-
-The user's focus area (if provided): $1
+Read and follow [references/prime.md](references/prime.md). The context/focus area is
+everything after "prime" in the user input above (if anything).
