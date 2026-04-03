@@ -1,6 +1,10 @@
 ---
-description: Morning planning session - briefing, tasks, and day planning conversation
-arguments: []
+name: morning
+description: >-
+  This skill should be used when the user invokes "/personal:morning" to start their
+  morning planning session. Provides briefing, task overview, and guided day planning
+  conversation.
+disable-model-invocation: true
 ---
 
 # Morning Planning Session
