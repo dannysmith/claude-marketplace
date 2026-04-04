@@ -98,9 +98,9 @@ fi
 
 # --- G. Check for devtask-complete ---
 if command -v devtask-complete >/dev/null 2>&1; then
-    echo "devtask-complete is available on PATH"
+    echo "devtask-complete is available"
 else
-    echo "Note: devtask-complete not found on PATH (optional - for completing tasks from the terminal)"
+    echo "Note: devtask-complete not detected (it may still be available in your interactive shell as a sourced function)"
 fi
 
 echo ""
