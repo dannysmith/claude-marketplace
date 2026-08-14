@@ -22,7 +22,7 @@ Danny writes like he's explaining complex ideas to a brilliant friend over a pin
 
 ### Essentials
 
-UK English | Contractions always | Pub chat tone | Specific > Abstract | Precise > Impressive | Earn every second | Bold key points | Mix sentence lengths
+UK English | Contractions always | Pub chat tone | Specific > Abstract | Precise > Impressive | Saxon > Latinate | Verbs > nominalisations | Earn every second | Bold key points | Mix sentence lengths
 
 ### Clarity and Unity
 
@@ -34,14 +34,18 @@ UK English | Contractions always | Pub chat tone | Specific > Abstract | Precise
 
 - "use" not "utilise" | "start" not "commence" | "help" not "facilitate" | "buy" not "purchase"
 - Simple words unless complex ones genuinely work better
+- Prefer the Saxon word to the Latin one. Eight letters or more? Check for something shorter
+- Verbs not nominalisations: "we expanded" not "the expansion of"
 - Concrete over abstract: "Set up weekly team calls" not "Implement communication strategies"
 
 ### Rhythm
 
 - Mix short (5-8 words), medium (9-20), long (21+) sentences
+- Any paragraph over four sentences needs one under ten words
 - Follow long with short for impact — the "suckerpunch effect"
 - Start sentences with And/But/So when natural
 - Sentence fragments for emphasis. Which is a good thing.
+- Watch for under-punctuation: long sentences chained with "and", no commas, no brackets
 
 ### Danny's Voice
 
@@ -54,11 +58,12 @@ UK English | Contractions always | Pub chat tone | Specific > Abstract | Precise
 ### Quality Bar
 
 - Does paragraph 1 earn paragraph 2?
+- Is there a real person, quote or source anywhere in it?
 - Does it sound like a human wrote it? Would you read this if you didn't write it?
 
 ### Kill on Sight
 
-"Let's dive in" | "leverage" | "In today's fast-paced world" | "It's worth noting" | "In conclusion" | "delve into" | hedging on every opinion | corporate speak | perfectly balanced paragraphs | announcing what you're about to say | "Here's the thing" | "What's interesting is"
+"Let's dive in" | "leverage" | "In today's fast-paced world" | "It's worth noting" | "In conclusion" | "delve into" | "not only... but also" | hedging on every opinion | corporate speak | perfectly balanced paragraphs | announcing what you're about to say | "Here's the thing" | "What's interesting is"
 
 ### What to Cut
 

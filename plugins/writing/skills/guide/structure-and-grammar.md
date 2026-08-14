@@ -27,6 +27,10 @@ Single-sentence paragraphs are fine for emphasis. Don't use them constantly.
 - Up to 25 for formal writing
 - Vary dramatically within a piece — the variation creates rhythm
 
+The variation matters more than the average. Machine-written prose sits at a steady 20-30 words a sentence and never breaks stride, which is what makes it dull even when every sentence is correct.
+
+Checkable test: any paragraph of more than four sentences should contain at least one sentence under ten words. If a whole page goes by without one, you've written a wall.
+
 ## Document Structure
 
 ### Headings
@@ -55,6 +59,20 @@ Single-sentence paragraphs are fine for emphasis. Don't use them constantly.
 ### Em Dashes
 
 Use sparingly — one or two per paragraph maximum — and for emphasis only. Don't use them as a substitute for commas or parentheses in every sentence.
+
+Plenty of good human writers love a dash; Emily Dickinson used more than any bot. What reads as machine-made is a piece where dashes have replaced every comma, bracket and full stop, so the punctuation has one texture from start to finish.
+
+### Too Little Punctuation
+
+The more common failure now, and easy to miss because nothing on the page looks wrong. Several long sentences run together, joined with "and", barely a comma between them and no brackets anywhere. It reads flat and it's harder to follow than it should be.
+
+Fixes, in order of preference:
+
+1. Split the sentence in two
+2. Add a parenthetical aside (they're good, use them)
+3. Add the comma that was always meant to be there
+
+Don't reach for semicolons to fix this — see below.
 
 ### Semicolons
 

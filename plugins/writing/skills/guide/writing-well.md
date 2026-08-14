@@ -64,7 +64,18 @@ Use the pattern for personality:
 - "use" not "utilise"
 - "buy" not "purchase"
 
-Save complex vocabulary for when simpler words genuinely won't work. The goal is communication, not decoration.
+Save complex vocabulary for when simpler words genuinely won't work. The goal is communication, not decoration. Prefer the Saxon word to the Latin or Greek one. Orwell called the alternative "pretentious diction" — dressing up simple statements in complicated words to sound clever. It never works. The reader notices the effort, not the intelligence.
+
+This generalises beyond any list of pairs. When a word runs to eight letters or more, check whether a shorter one does the same job. Sometimes it doesn't and the long word is right — "interdependence" means something "linking" doesn't. But check.
+
+### Verbs, Not Nominalisations
+
+A nominalisation is a verb wearing a noun costume: "expand" becomes "expansion", "implement" becomes "implementation", "decide" becomes "decision". They pile up quickly, they drain energy from a sentence, and they hide who did what.
+
+❌ "The implementation of the new process led to an improvement in team performance"
+✅ "We changed the process and the team got better"
+
+Test: if a noun has a verb hiding inside it — usually ending in -tion, -ment, -ance, -ity or -ness — try the sentence with the verb instead. Keep the noun only when the verb version is genuinely worse.
 
 ### Concrete over Abstract
 
@@ -77,11 +88,24 @@ Replace abstractions with specifics. Always.
 
 Start sentences with "And," "But," or "So" when it feels natural. Write with personality — parenthetical asides are fine when they add value. Use simple transitions that real people use.
 
+## Quote Real People
+
+Writing that never quotes anyone reads like it came from nowhere. Real writers talk to people, read things, and remember specific moments, and it shows in the text — because quoting someone drags in a name, a date, a bit of context and a set of quotation marks.
+
+- Name the person. Don't write "experts suggest"
+- Quote what someone actually said, in their words, even when it's less tidy than your paraphrase
+- A remembered line from a colleague or a mate counts. It doesn't have to be a study
+- If a piece has no people in it at all, it's usually arguing with nobody
+
+A named source is checkable. A vague one isn't.
+
 ## Punctuation
 
 - Em dashes: sparingly, one or two per paragraph maximum, for emphasis only
 - Semicolons: only where they're obviously the best choice; prefer full stops for digital content
 - Don't avoid traditional punctuation, but use it only where it genuinely clarifies meaning or improves flow
+- Watch the opposite failure too: long sentences chained together with "and", barely a comma between them, no brackets anywhere. When a paragraph runs on, split the sentence rather than adding a semicolon
+- Parenthetical asides (like this one) are good. Use them
 
 ## Quality Standards
 
@@ -90,6 +114,8 @@ Start sentences with "And," "But," or "So" when it feels natural. Write with per
 - Does paragraph 1 earn paragraph 2?
 - Can you cut 20% more without losing meaning?
 - Have you included a specific example or story?
+- Is there a real person, quote or source anywhere in it?
+- Does every paragraph over four sentences contain a short one?
 - Does this sound like a human wrote it?
 - Would you read this if you didn't write it?
 

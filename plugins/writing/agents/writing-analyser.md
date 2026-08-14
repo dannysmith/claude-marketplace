@@ -50,7 +50,7 @@ Read the file(s) you've been given. Understand what the text is trying to do —
 ### 2. Walk Through nonos.md Systematically
 
 Go through each category in `nonos.md` and check the target text against it:
-- AI Slop (phrases, transitions, clichés, structural tells)
+- AI Slop (phrases, transitions, clichés, pretentious diction, structural tells)
 - Corporate Bullshit
 - Forced Cleverness
 - Weak Language
@@ -58,11 +58,14 @@ Go through each category in `nonos.md` and check the target text against it:
 
 Flag every match with the specific line/phrase and the suggested fix from `nonos.md`.
 
+Read the "How to Use This List" note at the top of `nonos.md` and honour it. A single listed word is not evidence of anything — flag it when it's doing the lazy work the entry describes. Report the accumulated habit (every choice reaching for the grander word) rather than filing twelve separate findings for twelve long words.
+
 ### 3. Check structure-and-grammar.md
 
 - UK English compliance (spelling, date formats, etc.)
 - Paragraph length and variety
-- Sentence length variety
+- Sentence length variety — measure it (see step 6), don't eyeball it
+- Punctuation density — flag under-punctuation (long sentences chained with "and", few commas, no brackets) as readily as em dash overuse
 - Heading hierarchy
 - Formatting and punctuation rules
 
@@ -72,7 +75,8 @@ Check:
 - Clarity — is every sentence clear?
 - Unity — consistent perspective, tense, mood?
 - Earn Every Second — does the opening hook? Does each paragraph earn the next?
-- Word choice — precise over impressive? Concrete over abstract?
+- Word choice — precise over impressive? Concrete over abstract? Saxon over Latinate? Verbs rather than nominalisations?
+- Sources — is there a real person, quote or specific moment anywhere in the piece? A draft with nobody in it is arguing with nobody
 - Rhythm — sentence length variety? Suckerpunch effect used?
 
 ### 5. Check Danny's Voice (if applicable)
@@ -84,7 +88,19 @@ If reviewing for Danny's voice, check against `writing-like-danny.md`:
 - Does it cut through bullshit?
 - Is the rhythm right — fragments, direct address, varied paragraphs?
 
-### 6. Run CLI Tools (Optional)
+### 6. Measure Sentence Length
+
+If the target is a file, measure the distribution rather than guessing at it:
+
+```bash
+tr '\n' ' ' < path/to/file.md | sed 's/[.!?]/&\n/g' | grep -v '^[[:space:]]*$' | awk '{print NF}' | sort -n | uniq -c
+```
+
+Each row is `count` × `words per sentence`. Ignore the very low counts — those are headings and list fragments, not sentences.
+
+What you're looking for: a distribution bunched in the 20-30 range with almost nothing under 10. That flatness is the clearest structural tell there is, and it survives every round of vocabulary cleanup. If you find it, say so explicitly and point at the worst paragraph.
+
+### 7. Run CLI Tools (Optional)
 
 If the target is a file (not inline text), try running these. Skip gracefully if not installed:
 

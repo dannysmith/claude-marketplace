@@ -34,15 +34,16 @@ Read the full text first. Understand what it's trying to say, who the audience i
 Walk through `nonos.md` and fix every violation:
 - Replace banned AI phrases with natural alternatives (or delete)
 - Replace corporate bullshit with plain language
+- Cut pretentious diction — nominalisations back to verbs, Latinate words back to Saxon ones, long words back to short ones
 - Cut forced cleverness
 - Strengthen weak language
-- Fix structural AI tells (perfect balance, neat summaries, hedge-everything)
+- Fix structural AI tells (perfect balance, neat summaries, hedge-everything, under-punctuation, uniform sentence length, rule-of-three on repeat)
 - Fix tonal AI tells (sycophantic validation, performative enthusiasm, verbose repetition, tonal flatness, compulsive summarising)
 
 ### 3. Apply writing-well.md Principles
 - Sharpen clarity — make every sentence clear
 - Fix word choice — precise over impressive, concrete over abstract
-- Improve rhythm — vary sentence lengths, add punch
+- Improve rhythm — vary sentence lengths, add punch. Every paragraph over four sentences needs one under ten words
 - Cut unnecessary words — aim for 20% reduction
 - Fix transitions — natural flow, not announcements
 - Ensure the opening earns the reader's attention

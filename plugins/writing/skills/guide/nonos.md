@@ -4,6 +4,12 @@ Patterns to avoid. Use this as a systematic checklist when reviewing or editing 
 
 The categories overlap — some phrases are both AI slop AND corporate bullshit. That's fine. If it's in this list, don't use it.
 
+## How to Use This List
+
+The word lists below are a snapshot, and snapshots age. Models drop their tells as fast as anyone catalogues them: the em dash was the obvious giveaway until models stopped leaning on it, and "delve" has already faded. So weight the principles above the lists. The structural and tonal sections age far better than the vocabulary at the top.
+
+One word proves nothing. A text isn't machine-written because it says "delve", any more than it's Jane Austen because it says "imprudence". Flag a phrase when it's doing the lazy work the entry describes, not merely because it appeared. When a listed word is genuinely the right word, use it.
+
 ---
 
 ## AI Slop
@@ -74,16 +80,31 @@ Phrases and patterns that scream "an AI wrote this." Kill on sight.
 ❌ "curated" → "chosen" or "selected"
 ❌ "paramount" → "important" or "essential"
 
+### Pretentious Diction
+
+These are habits to catch rather than words to ban outright. The reach goes to the longer, more Latinate, more academic option every time, and the result sounds educated while saying very little. Orwell's phrase, and still the sharpest description of it.
+
+❌ Nominalisations: "the implementation of", "an improvement in", "the expansion of" → Use the verb: "we implemented", "improved", "expanded". Watch for -tion, -ment, -ance, -ity, -ness
+❌ Latinate where Saxon works: "commence", "utilise", "ascertain", "endeavour", "necessitate" → "start", "use", "find out", "try", "need"
+❌ Academic or scientific register in ordinary prose: "parameter", "methodology", "framework", "modality" → Say what you mean in plain words
+❌ Long words doing a short word's job → When a word runs to eight letters or more, check for a shorter one. Keep it only when it's genuinely more precise
+
+Ordinary words like "significant", "increasingly" and "consequences" are fine on their own. The accumulation is what gives the game away — a paragraph where every choice went to the grander option.
+
 ### Structural AI Tells
 
 ❌ Perfect three-point structures every time → Vary structure
+❌ Rule of three as the default liveliness device: "faster, cheaper, and more reliable" → Fine occasionally, exhausting every paragraph. Budget one per section; if two land near each other, rewrite one
 ❌ Perfectly balanced paragraphs → Vary paragraph length dramatically
 ❌ Every section ending with a neat summary → Let some sections just end
 ❌ Hedging on every single opinion → Take a position
 ❌ "In conclusion" / "To summarise" / "In summary" → Natural ending or just stop
 ❌ Opening with a definition → Start with why the reader should care
 ❌ Paragraph symmetry — every paragraph roughly the same length → Mix short punchy paragraphs with longer ones
-❌ Em dash overuse — three or more per paragraph → Use one at most, or restructure
+❌ Em dash overuse — three or more per paragraph → Use one at most, or restructure. Plenty of good human writers love a dash, so the dash alone proves nothing. What to look for is dashes doing the work commas, brackets and full stops should be doing
+❌ Under-punctuation — long sentences chained with "and", few commas, no brackets → Split the sentence. Add the aside. This is now the more common failure
+❌ Uniform sentence length — everything landing at 20-30 words, nothing short → Any paragraph over four sentences needs at least one sentence under ten words
+❌ Nobody quoted, named or cited anywhere in the piece → Real writing has real people in it. Add a name, a quote, or a specific moment
 ❌ Machine-gunned short sentences: "X is important. Y matters. Z is key." → Vary rhythm, combine some
 ❌ Over-signposting: "First... Second... Third... Finally..." in every section → Use natural flow, not numbered announcements
 ❌ Engagement bait endings: "What do you think?" / "I'd love to hear your thoughts" → End with substance, not a prompt
@@ -142,7 +163,8 @@ Language that makes people's eyes glaze over. Replace with what you actually mea
 
 Patterns where writing tries too hard to be smart. The effect is the opposite.
 
-❌ X isn't Y, it's Z → Overwrought contrast. Sometimes fine, but massively overused by AI.
+❌ X isn't Y, it's Z / "not X but Y" → Overwrought contrast. Sometimes fine, but massively overused by AI — and by Claude in particular.
+❌ "not only... but also" → Usually just "and". Rewrite as one clause or two sentences.
 ❌ "The real [noun] was [unexpected thing]" → Just make the point
 ❌ "But here's where it gets interesting" → Just be interesting
 ❌ Meta-commentary about the writing itself → Don't narrate what you're doing
