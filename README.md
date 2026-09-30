@@ -18,17 +18,17 @@ Then install individual plugins:
 
 ## Available Plugins
 
-| Plugin       | Description                                                                           | For Others? |
-| ------------ | ------------------------------------------------------------------------------------- | ----------- |
-| `personal`   | Morning planning, task management commands, and custom agents tailored to my workflow | No          |
-| `css-expert` | Modern CSS expertise - cascade layers, OKLCH, container queries, defensive patterns   | Yes         |
-| `writing`    | Writing voice, quality checking, deslopping, and style enforcement                    | No          |
+| Plugin | Description | For Others? |
+| --- | --- | --- |
+| `personal` | Morning planning, task management, video creation and custom agents tailored to my workflow | No |
+| `css-expert` | Modern CSS expertise - cascade layers, OKLCH, container queries, defensive patterns | Yes |
+| `writing` | Writing voice, quality checking, deslopping, and style enforcement | No |
 
 ### personal
 
 My daily driver plugin with:
 
-- **Skills**: `/personal:dev` (project init, task management, context priming), `/personal:morning` (day planning)
+- **Skills**: `/personal:dev` (project init, task management, context priming), `/personal:morning` (day planning), `/personal:video-creator` (promos, explainers and animated slides rendered from HTML)
 
 This plugin is configured for my specific workflow and integrates with:
 
