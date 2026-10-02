@@ -32,8 +32,8 @@
     {
       "name": "css-expert",
       "source": "./plugins/css-expert",
-      "description": "Modern CSS expertise",
-      "version": "1.0.1",
+      "description": "Modern CSS house style and platform features",
+      "version": "2.0.0",
       "author": {
         "name": "Danny Smith"
       },

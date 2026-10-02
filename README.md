@@ -21,7 +21,7 @@ Then install individual plugins:
 | Plugin | Description | For Others? |
 | --- | --- | --- |
 | `personal` | Morning planning, task management, video creation and custom agents tailored to my workflow | No |
-| `css-expert` | Modern CSS expertise - cascade layers, OKLCH, container queries, defensive patterns | Yes |
+| `css-expert` | Modern CSS house style and platform features - cascade layers, tokens, container queries, OKLCH, popover, anchor positioning | Yes |
 | `writing` | Writing voice, quality checking, deslopping, and style enforcement | No |
 
 ### personal
@@ -48,11 +48,11 @@ This plugin is tailored to Danny's writing voice and style preferences (UK Engli
 
 A skill for modern CSS development, useful for anyone. Covers:
 
-- Cascade layers (`@layer`)
-- OKLCH color space
-- Container queries
-- Defensive CSS patterns
-- Modern layout techniques
+- Architecture: cascade layers, three-tier design tokens, small components
+- Colour: OKLCH, `light-dark()`, relative colour, `contrast-color()`
+- Layout and typography: intrinsic grids, container queries, subgrid, fluid type, `text-box`
+- Interactive components: `<dialog>`, popover, anchor positioning, customisable select, entry/exit transitions, view transitions
+- A browser support table (use freely / enhancement / not yet) so newer features are used where they are safe
 
 ## Related
 

@@ -1,6 +1,8 @@
-# CSS Reset and Base Styles
+# Reset and base styles
 
-A modern CSS "reset" based on https://www.joshwcomeau.com/css/custom-css-reset/.
+Starting point for a new stylesheet. The reset is the same in every project; the base layer is a default to adapt. Token names match [architecture.md](architecture.md).
+
+The reset is based on https://www.joshwcomeau.com/css/custom-css-reset/.
 
 ```css
 @layer reset {
@@ -14,12 +16,17 @@ A modern CSS "reset" based on https://www.joshwcomeau.com/css/custom-css-reset/.
     margin: 0;
   }
 
+  /* Dialogs and popovers rely on auto margins for their default centring */
+  :where(dialog, [popover]) {
+    margin: auto;
+  }
+
   /* Better focus outline spacing */
   :where(:focus-visible) {
     outline-offset: 3px;
   }
 
-  /* Enable keyword animations */
+  /* Allow transitions to and from keywords like auto (Chromium only, ignored elsewhere) */
   @media (prefers-reduced-motion: no-preference) {
     :where(html) {
       interpolate-size: allow-keywords;
@@ -43,8 +50,8 @@ A modern CSS "reset" based on https://www.joshwcomeau.com/css/custom-css-reset/.
     /* Improve text rendering */
     -webkit-font-smoothing: antialiased;
 
-    /* Sensible min-height */
-    min-height: 100vh;
+    /* Sensible min-height that accounts for mobile browser toolbars */
+    min-block-size: 100svh;
   }
 
   /* Improve media defaults */
@@ -98,6 +105,10 @@ A modern CSS "reset" based on https://www.joshwcomeau.com/css/custom-css-reset/.
     text-wrap: balance;
   }
 
+  :where(p, li) {
+    text-wrap: pretty;
+  }
+
   /* Anything that has been anchored to should have extra scroll margin */
   :where(:target) {
     scroll-margin-block: 5ex;
@@ -134,13 +145,12 @@ A modern set of base styles.
     font-family: var(--font-primary);
     font-weight: var(--font-weight-normal, 400);
     hanging-punctuation: first allow-end last;
-    word-break: break-word;
 
     /* Colors - support both light/dark */
     color-scheme: light dark;
-    accent-color: var(--color-accent);
-    color: var(--color-fg);
-    background-color: var(--color-bg);
+    accent-color: var(--color-primary);
+    color: var(--text-primary);
+    background-color: var(--surface-base);
   }
 
   /* Sensible default for abbrs */
@@ -178,7 +188,7 @@ A modern set of base styles.
 
   /* Chilled out underlines - more subtle when not interacting */
   a:not([class]):not(:is(:hover, :focus)) {
-    text-decoration-color: color-mix(in srgb, currentColor, transparent 75%);
+    text-decoration-color: color-mix(in oklch, currentColor, transparent 75%);
   }
 
   /* Tighter line-height headings and UI elements */
@@ -225,7 +235,7 @@ A modern set of base styles.
 
   /* Sensible defaults for table styles. This assumes <th> elements have a scope="row" or scope="column" depending on whether they're in a <tr> or a <th>. */
   table {
-    --color-table-accent: #d0d0f5;
+    --color-table-accent: color-mix(in oklch, currentColor 12%, transparent);
 
     border-collapse: collapse;
     caption-side: bottom;
@@ -263,12 +273,7 @@ A modern set of base styles.
   }
 
   tbody tr:nth-child(even) {
-    background: color-mix(in srgb, var(--color-table-accent), transparent 60%);
+    background: color-mix(in oklch, var(--color-table-accent), transparent 60%);
   }
 }
 ```
-
-## Next Steps
-
-After using this reset, set up your color system using OKLCH and design tokens.
-See `guidelines/02-color-design-tokens.md` for a complete color system setup.
