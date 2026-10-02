@@ -2,7 +2,8 @@
 # init-project.sh - Phase 1: Deterministic project setup
 # Usage: init-project.sh
 #
-# Creates task management directories, migrates CLAUDE.md/AGENTS.md to the
+# Creates task management directories (including the gitignored
+# docs/tasks-todo/temporary/), migrates CLAUDE.md/AGENTS.md to the
 # standard layout (CLAUDE.md = pointer, AGENTS.md = content), and copies
 # templates for missing files.
 
@@ -19,7 +20,15 @@ is_only_content() {
 }
 
 # --- A. Create directories ---
-mkdir -p docs/tasks-todo docs/tasks-done
+mkdir -p docs/tasks-todo/temporary docs/tasks-done
+
+# Keep the temporary working directory out of git
+if ! grep -qxF "docs/tasks-todo/temporary/" .gitignore 2>/dev/null; then
+    # Start on a fresh line if the existing file doesn't end with a newline
+    [ -s .gitignore ] && [ -n "$(tail -c1 .gitignore)" ] && echo "" >> .gitignore
+    echo "docs/tasks-todo/temporary/" >> .gitignore
+    echo "Added docs/tasks-todo/temporary/ to .gitignore"
+fi
 
 # --- B. Migrate CLAUDE.md / AGENTS.md ---
 CLAUDE_EXISTS=false; AGENTS_EXISTS=false

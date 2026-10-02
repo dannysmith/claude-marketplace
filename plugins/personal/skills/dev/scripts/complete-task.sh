@@ -1,5 +1,6 @@
 #!/bin/bash
-# complete-task.sh - Move a task from todo to done with today's date prefix
+# complete-task.sh - Move a task from todo to done, adding today's date after "task-"
+# e.g. task-3-add-login.md -> task-2026-01-31-3-add-login.md
 # Usage: complete-task.sh <task-name-or-number>
 
 set -e
@@ -28,19 +29,40 @@ if [ ! -d "$DONE_DIR" ]; then
     exit 1
 fi
 
-# Find matching file (case-insensitive)
-MATCH=$(ls "$TODO_DIR"/ 2>/dev/null | grep -i "$TASK_ID" | head -1)
+# Find matching tasks: a pure number matches that task number exactly,
+# anything else is a case-insensitive substring of the filename
+MATCHES=()
+for FILE in "$TODO_DIR"/task-*.md; do
+    [ -f "$FILE" ] || continue
+    NAME=$(basename "$FILE")
+    if [[ "$TASK_ID" =~ ^[0-9]+$ ]]; then
+        if [[ "$NAME" == task-"$TASK_ID"-* ]]; then
+            MATCHES+=("$NAME")
+        fi
+    elif echo "$NAME" | grep -qiF -- "$TASK_ID"; then
+        MATCHES+=("$NAME")
+    fi
+done
 
-if [ -z "$MATCH" ]; then
+if [ ${#MATCHES[@]} -eq 0 ]; then
     echo "Error: No task found matching '$TASK_ID'"
     echo ""
     echo "Available tasks:"
-    ls "$TODO_DIR"/*.md 2>/dev/null | xargs -n1 basename 2>/dev/null || echo "  (none)"
+    ls "$TODO_DIR"/task-*.md 2>/dev/null | xargs -n1 basename 2>/dev/null || echo "  (none)"
     exit 1
 fi
 
+if [ ${#MATCHES[@]} -gt 1 ]; then
+    echo "Error: '$TASK_ID' matches more than one task, nothing completed"
+    echo ""
+    echo "Matching tasks:"
+    printf '  %s\n' "${MATCHES[@]}"
+    exit 1
+fi
+
+MATCH="${MATCHES[0]}"
 TODAY=$(date +%Y-%m-%d)
-NEW_NAME="${TODAY}-${MATCH}"
+NEW_NAME="task-${TODAY}-${MATCH#task-}"
 
 if [ -f "$DONE_DIR/$NEW_NAME" ]; then
     echo "Error: $DONE_DIR/$NEW_NAME already exists"

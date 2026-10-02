@@ -21,9 +21,9 @@ Danny's personal Claude Code plugin for productivity and development workflows.
 
 | Subcommand | Description |
 | --- | --- |
-| `init` | Initialise project with AI boilerplate and task management structure |
+| `init` | Initialise project with AI boilerplate and task management structure. Offers a `shoot` screenshot command in web projects |
 | `new [description or GH issue]` | Create a new task from a description or GitHub issue |
-| `complete <task>` | Complete a task (move to done with date prefix) |
+| `complete <task>` | Complete a task (move to done with the completion date). A number matches that task number exactly, anything else matches part of the filename |
 | `renumber` | Renumber prioritised tasks to start from 1 with no gaps |
 | `prime [focus]` | Prime session with essential project context |
 

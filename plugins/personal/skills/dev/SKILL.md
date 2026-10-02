@@ -20,18 +20,24 @@ allowed-tools:
 Project development utilities for initialisation, task management, and context priming.
 Designed for any dev project. Tasks are tracked as markdown files: todo tasks in
 `docs/tasks-todo/task-NUMBER-name.md`, completed tasks in
-`docs/tasks-done/YYYY-MM-DD-task-NUMBER-name.md`. If this project has not been initialised
+`docs/tasks-done/task-YYYY-MM-DD-NUMBER-name.md`. The gitignored
+`docs/tasks-todo/temporary/` holds working files. If this project has not been initialised
 with this system yet, suggest the user runs `/personal:dev init` first.
 
 ## Full user input
 
 $ARGUMENTS
 
-## Important: executing bundled scripts
+## Important: bundled files
 
-Scripts in `scripts/` are executable with shebangs. Execute them directly — never
-prepend `bash`, `sh`, or any interpreter. For example: `scripts/init-project.sh` not
-`bash scripts/init-project.sh`.
+This skill's directory is `${CLAUDE_SKILL_DIR}`. Paths under `scripts/`, `references/` and
+`assets/`, here and in the reference files, are relative to it. Scripts act on the current
+working directory, so run them from the project by their full path rather than changing
+into the skill directory.
+
+Scripts are executable with shebangs. Execute them directly — never prepend `bash`, `sh`,
+or any interpreter. For example: `${CLAUDE_SKILL_DIR}/scripts/init-project.sh` not
+`bash ${CLAUDE_SKILL_DIR}/scripts/init-project.sh`.
 
 ## Subcommands
 
@@ -45,8 +51,9 @@ Initialise or update a project's AI boilerplate and task management structure.
 
 Two phases:
 
-1. Execute: `scripts/init-project.sh`
-2. Read and follow the AI instructions in [references/init.md](references/init.md)
+1. Execute: `${CLAUDE_SKILL_DIR}/scripts/init-project.sh`
+2. Read and follow the AI instructions in [references/init.md](references/init.md), which
+   also cover offering a screenshot command in web projects
 
 ### new
 
@@ -57,19 +64,22 @@ everything after "new" in the user input above.
 
 ### complete
 
-Complete a task by moving it from `docs/tasks-todo/` to `docs/tasks-done/` with a date prefix.
+Complete a task by moving it from `docs/tasks-todo/` to `docs/tasks-done/` with the
+completion date added (`task-3-name.md` becomes `task-YYYY-MM-DD-3-name.md`).
 
-The task identifier is the word immediately after "complete" in the user input.
+The task identifier is the word immediately after "complete" in the user input. A pure
+number matches that task number exactly; anything else matches as part of the filename.
 
-Execute: `scripts/complete-task.sh <task-identifier>`
+Execute: `${CLAUDE_SKILL_DIR}/scripts/complete-task.sh <task-identifier>`
 
-Report the result to the user.
+Report the result to the user. If the script reports no match or more than one match,
+nothing was moved: show the user its output and ask which task they meant.
 
 ### renumber
 
 Renumber prioritised tasks to start from 1 with no gaps.
 
-Execute: `scripts/renumber-tasks.sh`
+Execute: `${CLAUDE_SKILL_DIR}/scripts/renumber-tasks.sh`
 
 Report the result to the user.
 

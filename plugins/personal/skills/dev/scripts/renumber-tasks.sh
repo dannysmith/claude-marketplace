@@ -39,9 +39,9 @@ echo "$FILES" | while read -r FILE; do
     COUNTER=$((COUNTER + 1))
 done
 
-# Second pass: rename from temp to final names
+# Second pass: rename from temp to final names (numeric sort, so 10 follows 9 not 1)
 COUNTER=1
-for FILE in task-temp-*-*.md; do
+for FILE in $(ls task-temp-*-*.md | sort -t- -k3,3n); do
     if [ -f "$FILE" ]; then
         SUFFIX=$(echo "$FILE" | sed 's/^task-temp-[0-9]*\(-.*\.md\)$/\1/')
         FINAL_NAME="task-${COUNTER}${SUFFIX}"
