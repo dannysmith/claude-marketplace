@@ -33,6 +33,33 @@ curl -s https://raw.githubusercontent.com/dannysmith/morning-briefing-generator/
 
 Verify the content is for today's date.
 
+### Weather
+
+The briefing only has a one-line weather summary, so fetch today's hourly forecast for London from Open-Meteo (no API key needed):
+
+```bash
+curl -s 'https://api.open-meteo.com/v1/forecast?latitude=51.5072&longitude=-0.1276&timezone=Europe%2FLondon&forecast_days=1&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,wind_speed_10m_max,sunrise,sunset&hourly=temperature_2m,precipitation_probability,weather_code'
+```
+
+`weather_code` values are WMO weather codes. Use the hourly data to work out the shape of the day (when it's warmest, when rain is likely, whether there's a good window to be outside).
+
+### News
+
+Fetch the latest items from the BBC UK, technology and world news feeds (sport already removed). This prints one line per item as `title | description | link | published`, with stories that appear in more than one feed listed once:
+
+```bash
+for feed in uk technology world; do curl -s "https://bbc-feeds.danq.dev/$feed-no-sports.xml"; done | perl -0ne 's/<!--.*?-->//gs; while (m{<item>.*?<title><!\[CDATA\[(.*?)\]\]></title>.*?<description><!\[CDATA\[(.*?)\]\]></description>.*?<guid[^>]*>(.*?)</guid>.*?<pubDate>(.*?)</pubDate>}gs) { print "- $1 | $2 | $3 | $4\n" unless $seen{$3}++ }'
+```
+
+The feeds aren't in date order and hold around 70 items between them, most of which the user won't care about. Read all of them, along with the news items in the briefing, and pick the handful (usually 3-6, fewer on a quiet day) worth their attention:
+
+- Major political news, in the UK or internationally
+- Anything important enough that they should definitely know about it
+- Tech stories, especially AI and software
+- Defence and security: military, geopolitics, conflicts, procurement, intelligence
+
+Skip celebrity, entertainment, human-interest and routine crime or court stories unless they're genuinely major. If a headline looks relevant but the description is too thin to say why it matters, fetch the article to find out.
+
 ### Load Task Management Skill
 
 Load the task-management skill: `Skill(tdn:task-management)`
@@ -59,7 +86,10 @@ Wait for their response before proceeding.
 
 Once they're ready:
 
-1. **Show the morning briefing** - output the briefing markdown directly in your response text (don't just show the raw curl output). This ensures proper formatting and clickable links. Preserve all URLs from the briefing so the user can click through to articles.
+1. **Show the morning briefing** - output the briefing markdown directly in your response text (don't just show the raw curl output). This ensures proper formatting and clickable links. Preserve all URLs from the briefing so the user can click through to articles. Present it as one briefing rather than the generated one plus extras:
+   - **Weather:** keep the briefing's weather section (including tides) and add a sentence or two on how the day will go, based on the hourly forecast.
+   - **News:** replace the briefing's news list with your picks from both sources, most important first. Link each headline to its article and add a line on what happened and why it matters to them. Don't list the same story twice.
+   - Keep the rest of the briefing (markets, new content etc.) as it is.
 2. **Show task overview** - summarise the key tasks and what's on their plate today
 3. **Highlight anything urgent** - deadlines, scheduled items, blockers
 
@@ -107,7 +137,8 @@ Keep it short and sweet, but useful for future reference.
 
 ## Graceful Degradation
 
-- If the GitHub briefing fetch fails, acknowledge it and continue with task context
+- If the GitHub briefing fetch fails, acknowledge it and build the briefing from the weather and news fetches alone
+- If the weather or news fetch fails, say so briefly and use what the briefing already has
 - If `tdn` commands fail, note the issue and continue conversationally
 - If yesterday's day note doesn't exist or is empty, that's normal - just proceed without that context
 - Always aim to be helpful even with partial information

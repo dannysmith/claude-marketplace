@@ -14,7 +14,7 @@
       "name": "personal",
       "source": "./plugins/personal",
       "description": "Danny's personal skills, commands and agents",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "author": {
         "name": "Danny Smith"
       },
