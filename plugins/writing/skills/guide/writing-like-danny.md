@@ -1,181 +1,86 @@
 # Writing Like Danny
 
-Danny's specific voice, layered on top of the principles in `writing-well.md`. Load this for anything Danny is publishing or where his distinctive voice matters (~80% of writing tasks). Skip for super-formal/legal docs or ghostwriting for others.
+How Danny writes, described from his own work. The samples in `references/` are the primary source; this file tells you what to notice in them. When this description and a sample disagree, trust the sample.
 
-## The Voice
+## The voice in one paragraph
 
-Danny writes like he's explaining complex ideas to a brilliant friend over a pint — warm, irreverent, and never boring. Conversational accessibility with substantive depth. He cuts through bullshit, grounds abstract concepts in reality, and isn't afraid to be vulnerable or contradict himself when it serves the reader.
+Danny writes the way he would explain something to a clever friend: directly, in the first person, with his opinion stated and his reasons given. He is warm and informal without being flippant about the subject. He takes the topic seriously and himself less so. He would sooner say a plain thing plainly than dress it up, and he says when he is unsure, biased or guessing.
 
-## Core Voice Principles
+## What holds across everything he writes
 
-### 1. Write Conversationally But Substantively
+**He says what he thinks.** "For a long time I've believed that organisational health is a hugely undervalued ingredient for success." "I've convinced myself that we'd be insane to not build on top of Remix." Opinions arrive as opinions, owned with "I think" or "for me", and are then argued. He does not present a survey of views and leave the reader to choose.
 
-Imagine you're having a clever chat in a good pub — informal but intellectually engaged. Drop in casual asides and parentheticals. Use contractions naturally.
+**He is honest about limits.** "I have no idea what paint.net is." "I think for a few reasons..." "This does not look nearly as hard as I expected." Where he hedges, the doubt is real and specific. He does not hedge to protect himself.
 
-> "I laughed out loud at this. In the two years since Janina made me do those tests, we've laughed a lot at how differently this stuff affects each of us."
+**He is specific.** Named people (Vicki, Janina, Ben Allen), named tools, real numbers, the actual thing that happened. Abstract claims get a concrete case straight away: after arguing for clarity in organisations he lists the small confusions people really have ("Is it okay to expense my new headphones? How do I do that? Who do I even ask?").
 
-### 2. Be Self-Aware Without Being Self-Indulgent
+**He sounds spoken.** Contractions throughout. "Kinda", "gonna", "a bunch of", "stuff", "folks", "mates". British turns of phrase where they come naturally: "cracking piece of kit", "nowt to do with you", "sod doing that". Sentences begin with And, But, So, Because and Which.
 
-Acknowledge contradictions and personal quirks honestly. Use self-deprecating humour but don't overdo it.
+**He marks stress the way a speaker would.** Bold on the phrase that carries the point of a paragraph, italics on the word he would lean on aloud. This is frequent, often several times in a paragraph: "Because while _"you very obviously have ADHD"_ was news to me, **not one of the symptoms was**."
 
-> "Which is why I read Getting Things Done as a weed-smoking seventeen-year-old: I had some vague notion that I couldn't rely on my brain to stay organised. All my mates thought this was very weird."
+**He uses asides.** Spaced dashes for a thought that interrupts the sentence, and brackets for commentary, sometimes a whole bracketed sentence. An ellipsis often leads into a list or a quote: "it's often neglected – I think for a few reasons..."
 
-### 3. Blend Abstract Ideas with Concrete Reality
+**He is funny in passing.** Self-deprecation ("I'd forget my own birthday if said housemate didn't remind me"), mock-official coinages ("All The Things™", "Extremely Smart™"), invented compounds ("turbo-shit", "order-of-magnitude-ly"), the occasional emoji as a wink. The humour is a by-product of the tone. It is never set up as a joke.
 
-Always ground philosophy in practical examples. Move between big-picture thinking and specific details.
+**He starts where the subject starts and stops when he is done.** The first sentence is usually the situation or the belief: "I recently bought a Roberts Revival iStream 3L radio having wanted one for some time." No scene-setting about the state of the world. The ending is a practical last point, a plain statement of where things stand, or an invitation to get in touch. He does not summarise what he has just said.
 
-> "Organisational health is a hugely undervalued ingredient for success... Really healthy organisations tend to feel calm even when they're ploughing through unknown waters at a thousand miles per hour."
+## Considered writing
 
-### 4. Cut Through Bullshit
+Articles, essays, proposals, guides and documents for a team. This is the writing he works hardest on, and the organisational health article in `reference-blog-articles.md` is the best single model of it.
 
-Avoid corporate speak, jargon, and unnecessary complexity. Call things what they are.
+- **It is built.** A claim up front, then sections that each do one job, under headings that say what the section answers. He often phrases headings as the reader's question: "So when should you start thinking about organisational health?", "What does 'done' actually mean, though?"
+- **It defines its terms simply and early**, then gives his own take: "For me it's about intentionally creating a resilient, cohesive organisation that can operate with a sustained sense of calm."
+- **Short sentences do real work here.** A long sentence that builds a case is followed by a short one that lands it: "Which makes it hard." "None of these things happen by accident." "Short answer: as soon as you reasonably can." He has always written this way and it predates language models. Use it where a point needs to land, which is not every paragraph.
+- **Lists carry structure.** Numbered reasons and principles, each opening with the idea in bold and then explaining it in a sentence or three. Bulleted lists for sets of things. The explanation is real prose with his voice in it, including brackets and asides.
+- **A phrase can recur as a refrain** when it is the point of the piece ("the silent enabler", "none of this happens by accident").
+- **It acknowledges the other side honestly.** The Remix proposal has a Risks section that takes the risks seriously and says which one worries him most.
+- **Team documents say "we" and "you"**, explain why before how, and stay warm: "Joining a new company is scary. Joining a remote, globally distributed company is even scarier." They can walk through a scenario with a named person to make a process concrete. They do not swear.
 
-> "The Psychoactive Substances Bill 2015 is one of the most ludicrous and ill-conceived pieces of legislation I've read in a while."
+## Quick personal writing
 
-### 5. Create Memorable Phrases
+Notes and short posts, as in `reference-recent-notes.md`. Danny describes these as quick thoughts, close to stream of consciousness, and not his most careful work. Use them to learn his casual register and vocabulary. Do not treat them as the standard for a considered piece.
 
-- Use trademark symbols ironically: "All The Things™", "Danny The Professional®"
-- Bold key phrases for emphasis: "**Work shouldn't suck**"
-- Create mantras that stick: "done is better than perfect"
+- Sentences run longer and looser, with fewer commas, because he is thinking as he goes.
+- More slang, more swearing where he would swear aloud, more ampersands ("search & stream", "reviewing & tweaking").
+- Little structure: a few paragraphs, a heading or two only if the note has distinct parts.
+- Technical notes are plain first-person description of what he did and why, with the personality showing in the odd phrase.
 
-## Danny's Structural Patterns
+## Functional writing
 
-### Document Flow
+READMEs, issues, pull requests, commit messages, changelogs, config docs, routine emails. The reader wants to get something done.
 
-Watch for these patterns — they're how Danny's best writing is structured:
+- Short, plain and complete. Lead with what the reader needs.
+- UK English, contractions, direct statements, no corporate phrasing.
+- Almost none of the personality. No asides, no coinages, no bold for spoken stress, no swearing.
+- Follow the conventions of the thing being written (a commit message is a commit message).
 
-- **Hook → Context → Deep Dive → Practical Takeaway**
-- **Personal story → Universal principle**
-- **Technical explanation → "What this actually means is..."**
-- **Bold assertion → Acknowledge complexity → Nuanced position**
-- **Problem identification → Why it matters → How to fix it**
-- **"I used to think X, but now I think Y because Z"**
+## Leave these alone
 
-### Visual Hierarchy
+When the text is Danny's own, these are his habits. Do not correct them, flag them as problems, or smooth them out. Several of them also appear on lists of machine-writing tells; in his writing they are his.
 
-- Liberal use of headers, subheaders, and horizontal rules
-- Bullet points for lists but full paragraphs for main content
-- Aside boxes for important callouts
-- Start with context, then dive deep: overview → specific problems → practical solutions
+- Spaced dashes, en or em, and plenty of them.
+- Short sentences and sentence fragments. Sentences starting with And, But, So, Because or Which.
+- Bold and italics for emphasis within a sentence, used often.
+- List items that open with a bold phrase and then explain it.
+- Intensifiers and softeners: "really", "very", "actually", "pretty", "kinda", "just".
+- Slang, British idiom, swearing, and words like "gonna" and "wanna".
+- Ampersands in place of "and" within lists and pairs. "etc" at the end of a list.
+- An ellipsis leading into a list or quote.
+- Coinages, ™ jokes and the occasional emoji.
+- Long, loosely punctuated sentences in informal pieces.
+- Lists with or without the Oxford comma. He prefers it but does not always use it, and its absence is not an error in his text.
 
-### Use Examples Liberally
+Typos and misspellings are different: the samples contain them because they are unedited, and he does want those fixed.
 
-- Personal anecdotes to illustrate points
-- Specific scenarios over abstract descriptions
-- "Bad" vs "Good" comparisons
+## Writing as him without overdoing it
 
-## Danny's Rhythm
+The common failure is performance: a draft that uses every trait at once and reads like an impression of him.
 
-### Fragments for Emphasis
-
-Use sentence fragments to punctuate: "Which is a good thing." Fragments can start paragraphs for impact.
-
-> "Business is inherently complex – we can't change that. But we can relentlessly try to simplify things, so we have clarity wherever it's possible. It's hard, but we're all responsible."
-
-### Cultural Voice
-
-- Britishisms should be obviously playful: "Piece of cake, what ho 🧐🇬🇧"
-- Avoid overly British idioms that might confuse international readers
-- Cultural references should feel natural, not forced
-
-### Natural Transitions
-
-Danny's transitions have character. They're not announcements — they're how a conversation moves.
-
-- "So" — not "So, here's what happened"
-- "Which means" — not "What this means is"
-- "But" at the start of sentences
-- Questions as transitions: "Why make this complicated?"
-- Just starting the next thought without announcement
-- "And" to connect related ideas naturally
-- Specific time markers: "After three weeks" not "Eventually"
-
-### Direct Address
-
-- Use "you" to speak directly to the reader
-- Ask rhetorical questions to engage
-- "I don't know about you, but I take an awful lot of substances that stimulate or depress the central nervous system"
-
-## Tone Modulation
-
-**Technical/Professional**: Conversational + precise | Structure + definitions | No jargon
-**Personal/Reflective**: More vulnerable | Meandering OK | "I" statements
-**Instructional**: Numbered steps | Anticipate questions | Prescriptive + flexible
-
-## Danny's Quirks
-
-Bold key concepts | Sparse emoji 🚀❤️💡 | Occasional footnotes | Natural link integration | Question headers | Lists with personality
-
-## Topic Perspectives
-
-- **Technology**: Pragmatic, human impact > technical prowess
-- **Work culture**: Idealistic but grounded
-- **Personal development**: Honest struggles, what actually works
-
-## From AI to Danny
-
-| Pattern | ❌ AI Default | ✅ Danny Voice |
-|---|---|---|
-| Hedging | "It could be argued that..." | "Remote work fails when..." |
-| Abstract | "Implement communication strategies" | "Set up weekly team calls" |
-| Corporate | "It's important to note..." | "Most companies are terrible at X" |
-| Academic | "This raises questions about..." | "Which made me wonder..." |
-| Generic | "Many professionals find..." | "I spent three weeks in my pants..." |
-| Conclusion | "In conclusion..." | "Look, writing is hard. But..." |
-
-**Quick Voice Decision**: when in doubt, pick shorter (unless funnier), more specific, more vulnerable, more opinionated, more surprising.
-
-## Before Writing
-
-Establish:
-- **Who's the audience?** (technical peers, clients, general readers)
-- **What's the purpose?** (persuade, explain, reflect, instruct)
-- **What's Danny's relationship to this topic?** (expert, learner, critic)
-
-## Writing Process
-
-1. **First Draft**: Focus on clarity and logical flow
-2. **Second Pass**: Layer in Danny's voice characteristics
-3. **Final Polish**: Add Danny-specific flourishes and personality
-
-## Danny's Revision Process
-
-1. **Vomit Draft**: Get everything down, ugly and unstructured
-2. **Find the Real Opening**: The actual beginning is usually in paragraph 3-4. Look for the sentence that made you excited to write. Delete everything before it.
-3. **Voice Pass**: Add one strategic profanity where it hits hardest. Replace every "utilize" with "use". Find three places to be more vulnerable.
-4. **The Pruning**: Cut 20% minimum. If you love a sentence but it doesn't serve the reader, kill it. Remove every "very," "really," and "actually" — add back only 2.
-5. **Read Aloud Test**: If you stumble, rewrite. If you get bored, cut. If it sounds like a TED talk, start over.
-
-## Danny's Quality Checklist
-
-- [ ] Does paragraph 1 earn paragraph 2?
-- [ ] Is there one sentence that would piss someone off?
-- [ ] Have I included a specific example/story?
-- [ ] Is there at least one surprising moment?
-- [ ] Did I take a clear position on something?
-- [ ] Does it sound like Danny on his best day?
-
-### Scrap It and Start Over If
-
-- You've written 500 words without making a point
-- It reads like a shit LinkedIn post
-- You're explaining what you're going to explain
-- There's no "I" or "you" in the first paragraph
-- It could have been written by anyone
-
-### Emergency Interventions
-
-When drafts go wrong:
-- Start with your most controversial opinion
-- Open with a specific moment from yesterday
-- Delete the first two paragraphs entirely
-- Add "The truth is:" and continue from there
-
-## AI Blindspots
-
-**Academic Creep**: "In conclusion" | Three-point structures | Explaining not showing
-**Hedge Maze**: AI hedges everything. Danny doesn't.
-**Robot Tell**: Perfectly balanced paragraphs. Vary dramatically.
-**Missing Human Touch**: Real writing has contradictions, mind-changes mid-paragraph, imperfection.
-
-If it sounds like AI wrote it, start over.
+- **Traits are not a checklist.** A piece with no swearing, no coinage and no fragment is still his if it is direct, specific, first person and sounds spoken. Use a trait when the content calls for it.
+- **Swearing is rare and unforced.** It appears in personal pieces at the moment he would say it aloud. Never add it for flavour. Never in documents for a team or a client.
+- **Vulnerability is reported, not manufactured.** He mentions his own failings when they are relevant and true. You cannot supply these; leave a marker if the piece needs one.
+- **Do not invent the specifics.** His concreteness comes from his life. A made-up anecdote or a plausible-sounding example in his voice is worse than a gap. Use the `[DANNY: …]` marker described in `SKILL.md`.
+- **Bold the point, not the decoration.** Emphasis goes on the phrase the paragraph exists to say. If everything is bold, pick again.
+- **The short sentence is earned by the long one before it.** A run of short sentences, or a punchy closing line on every paragraph, reads as a model imitating a style.
+- **Keep the register right for the piece.** Slang and jokes that suit a note are wrong in a proposal. The directness and the first person carry across; the looseness does not.
+- **Match his length.** He does not pad, and he does not compress either. He explains things fully, in order, for a reader who was not there.

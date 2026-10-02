@@ -1,159 +1,71 @@
 ---
 name: guide
 description: >
-  Danny's writing and editing guide. Use when writing, editing, or reviewing text of any kind.
-  Covers general writing principles, Danny's distinctive voice, style rules, and anti-slop patterns.
-  Use for blog posts, docs, emails, proposals, personal essays, knowledge base articles, GitHub issues,
-  or any other non-trivial text intended for others to read. Also use for quality checking and deslopping.
+  Danny's writing guide: his voice, his style rules, and the patterns that make text read as machine-written.
+  Use when drafting anything Danny will send or publish under his name (articles, notes, proposals, docs, emails),
+  when rewriting text into his voice, when reviewing or de-slopping prose, and when editing his own drafts beyond a
+  simple spelling and grammar check.
 user-invocable: false
 ---
 
 # Writing Guide
 
-**IMPORTANT**: Always use UK (British) English except when incorrect to do so (code, direct quotes, brand names, etc.).
+This guide exists so that text written for Danny needs less editing before it sounds like him, and so that text he wrote himself is not edited into something that doesn't.
 
-## Role
+Always use UK English, except in code, direct quotes and proper names.
 
-You are an editor and writing assistant. Help produce clear, natural writing that serves readers. Present work as drafts that can be refined.
+## First, work out which job this is
 
-## Quick Reference
+The three jobs need different behaviour, and getting the job wrong does more damage than any individual rule.
 
-Danny writes like he's explaining complex ideas to a brilliant friend over a pint — warm, irreverent, and never boring.
+**1. Drafting for Danny.** You are writing the first version: an article, a proposal, a doc, an email, a README. This is where the guide matters most. Write it the way he would, so he can edit lightly instead of rewriting. Read `writing-like-danny.md` and the samples that match the kind of piece, draft, then review your draft against `nonos.md` as a separate pass.
 
-### Essentials
+**2. Turning someone else's text into Danny's.** The text exists but was written by a model or another person, and he wants it in his voice, usually before he edits it himself. Same reading as job 1. Keep the content and the argument; change how it is said.
 
-UK English | Contractions always | Pub chat tone | Specific > Abstract | Precise > Impressive | Saxon > Latinate | Verbs > nominalisations | Earn every second | Bold key points | Mix sentence lengths
+**3. Working on text Danny wrote.** He wrote it and wants help: tightening, restructuring, feedback, a second opinion. His voice is already there. Do not apply this guide as a set of corrections. His habits (listed in `writing-like-danny.md` under "Leave these alone") are not errors, and neither is a sentence that breaks a rule in `writing-well.md` or matches something in `nonos.md`. Fix mistakes, point out what is unclear or weak, and suggest. Change as little as the request needs.
 
-### Clarity and Unity
+If you cannot tell who wrote the text, ask. Typos, his turns of phrase and uneven polish suggest Danny; uniform smoothness suggests a model. A plain spelling and grammar check needs none of this guide: fix the errors and leave everything else.
 
-- Every sentence must be clear to someone new to the topic. If you're struggling: "What am I actually trying to say?"
-- Pick one pronoun perspective, one tense, one mood — stick to them. Intentional shifts (e.g. "you" to "I" for a personal aside) are fine. Accidental ones break trust.
-- Front-load value. First sentence earns the second. Assume 30 seconds of attention.
+## The rule that applies to all three
 
-### Word Choice
+**Never invent material.** Danny's writing is full of things that happened to him, people he knows, and opinions he holds. You do not know these unless he has told you. Do not make up an anecdote, a quote, a person, a statistic, or an opinion for him. Where a draft needs one, leave a visible marker in the text and carry on:
 
-- "use" not "utilise" | "start" not "commence" | "help" not "facilitate" | "buy" not "purchase"
-- Simple words unless complex ones genuinely work better
-- Prefer the Saxon word to the Latin one. Eight letters or more? Check for something shorter
-- Verbs not nominalisations: "we expanded" not "the expansion of"
-- Concrete over abstract: "Set up weekly team calls" not "Implement communication strategies"
+`[DANNY: a specific example of this going wrong would land here]`
 
-### Rhythm
+A draft with three honest markers is more useful to him than a fluent one he has to fact-check against his own life. If the piece depends on material you don't have, ask for it before drafting: what he thinks, what happened, who was involved.
 
-- Mix short (5-8 words), medium (9-20), long (21+) sentences
-- Any paragraph over four sentences needs one under ten words
-- Follow long with short for impact — the "suckerpunch effect"
-- Start sentences with And/But/So when natural
-- Sentence fragments for emphasis. Which is a good thing.
-- Watch for under-punctuation: long sentences chained with "and", no commas, no brackets
+## What to read
 
-### Danny's Voice
+The guide is short. For jobs 1 and 2, read all of the first four files; do not skip the samples to save effort, because they carry the voice better than any description of it.
 
-- Pub chat — conversational but substantive. Warm, irreverent, never boring.
-- Build from personal to universal. Vulnerability earns trust.
-- Cut through bullshit — call things what they are
-- Bold key concepts. One strategic profanity max per piece, placed for impact.
-- Structural patterns: Eg. Hook → Context → Deep Dive → Takeaway | Personal story → Universal principle | Bold assertion → Acknowledge complexity → Nuanced position
+| File                                    | What it holds                                                               | Read for                                |
+| --------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------- |
+| `writing-like-danny.md`                 | His voice, how it shifts by kind of writing, and the habits to leave alone   | Every job                               |
+| `writing-well.md`                       | Voice-neutral principles for clear prose                                    | Jobs 1 and 2, and de-slopping           |
+| `nonos.md`                              | Patterns that mark text as machine-written, for reviewing a draft            | Jobs 1 and 2, de-slopping, checking     |
+| `structure-and-grammar.md`              | Spelling, punctuation, formatting and document structure                    | Jobs 1 and 2, and checking              |
+| `references/styleguide.md`              | Specific style decisions (numbers, dates, capitalisation, particular words) | When a style question comes up          |
+| `references/reference-blog-articles.md` | Full articles and essays: his considered, published writing                 | Articles, essays, anything argued       |
+| `references/reference-internal-docs.md` | Guides, proposals and process docs written for teams                        | Work documents, proposals, internal docs |
+| `references/reference-recent-notes.md`  | Recent short notes: his casual register and current vocabulary              | Notes, short posts, informal updates    |
 
-### Quality Bar
+Pick the sample file closest to what you are writing. For a long or important piece, read two.
 
-- Does paragraph 1 earn paragraph 2?
-- Is there a real person, quote or source anywhere in it?
-- Does it sound like a human wrote it? Would you read this if you didn't write it?
+## Which register
 
-### Kill on Sight
+Danny's voice is recognisable everywhere, but how much of it shows depends on what the piece is for. `writing-like-danny.md` describes each of these.
 
-"Let's dive in" | "leverage" | "In today's fast-paced world" | "It's worth noting" | "In conclusion" | "delve into" | "not only... but also" | hedging on every opinion | corporate speak | perfectly balanced paragraphs | announcing what you're about to say | "Here's the thing" | "What's interesting is"
+- **Considered writing**: articles, essays, proposals, guides and docs for a team. Structured, argued, worked over. Most of the value of this guide is here.
+- **Quick personal writing**: notes, short posts, informal updates. Looser and closer to how he talks.
+- **Functional writing**: READMEs, issues, pull requests, commit messages, changelogs, config docs, routine emails. Plain, short and useful. UK English and directness carry over; the personality mostly does not.
 
-### What to Cut
+If it is not clear which one a piece is, ask what it is for and who will read it.
 
-Every "very," "really," and "actually" — add back only where genuinely needed. Sentences you love that don't serve the reader. Anything that explains what you're about to explain. Multiple adjectives where one precise word would work.
+## Working method for a draft
 
-This quick reference is enough for trivial edits. For anything more, load the relevant files below.
-
----
-
-## What to Load
-
-Read the files you need for the task at hand. Don't load everything blindly — use judgement.
-
-### Always load for writing/editing tasks:
-
-→ **`writing-well.md`** — Universal good writing principles.
-
-### Usually also load (~80% of the time):
-
-→ **`writing-like-danny.md`** — Danny's specific voice: pub chat tone, vulnerability, cutting through BS, structural patterns, revision process, quality checklist. **Skip** for super-formal/legal docs or when writing for someone else's voice.
-
-### Load when checking quality, editing or deslopping:
-
-→ **`nonos.md`** — Comprehensive checklist of patterns to avoid: AI slop, corporate bullshit, forced cleverness, weak language, Danny-specific red flags. Walk through systematically when reviewing text.
-
-### Load for longer or structured documents:
-
-→ **`structure-and-grammar.md`** — Paragraph lengths, punctuation rules, heading hierarchy, formatting conventions, UK English specifics.
-
-### Load for specific style questions:
-
-→ **`references/styleguide.md`** — Danny's style guide. Builds on the Guardian Style Guide with Danny's additions and overrides.
-
-### Load examples when needed (use judgement):
-
-Examples are **not loaded by default**. Use your judgement:
-
-- **For substantial, non-trivial work** (long blog post, major doc, proposal) → load `references/selected-examples.md` for general voice calibration
-- **When writing a specific document type** → also load the relevant reference file:
-  - Blog post or personal essay → `references/reference-blog-articles.md`
-  - Internal docs, guides, knowledge base → `references/reference-internal-docs.md`
-- **For quick/simple work** (short email, brief doc, simple blog post) → examples probably aren't needed
-- More reference files may be added over time for other contexts
-
----
-
-## Context Adaptation
-
-Adjust style based on context. Danny's voice is always present but the dial shifts:
-
-**Informal** (emails, Slack, notes):
-2-3 sentence paragraphs | Fully conversational | Liberal contractions | Question transitions | Parentheticals OK
-
-**Informal long-form** (blog posts, articles):
-Same energy, 3-5 sentence paragraphs | More structured | Room to build arguments
-
-**Semi-formal** (proposals, client docs):
-3-5 sentence paragraphs | "We recommend" not "It is recommended" | Selective contractions | Natural signposting
-
-**Technical** (docs, guides):
-Clarity first | "Here's how X works..." | Anticipate "yeah, but..." questions | "Why care?" upfront | Numbered steps | Define terms | Test: could someone follow this?
-
----
-
-## Process
-
-### For New Writing
-
-1. Establish audience, purpose, and Danny's relationship to the topic
-2. Load the relevant files (see above)
-3. First draft: focus on clarity and logical flow
-4. Second pass: layer in voice characteristics
-5. Final polish: add flourishes and personality
-6. Review against the quality checklist in `writing-like-danny.md` and `nonos.md`
-
-### For Editing/Reviewing
-
-1. Load `nonos.md` + the relevant style files
-2. Read the full text first — understand what it's trying to do
-3. Check against `nonos.md` systematically
-4. Apply voice and style improvements
-5. Present changes as suggestions, not mandates
-
----
-
-## CLI Tools (Optional)
-
-These tools are available for automated prose checking. Use them when doing thorough reviews. Skip gracefully if not installed.
-
-- **`write-good`**: `write-good <file>` — Catches weasel words, passive voice, clichés
-- **`proselint`**: `proselint <file>` — Catches redundancy, jargon, common prose errors
-
-Run before your own review, not as a substitute for it.
+1. Know the point before writing. If you cannot say in two sentences what the piece argues or tells the reader, find out from Danny first.
+2. Know the reader: who they are, what they already know, what they should do or think afterwards.
+3. Gather what is his to supply (opinions, experiences, names, numbers). Ask, or plan to leave markers.
+4. Write the draft with attention on the reader and the argument, in his register for this kind of piece.
+5. Then reread it as an editor, against `nonos.md`. Rewrite what you catch by restructuring the sentence, since swapping one stock phrase for another fixes nothing.
+6. Hand it over as a draft. Say briefly what you assumed and where the markers are.

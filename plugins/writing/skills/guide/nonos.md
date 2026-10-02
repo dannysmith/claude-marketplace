@@ -1,217 +1,110 @@
 # No-Nos
 
-Patterns to avoid. Use this as a systematic checklist when reviewing or editing text.
+Patterns that make text read as produced without attention: mostly machine habits, plus the corporate ones they grew out of. Once a reader spots them, they stop reading generously.
 
-The categories overlap — some phrases are both AI slop AND corporate bullshit. That's fine. If it's in this list, don't use it.
+## How to use this
 
-## How to Use This List
+**It is for reviewing, after drafting.** While writing, keep your attention on the reader and the argument. Then reread the draft against this file as a separate pass.
 
-The word lists below are a snapshot, and snapshots age. Models drop their tells as fast as anyone catalogues them: the em dash was the obvious giveaway until models stopped leaning on it, and "delve" has already faded. So weight the principles above the lists. The structural and tonal sections age far better than the vocabulary at the top.
+**It is for machine-written and generic text.** Use it on your own drafts, on text Danny has asked you to de-slop, and when checking a document for these patterns. Do not run it over prose Danny wrote himself as a list of faults. Several of his habits overlap with entries here (short sentences, dashes, bold emphasis, list items that open with a bold phrase); `writing-like-danny.md` lists them, and in his writing they stay.
 
-One word proves nothing. A text isn't machine-written because it says "delve", any more than it's Jane Austen because it says "imprudence". Flag a phrase when it's doing the lazy work the entry describes, not merely because it appeared. When a listed word is genuinely the right word, use it.
+**Know the families, not just the phrases.** The examples below go out of date as models change. "Delve" and "tapestry" were the famous tells and have largely gone; the habits underneath them have not. Recognise what a pattern is doing and you will catch next year's version of it.
 
----
+**One instance proves nothing.** A single "robust" or one three-item list is ordinary writing. What gives text away is density and repetition: the same move in every paragraph. Flag an instance when it is doing the lazy work the entry describes, and report a habit once instead of listing every occurrence.
 
-## AI Slop
+**Fix by restructuring.** Deleting a stock phrase and writing its nearest neighbour changes nothing; suppressing one pattern tends to produce its sibling. Work out what the sentence is for and write that. Sometimes the answer is that the sentence was saying nothing and can go.
 
-Phrases and patterns that scream "an AI wrote this." Kill on sight.
+## Framing that performs instead of saying
 
-### Phrases to Ban
+- **Knocking down a claim nobody made.** "It's not about speed, it's about trust." "This isn't a tool. It's a philosophy." If no one said it was about speed, state the point directly. A real contrast with a real opposing view is fine.
+- **The staged reveal.** A colon, dash or question that sets up a payoff: "The result? Chaos." "Here's the catch:". Just say it.
+- **Announcing instead of delivering.** "Here's the thing", "Let's dive in", "Let me explain", "It's worth noting that", "The key insight is", "What's interesting is", "The bottom line is". Remove the announcement and keep what follows.
+- **Claiming depth or secrecy.** "Here's the truth", "What nobody tells you", "The real question is", "Let that sink in", "The answer might surprise you".
+- **Narrating the document.** "In this section we'll look at", "As mentioned above", "To summarise".
+- **Rhetorical question, immediately answered**, used as a transition.
 
-❌ "Let's dive in" → Just start
-❌ "Without further ado" → Just start
-❌ "In today's fast-paced world" → Delete entirely
-❌ "It's worth noting that" → Just say the thing
-❌ "Here's everything you need to know" → Delete
-❌ "delve into" → "look at" or just look at it
-❌ "I'd be happy to help" → Just help
-❌ "Great question!" → Delete
-❌ "Absolutely!" → Delete or replace with actual agreement
-❌ "That's a really interesting point" → Delete
+## Endings
 
-### Transitions to Ban
+- **A quotable line closing each paragraph**, restating what the paragraph already established.
+- **A summary closing each section**, or a conclusion that repeats the piece. "In conclusion", "Ultimately", "At the end of the day".
+- **Signing off to the reader**: "I hope this helps", "Let me know what you think", "What's your experience?", offers of further help.
+- **The uplifting final sentence** that widens out to a grand statement about the future of something.
 
-❌ "Here's what actually works" → Just say what works
-❌ "The clever bit is" → Don't announce cleverness
-❌ "Here's the thing" → Start with the thing
-❌ "What's interesting is" → Just be interesting
-❌ "The key insight" → Present the insight directly
-❌ "It turns out that" → Cut entirely
-❌ "Let me explain" → Just explain
-❌ "Here's why" → Give the reason directly
-❌ "Here's the deal" → Delete
-❌ "The bottom line is" → Just say it
+## Rhythm on autopilot
 
-### Clichés that Signal AI
+- **Groups of three by reflex**: three adjectives, three examples, three parallel clauses, whether or not there are three things. Count what is there and write that many.
+- **Paired opposites and tidy balance**: "not only… but also", "both… and", "on the one hand… on the other" when one side is plainly stronger.
+- **Uniform sentences**, every one a similar length and shape, or a predictable alternation such as two long sentences then a short punchy one.
+- **Machine-gunned fragments**: "It's fast. It's simple. It works."
+- **Paragraphs all the same size**, each built the same way: claim, elaboration, closing line.
+- **The same idea said three ways** for emphasis.
 
-❌ "rock solid" → "hasn't broken" or be specific
-❌ "game changer" → Describe the actual change
-❌ "leverage" → "use"
-❌ "dive into" → "look at"
-❌ "unpack" → "explain"
-❌ "at the end of the day" → Delete
-❌ "journey" (unless literally travelling) → "process" or be specific
-❌ "landscape" (unless actual land) → "situation" or be specific
-❌ "navigate" (unless actual navigation) → "deal with" or be specific
-❌ "harness" → "use"
-❌ "unlock" (unless a literal lock) → "enable" or be specific
-❌ "empower" → Be specific about what actually happens
-❌ "elevate" → Be specific
-❌ "streamline" → "simplify" or be specific
-❌ "robust" → Be specific about what makes it strong
-❌ "seamless" → Be specific about what makes it smooth
-❌ "cutting-edge" → Be specific or delete
-❌ "best-in-class" → Delete or provide evidence
-❌ "tapestry" / "rich tapestry" (unless literal weaving) → Be specific about what's actually interconnected
-❌ "multifaceted" → "complex" or just be specific. Used 700x more in AI writing than human writing.
-❌ "intricate" / "intricate interplay" → Be specific about what's actually complex. 100x overused by AI.
-❌ "realm" (unless literal kingdom) → "area" or "field"
-❌ "testament to" → Just say what it proves or shows
-❌ "pivotal" → "important" or be specific about the turning point
-❌ "foster" → "encourage", "build", or be specific
-❌ "profound" / "profoundly" → Be specific about the actual impact
-❌ "meticulous" / "meticulously" → "careful" or be specific
-❌ "vibrant" → Be specific about what makes it lively
-❌ "nuanced" (as empty praise) → Be specific about what the nuances actually are
-❌ "unveil" → "show" or "announce"
-❌ "embark" → "start" or "begin"
-❌ "groundbreaking" → Be specific about what's actually new
-❌ "transformative" → Be specific about what changes and how
-❌ "curated" → "chosen" or "selected"
-❌ "paramount" → "important" or "essential"
+## Sincerity, intensity and hedging
 
-### Pretentious Diction
+- **Sincerity markers**: "honestly", "frankly", "genuinely", "truly", "to be clear", "and honestly?". They imply the surrounding text is something less than sincere.
+- **Intensifiers as a substitute for content**: "incredibly", "extremely", "absolutely", "truly remarkable". Say what makes it so.
+- **Stacked hedges**: "may potentially", "could arguably", "it might be worth considering". One hedge, where the doubt is.
+- **Hedging everything**, so that no claim is ever committed to.
+- **Praise and validation**: "Great question", "That's a really interesting point", "You're absolutely right".
+- **Performed enthusiasm**: exclamation marks, "Exciting!", "I'm thrilled to".
+- **Therapeutic tone** where nobody asked for support: "It's completely understandable that", "It's okay to".
+- **Caveats stacked at the start** before any content arrives.
 
-These are habits to catch rather than words to ban outright. The reach goes to the longer, more Latinate, more academic option every time, and the result sounds educated while saying very little. Orwell's phrase, and still the sharpest description of it.
+## Inflated vocabulary
 
-❌ Nominalisations: "the implementation of", "an improvement in", "the expansion of" → Use the verb: "we implemented", "improved", "expanded". Watch for -tion, -ment, -ance, -ity, -ness
-❌ Latinate where Saxon works: "commence", "utilise", "ascertain", "endeavour", "necessitate" → "start", "use", "find out", "try", "need"
-❌ Academic or scientific register in ordinary prose: "parameter", "methodology", "framework", "modality" → Say what you mean in plain words
-❌ Long words doing a short word's job → When a word runs to eight letters or more, check for a shorter one. Keep it only when it's genuinely more precise
+The reach for the grander word, repeated until the whole text has one texture.
 
-Ordinary words like "significant", "increasingly" and "consequences" are fine on their own. The accumulation is what gives the game away — a paragraph where every choice went to the grander option.
+- **Stock abstractions**: landscape, journey, tapestry, realm, ecosystem, space (for a field), narrative, paradigm. Used when no literal one is present.
+- **Stock verbs**: delve, navigate, leverage, harness, unlock, empower, elevate, foster, streamline, unpack, underscore, showcase, embark, unveil, surface (as a verb).
+- **Stock adjectives**: robust, seamless, pivotal, crucial, vital, comprehensive, nuanced, multifaceted, intricate, vibrant, transformative, groundbreaking, cutting-edge, meticulous.
+- **Stock phrases**: "a testament to", "plays a crucial role", "game changer", "deep dive", "at its core", "when it comes to", "in today's world".
+- **Newer coinages that spread through model output**: "load-bearing", "earns its keep", "smoking gun", "the shape of", "worth flagging", "quietly", "sharp", "crisp", and "real" or "genuine" as an intensifier ("a real problem").
+- **Nominalisations**: "the implementation of", "an improvement in", "provide assistance to". Use the verb.
+- **Formal connectives**: "Moreover", "Furthermore", "Additionally", "Consequently", "It is important to note".
 
-### Structural AI Tells
+When one of these is the exact word, use it. "Robust" is a term in statistics and "navigate" is what ships do.
 
-❌ Perfect three-point structures every time → Vary structure
-❌ Rule of three as the default liveliness device: "faster, cheaper, and more reliable" → Fine occasionally, exhausting every paragraph. Budget one per section; if two land near each other, rewrite one
-❌ Perfectly balanced paragraphs → Vary paragraph length dramatically
-❌ Every section ending with a neat summary → Let some sections just end
-❌ Hedging on every single opinion → Take a position
-❌ "In conclusion" / "To summarise" / "In summary" → Natural ending or just stop
-❌ Opening with a definition → Start with why the reader should care
-❌ Paragraph symmetry — every paragraph roughly the same length → Mix short punchy paragraphs with longer ones
-❌ Em dash overuse — three or more per paragraph → Use one at most, or restructure. Plenty of good human writers love a dash, so the dash alone proves nothing. What to look for is dashes doing the work commas, brackets and full stops should be doing
-❌ Under-punctuation — long sentences chained with "and", few commas, no brackets → Split the sentence. Add the aside. This is now the more common failure
-❌ Uniform sentence length — everything landing at 20-30 words, nothing short → Any paragraph over four sentences needs at least one sentence under ten words
-❌ Nobody quoted, named or cited anywhere in the piece → Real writing has real people in it. Add a name, a quote, or a specific moment
-❌ Machine-gunned short sentences: "X is important. Y matters. Z is key." → Vary rhythm, combine some
-❌ Over-signposting: "First... Second... Third... Finally..." in every section → Use natural flow, not numbered announcements
-❌ Engagement bait endings: "What do you think?" / "I'd love to hear your thoughts" → End with substance, not a prompt
+## Corporate language
 
----
+- **Jargon for ordinary things**: "align on" (agree), "circle back" (follow up), "bandwidth" (time), "ideate" (think of ideas), "going forward" (delete), "actionable insights", "best-in-class", "value proposition", "move the needle", "low-hanging fruit", "synergy".
+- **Wordy forms**: "in order to" (to), "at this point in time" (now), "in terms of", "with regard to", "it is recommended that" (we recommend).
+- **Passive constructions that hide who did it**: "mistakes were made", "it was decided".
+- **Buzzwords used straight**, without meaning or irony.
 
-## Tonal AI Tells
+## Generic content
 
-Patterns that don't use any single banned phrase but still scream AI through tone and cadence.
+Harder to spot than phrasing, and more damaging.
 
-❌ Sycophantic validation: "That's a great point", "You raise an excellent question" → Delete. Respond to the substance, not the person.
-❌ Performative enthusiasm: Exclamation marks everywhere, "Exciting!", "Love this!" → Genuine engagement doesn't need exclamation marks
-❌ Explanation without argument: Presenting all sides neutrally, never taking a position → Take a stance and defend it
-❌ Verbose repetition: Saying the same thing three ways for "emphasis" → Say it once, well
-❌ Tonal flatness: Every paragraph at the same emotional register → Let tone shift naturally with content
-❌ Compulsive summarising: Restating what was just said before moving on → Trust the reader to follow
-❌ Disclaimers and caveats stacked at the start: "While it's true that... and of course... it's important to remember..." → Get to the point, add caveats only where they genuinely matter
-❌ False balance: "On the one hand... on the other hand..." when one side is clearly stronger → Make the argument
+- **Sentences that could sit in any piece on any subject.** "Communication is key to any successful team." Ask what the specific version is; if there isn't one, cut it.
+- **Vague attribution**: "experts say", "studies show", "many people find", with nothing checkable behind it.
+- **Invented specifics**: a plausible example, a made-up quote, a statistic from nowhere, a too-neat anecdote. This includes the whimsical illustrative detail, like the cat judging your life choices. Remove it and mark what real material is needed.
+- **Balance with no position**: every view presented neutrally, no conclusion drawn.
+- **Explaining the obvious**, or defining a term the reader certainly knows.
+- **Restating the question or brief** before answering it.
+- **The safe default example**: the first one anyone would think of.
 
----
+## Formatting imposed on prose
 
-## Corporate Bullshit
+- **Headings on a short piece** that has no sections to navigate.
+- **Bullets that break up reasoning.** An argument cut into fragments loses the words that connected it. Lists are for things that are list-shaped.
+- **Every bullet opening with a bold label**, in a piece that did not need labels.
+- **Bold scattered until nothing stands out.**
+- **Title Case Headings**, emoji as bullet markers, a table for information with one dimension.
+- **A dash in every sentence**, doing the work of commas, brackets and full stops alike.
 
-Language that makes people's eyes glaze over. Replace with what you actually mean.
+## Compression
 
-❌ "enhance stakeholder engagement" → "talk to people"
-❌ "leverage synergies" → Say what you actually mean
-❌ "optimise" → "improve" (unless genuinely optimising something specific)
-❌ "facilitate" → "help" or "run"
-❌ "ideate" → "come up with ideas"
-❌ "circle back" → "come back to this" or "follow up"
-❌ "synergy" → Delete or describe the actual benefit
-❌ "align on" → "agree on"
-❌ "bandwidth" (for people) → "time" or "capacity"
-❌ "deep dive" → "look closely at"
-❌ "move the needle" → Be specific about what changes
-❌ "low-hanging fruit" → "easy wins" or be specific
-❌ "paradigm shift" → Describe the actual change
-❌ "value proposition" → "what you get" or "why it matters"
-❌ "actionable insights" → "things you can do" or just give the insights
-❌ "best practice" → Say what the practice actually is
-❌ "going forward" → Delete (it's always implied)
-❌ "at this point in time" → "now"
-❌ "in terms of" → Usually deletable; rephrase
-❌ "It is recommended that" → "We recommend" or just recommend it
-❌ "utilise" → "use"
-❌ "commence" → "start"
-❌ "purchase" → "buy"
-❌ "prior to" → "before"
-❌ "in order to" → "to"
-❌ "due to the fact that" → "because"
+The opposite failure to padding, and increasingly common.
 
----
+- **Dropped articles and connectives**, so the prose reads like notes.
+- **Arrows and symbols** standing in for sentences.
+- **Abbreviations and labels the reader was never given.**
+- **References to context the reader did not see**: "as discussed", "the earlier approach".
 
-## Forced Cleverness
+## Chat residue
 
-Patterns where writing tries too hard to be smart. The effect is the opposite.
+Left over when text is lifted from a conversation with a model.
 
-❌ X isn't Y, it's Z / "not X but Y" → Overwrought contrast. Sometimes fine, but massively overused by AI — and by Claude in particular.
-❌ "not only... but also" → Usually just "and". Rewrite as one clause or two sentences.
-❌ "The real [noun] was [unexpected thing]" → Just make the point
-❌ "But here's where it gets interesting" → Just be interesting
-❌ Meta-commentary about the writing itself → Don't narrate what you're doing
-❌ "Plot twist:" or "Spoiler alert:" → Delete
-❌ Overusing colons to create false profundity → Use colons normally
-❌ "The answer might surprise you" → Just give the answer
-❌ "And that's the point" → If it were clear, you wouldn't need to say this
-❌ Ending every section with a one-liner zinger → Let some sections just end normally
-❌ "And honestly?" / "And truthfully?" → Fake intimacy. Just say the honest thing without announcing it.
-❌ "Here's the truth" / "Nobody tells you this" → False depth signalling. If it were actually secret knowledge, you wouldn't frame it this way.
-❌ "Let that sink in" → Delete. If it's sinking, you don't need to say so.
-
----
-
-## Weak Language
-
-Words and patterns that drain writing of conviction.
-
-### Use Sparingly or Not at All
-
-❌ "Moreover," "Furthermore," "Consequently" → Prefer natural transitions
-❌ "Simply put" or "The answer is simple" → Acknowledge complexity instead
-❌ "arguably" → Either argue it or don't
-❌ "potentially" → Be specific about the likelihood
-❌ "It could be argued that" → Just argue it
-❌ "It's important to note" → Just note it
-❌ "Needless to say" → Then don't say it
-
-### Empty Patterns
-
-❌ Empty openings: "There are many factors to consider..."
-❌ Multiple adjectives where one precise word would work
-❌ False simplicity without acknowledging complexity
-❌ Apologising for having opinions
-❌ Over-explaining jokes or cultural references
-❌ Passive voice where active would work (check every instance)
-
----
-
-## Danny-Specific
-
-Patterns that are particularly wrong for Danny's voice.
-
-❌ "In conclusion" or similar academic transitions → Natural ending
-❌ Buzzwords used unironically → Either skip them or acknowledge the cringe
-❌ Perfectionist confidence → Danny acknowledges complexity
-❌ Generic examples → Danny uses specific, personal ones
-❌ Formal hedging → Danny states opinions directly
-❌ No personality in transitions → Danny's transitions have character
-❌ Missing British spellings → Always UK English
+- Openers addressed to the person who asked: "Certainly!", "Sure, here's", "I'd be happy to help".
+- Closers: "I hope this helps", "Let me know if you'd like me to".
+- Meta-commentary about the answer: "Here's a breakdown", "Below is a comprehensive overview".

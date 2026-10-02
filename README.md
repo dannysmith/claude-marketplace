@@ -39,8 +39,8 @@ This plugin is configured for my specific workflow and integrates with:
 
 Writing plugin with Danny's voice, quality checking, and deslopping. Includes:
 
-- **Skills**: `guide` (core reference), `/danify`, `/unslopify`, `/quickcheck`, `/fullcheck`
-- **Agents**: `writing-analyser` for systematic quality analysis
+- **Skills**: `guide` (core reference), `/danify`, `/unslopify`, `/check`
+- **Agents**: `writing-analyser` for an independent review of a document
 
 This plugin is tailored to Danny's writing voice and style preferences (UK English).
 

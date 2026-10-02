@@ -1,14 +1,14 @@
 # Reference: Blog Articles and Personal Essays
 
-Full-length examples of Danny's blog posts and personal essays. Load when writing a substantial blog post, article, or personal essay.
+Full-length examples of Danny's articles and personal essays. Read these when drafting an article, an essay, or anything that argues a position. This is his considered writing, and the organisational health article is the one he names as the most carefully written.
 
-These are Danny's actual words — unedited, including occasional typos. That's intentional: real writing has imperfections.
+These are Danny's actual words, unedited, typos included. The typos are not part of the style.
 
 ---
 
 ## Clay CRM — Personal/Persuasive
 
-Source: danny.is. Demonstrates: building from personal frustration to structural insight, strategic profanity, concrete examples.
+Source: danny.is.
 
 I paid a 12-month subscription for a Personal CRM called Clay because I need help "mamaging my personal and professional relationships". It's not bad software. BUT...
 
@@ -76,13 +76,13 @@ I want a Personal CRM that's like "Chase just interviewed someone you know on hi
 
 ---
 
-## Organisational Health — Business/Professional
+## Organisational Health: The Silent Enabler
 
-Source: danny.is. Demonstrates: making dry topics compelling, personal authority, sensory language, structured arguments.
+Source: danny.is, 2022-02-10. The full article. Danny names this as his most carefully written piece and the best model for considered, work-related writing: an argued position, built in sections, with bold on the claims that matter.
 
 For a long time I've believed that **organisational health** is a hugely undervalued ingredient for success – especially for startups that are scaling fast. **It's the silent enabler of so much else**. Before I give you my take on it, here's a succinct definition of Organisational Health...
 
-> An organization's ability to function effectively, to cope adequately, to change appropriately, and to grow from within.
+[quoted passage omitted]
 
 For me it's about intentionally creating a resilient, cohesive organisation that can operate with a sustained sense of **calm**.
 
@@ -97,15 +97,171 @@ Despite the obvious benefits of a healthy organisation, it's often neglected –
 
 Remote and distributed companies need to be **much healthier** than office-based firms because co-location allows us to paper over **an awful lot of cracks**. And systemic health problems have a disproportionately large effect on remote teams, which quickly compounds with scale.
 
+### So what does a healthy organisation look like to me?
+
+These kinds of things...
+
+- **Happy**, autonomous and empowered people (obviously).
+- A unified, coherent senior leadership **team** exhibiting all the traits & behaviours we'd expect of _any other great team_.
+- Common, well-understood **shared** norms, habits, behaviours & ways of working. (We could label this "culture".)
+- Common, well-understood **values** and **principles** which facilitate aligned independent decision-making at all levels.
+- A clear, _truthful_ and well-understood **structure** (org design, teams, career levels, salaries etc).
+- _Excellent_ communication everywhere.
+- A culture that values **clarity**.
+- A culture of **trust** and psychological **safety**.
+- A culture that cares about **how** we work, and actively tries to make it better.
+- **Systems**, processes and **tools** that make it easy to "operationalise" repetitive work.
+- Managers who have the **time**, **skill** and **motivation** to lead and manage well.
+
+None of these things happen by accident.
+
+**Aside:** While it helps and is amazing to be part of, **I don't think shared passion for the mission is necessary** – there are thousands of very healthy companies whose people don't really give a damn about the mission. (Potential exception: your senior leadership team.)
+
+### So when should you start thinking about organisational health?
+
 Short answer: **as soon as you reasonably can.**
 
 Small, young companies get disproportionally large gains from the effort, which **compound over time**. Without the right foundations this all gets exponentially harder as you scale (and as your collective habits and ways of working become entrenched). I've seen way too many companies ignore this stuff until they've raised a Series B and the wheels start falling off.
+
+Having the foundations for a **super healthy** organisation allow you to scale quickly without as much pain, and help things stay calm as the organisation rapidly becomes more complex.
+
+**Aside:** If you're a tiny seed-stage startup scrambling to find product-market fit, you should probably focus 💯 on that (solid foundations are useless if they're the wrong shape for the house, or you never build it). But **as soon as you reasonably can**, step back and think about how to build a healthy organisation.
+
+### So how do we start getting healthier? 🌱
+
+Firstly, we need to believe it's _at least_ as important as our other business aims. Being healthy is unlikely to be the number one goal but, as with human health, unless we make a strong commitment to it, it'll always lose out to other more pressing stuff.
+
+Secondly, we need at least one person who's wholly focussed on keeping our organisation healthy. I've seen some amazing small startups where this is the **fundamental** job of the COO. More recently, I've seen this owned by a _Head of Remote_.
+
+In larger firms I've seen teams called _Workplace Design_, _Office of the COO_, _Remote Operations_, _People Operations_, (plain old) _Operations_, and the like. The one thing these have in common is that they are 100% focussed on making the **company itself** as healthy as possible.
+
+Ultimately, keeping an organisation healthy will always be a joint effort led by people like...
+
+- COO, VP Ops etc
+- CPO, VP People etc
+- Chief of Staff, Head of Remote etc
+- Leaders specific to the company's core business (eg CTO for tech companies)
+
+None of this happens by accident.
+
+**Aside:** I nicked the term **Organisational Health** from _[The Advantage by Patrick Lencioni](https://www.tablegroup.com/books/the-advantage/)._ The first chapter makes a much fuller argument for its importance than I have here.
+
+### Guiding Principles 📜
+
+Here are a few loose principles I've found useful for helping folks approach organisational health. (I could – and probably will – write a whole article on each of them.)
+
+#### 1️⃣ Have an internal focus
+
+Most functions in a startup are led by external needs & drivers: Product, Engineering, Sales, Marketing, Strategy, etc... all _should_ have their eyes set mostly on the outside world.
+
+We need at least one function which has an internal focus, **treats the company like a product**, itself as a product team and its employees as users. And this function needs a good product manager.
+
+Done well, this function is a huge force multiplier for all the others.
+
+[quoted passage omitted]
+
+#### 2️⃣ Beware organisational debt
+
+Just like a software product accrues technical debt, a company accrues organisational debt. The effects are similar - it gets increasingly harder to get stuff done over time.
+
+Used strategically, this kind of debt is useful because it lets us move faster, but the tweet below explains why we **must** be intentional about how we incur it. And how we pay it down.
+
+[embedded tweet omitted]
+
+#### 3️⃣ Human + System
+
+These are the two fundamental components, and Internal Operations should focus on both:
+
+- **Human** - Relationships, culture, leadership, human growth, shared mindset, "vibes" etc.
+- **System** - Structure, process, policy, tooling, automation etc.
+
+These need to be viewed and tackled together and the highest leverage stuff addresses both human & system concerns at the same time (eg. shared behaviours & habits).
+
+**Aside:** A garden needs plants (humans) that take their own path. These need thoughtful nurturing. It also needs pots, trellises, paths (systems) to support the plants. These aren't nurtured, they're engineered. If we want an awesome garden we need to engineer the right systems and nurture the plants right – this will only work if view both together as a whole. 🌱
+
+#### 4️⃣ Behaviours & habits _over_ processes & tools
+
+While processes and tools are important, the most effective way to improve an organisation's health is by improving the habits and default behaviours of its people.
+
+If you've ever tried to impose a new system or process without considering behavioural change, you've probably seen a lot of folks ignore it and revert to what they know. **People always fall back on their habits and default behaviours. Especially in groups.**
+
+On the plus side, given the right habits, behaviours, principles, environment etc, people will likely create effective systems & tools on their own.
+
+That said... used intentionally, processes and tools **can be very powerful tools** for affecting behaviour & habits. Especially in groups.
+
+#### 5️⃣ Strive for clarity
+
+A culture of clarity reduces day-to-day uncertainty and tends plenty of efficiency savings (especially in distributed companies). But its greatest value comes from how it **reduces the cognitive load on people**.
+
+At best, lack of clarity leads to increased cognitive load as folks struggle to make sense of things and make decisions themselves. At worst, it leads to a culture of uncertainty and stress because in the absence of facts people always assume the worst. In either case, it means people are spending a lot of time thinking and talking about unnecessary stuff.
+
+Creating clarity in a complex and inherently unclear environment is one of the hardest things about leadership, so leaders often think about clarity in a very macro sense: is everyone clear on our mission? Or our Q3 goals?
+
+Yet most of the uncertainty, inefficiency & stress I've seen comes from lack of clarity on tiny things:
+
+- I've found five different versions of this template and have two conflicting answers about which one to use here.
+- What's this meeting about? I don't really know what's expected of me and what are these weird notes I've been sent all about?
+- Is it okay to expense my new headphones? How do I do that? Who do I even ask?
+- Who should I talk to on the marketing team about this thing? Misha told me Andy, but which Andy? He's not on the org chart? Wait, is Marketing even the right team?
+
+Creating clarity & consistency on stuff like this is often much harder than it seems – especially in large, fast-growing or globally distributed companies. But done right, it can have an insanely big effect on organisational health.
+
+**Aside:**
+
+- Vision & values provide clarity on why we're all here.
+- Consistent systems and processes create clarity about how things work (and **why**).
+- Strong principles provide clarity on how to make decisions.
+- Org structure provides contextualised clarity on who's responsible for what.
+- Mission → strategy → plans provide clarity on where we're going and how.
+- Clear, consistent internal messaging **communicates** clarity re everything
+
+    above.- etc.
+
+  
+
+#### 6️⃣ Practice simplicity
+
+Simplicity matters because simple things are easy for people to _fully_ understand and reason about. When designing systems we have to consider the **usefulness and accuracy of the mental models folks form about them**.
+
+It's much easier to augment folks' existing _correct_ mental models than to fix their incorrect ones.
+
+[quoted passage omitted]
+
+Designing simple solutions for complicated problems is almost never simple itself, but wherever possible we should aggressively err on the side of simplicity.
+
+#### 7️⃣ Harness the power of principles
+
+Principles are often more useful than rigid rules because when they're fully understood they allow people to confidently make decisions without constant recourse to others. They also help people understand **the why**.
+
+Even when you need rigid rules, clearly explaining the principles which underpin them increases transparency & shared understanding, and helps folks to adapt the rules intelligently.
+
+For any principles to be useful they need to be well-thought-out, easy to understand and **constantly reinforced by everyone**. Otherwise, they're just more words in a document somewhere.
+
+#### 8️⃣ Create frameworks (as well as tools)
+
+Our inwards-facing function needs to build an environment & toolset that helps other functions do their best work. But also go one step further and create the environment & meta-tools that allow others to design their own.
+
+We can't design an entire company from the top. Nor can we design by general consensus on everything. Instead, we need to provide a framework of strong, consistent guide-rails (principles, tools, practices, structures etc) that everyone trusts.
+
+This is the kernel of our "Operating System". If everyone **really** understands this framework and buys into it, (with a little help) they'll be able to create their own systems of work on top of it. And our kernel helps keep those systems compatible with each other.
+
+Doing this is the only real way to create a **truly agile organisation** that can evolve as it scales.
+
+Of course, keeping the kernel fit for purpose takes ongoing effort. As does guiding and nurturing the people and systems that use it.
+
+---
+
+These are just a few of my thoughts on what it takes to keep an organisation healthy, but hopefully they've sparked a few thoughts for you.
+
+If you take one thing away from this, let it be the idea that creating a great company only happens when we set out to do so with intentionally, and when we get it right the sense of calm it can provide is a silent enabler of so much else.
+
+And with many of us moving towards remote, globally distributed organisations, all this matters **much more**.
 
 ---
 
 ## AI and ADHD — Personal Experience
 
-Source: danny.is. Demonstrates: personal vulnerability, building from specific to universal, casual self-deprecation, philosophical depth without pretension.
+Source: danny.is.
 
 My friend Vicki's "mate have you considered maybe youse got ADHD" was the first time I remember this topic coming up. That was maybe six years back, and I promptly forgot about it. Then, two years ago – while ADHD was all the rage on TikTok – my friend Janina had a period of revalation about herself and made me do a bunch of tests. Turns out I probably have Adult ADHD.
 
@@ -129,7 +285,7 @@ Weather you have ADHD or not, finding ways to work **with** your brain rather th
 
 ## Why Do I Teach? — Personal Essay
 
-Source: Medium. Demonstrates: starting with a real moment, quick pivot to reflection, numbered insights, concise philosophical depth.
+Source: Medium.
 
 I was speaking with Ben Allen today and the conversation led me to an interesting thought. If you'd asked me yesterday why I teach, I'd have said it was because I like helping people get better, I like talking, and I really enjoy it.
 
@@ -150,7 +306,7 @@ In addition, the knowledge that I'll inevitably learn stuff by building material
 
 ## Website Redesign Part 2 — Personal/Reflective
 
-Source: danny.is. Demonstrates: thinking in public, vulnerability about creative process, self-imposed constraints, mixing emotional and practical analysis.
+Source: danny.is.
 
 Until now, every time I've redesigned this website it's been because I didn't like how it looked. Every few years, I've looked at it and felt like it doesn't adequately represent me.
 
@@ -262,7 +418,7 @@ Until next time.
 
 ## The Psychoactive Substances Bill — Political Commentary
 
-Source: Medium. Demonstrates: stating position clearly, using official language against itself, structuring complex arguments, mixing serious analysis with strategic humour.
+Source: Medium.
 
 The Psychoactive Substances Bill 2015 is one of the most ludicrous and ill-conceived pieces of legislation I've read in a while. It was announced in the Queen's Speech in May 2015 and was passed from the Lords to the Commons on 22 July 2015. It is intended to:
 

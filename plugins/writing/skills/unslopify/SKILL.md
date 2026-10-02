@@ -1,68 +1,46 @@
 ---
 name: unslopify
-description: Remove AI slop and corporate bullshit from text — produces clean, natural, human-sounding writing. Use when the user asks to "unslopify", "deslop", "remove slop", "clean up AI text", or wants text cleaned of AI-sounding language without applying Danny's specific voice.
+description: Remove AI slop and corporate language from text, leaving clean, natural writing without applying Danny's voice. Use when the user asks to "unslopify", "deslop", "remove slop", or "clean up AI text".
 argument-hint: "[file/dir/text]"
 disable-model-invocation: true
 ---
 
 # /unslopify — Remove AI Slop
 
-Takes text and systematically removes AI slop, corporate bullshit, and unnatural language. The goal is clean, natural, human-sounding writing — NOT to apply Danny's specific voice.
+Takes machine-written or generic text and rewrites it as clean, plain prose a careful person might have written. It does not add Danny's voice; use `/danify` for that.
 
-## Determine Input
+## Determine input
 
-Figure out what to deslopify:
 - **File path(s) passed as arguments** → read those files
-- **Directory path** → read the files in it (markdown/text files)
+- **Directory path** → read the markdown and text files in it
 - **Inline text** → use it directly
-- **Nothing passed** → look at recent conversation context for text being discussed. If genuinely unclear, ask the user what they'd like deslopified.
+- **Nothing passed** → use the text under discussion in the conversation. If it is unclear which text is meant, ask.
 
-## Load Skill Files
+If the text reads as though Danny wrote it himself, say so and stop. His habits overlap with some slop patterns, and this command would strip them. Offer `/check` instead.
 
-Read these files from the [guide](../guide/) skill:
-1. [`writing-well.md`](../guide/writing-well.md)
-2. [`nonos.md`](../guide/nonos.md)
+## Read the guide
 
-Do NOT load `writing-like-danny.md`. This command is about deslopping, not danifying. Some incidental Danny flavour bleeding through from `writing-well.md` is fine — his principles of good writing are good principles of writing — but the focus is on removing slop, not adding voice.
+Read these from the [guide](../guide/) skill:
+
+1. [`nonos.md`](../guide/nonos.md)
+2. [`writing-well.md`](../guide/writing-well.md)
+3. [`structure-and-grammar.md`](../guide/structure-and-grammar.md), for UK English and punctuation
+
+Do not read `writing-like-danny.md` or the samples.
 
 ## Process
 
-### 1. Read and Understand the Text
-Read the full text first. Understand what it's trying to say, who the audience is, and what tone it's going for. You're cleaning the text, not rewriting it from scratch.
+1. **Read the whole text first.** Work out what it is trying to say, who it is for, and how formal it is meant to be.
+2. **Find the patterns** in `nonos.md`, by family. Note which habits recur; those are the ones that matter.
+3. **Rewrite by restructuring.** For each passage, work out what it is for and say that plainly. Replacing a stock phrase with a similar one is not a fix. Where a sentence says nothing, cut it.
+4. **Apply `writing-well.md`**: lead with the content, plain words, concrete statements, the connectives that carry the logic.
+5. **Keep the meaning and the register.** Formal text stays formal and casual text stays casual. Do not add opinions, examples or facts that were not in the source. If the source has invented-looking specifics or unsupported claims, flag them instead of polishing them.
+6. **Reread the result** for patterns introduced by the rewrite.
 
-### 2. Systematic Slop Removal
-Walk through `nonos.md` and fix every violation:
-- Replace banned AI phrases with natural alternatives (or delete)
-- Replace corporate bullshit with plain language
-- Cut pretentious diction — nominalisations back to verbs, Latinate words back to Saxon ones, long words back to short ones
-- Cut forced cleverness
-- Strengthen weak language
-- Fix structural AI tells (perfect balance, neat summaries, hedge-everything, under-punctuation, uniform sentence length, rule-of-three on repeat)
-- Fix tonal AI tells (sycophantic validation, performative enthusiasm, verbose repetition, tonal flatness, compulsive summarising)
-
-### 3. Apply writing-well.md Principles
-- Sharpen clarity — make every sentence clear
-- Fix word choice — precise over impressive, concrete over abstract
-- Improve rhythm — vary sentence lengths, add punch. Every paragraph over four sentences needs one under ten words
-- Cut unnecessary words — aim for 20% reduction
-- Fix transitions — natural flow, not announcements
-- Ensure the opening earns the reader's attention
-
-### 4. Preserve Intent
-Don't change the meaning, argument, or intended tone. If the original is formal, keep it formal (just remove the slop). If it's casual, keep it casual. You're polishing, not transforming.
+If the text was already clean, say so and change nothing.
 
 ## Output
 
-Present the deslopified text in full, then a brief summary of what changed:
+For inline text, return the cleaned text. For a file, ask whether to edit it in place or return the text, unless the request already makes that clear.
 
-```markdown
-## Deslopified Text
-
-[The full rewritten text]
-
-## What Changed
-- [Brief list of the main types of changes made]
-- [e.g. "Removed 12 AI slop phrases", "Replaced corporate jargon throughout", "Cut ~25% unnecessary words"]
-```
-
-If the text was already clean, say so. Don't make changes for the sake of it.
+Then add a short summary of the main habits you removed and anything you flagged. Describe them in words; do not count phrases.

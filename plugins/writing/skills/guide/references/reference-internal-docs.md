@@ -1,14 +1,14 @@
 # Reference: Internal Documentation
 
-Full-length examples of Danny's internal knowledge base articles, guides, and process docs. Load when writing internal documentation, guides, or knowledge base articles.
+Full-length examples of Danny's guides, proposals and process documents, written for teams at companies he worked with. Read these when drafting work documents: internal docs, guides, knowledge base articles, proposals.
 
-These are Danny's actual words — unedited. Written for internal teams at companies he worked with.
+These are Danny's actual words, unedited, typos included. The typos are not part of the style.
 
 ---
 
 ## Guide to Onboarding New Team Members
 
-Source: Notion (internal knowledge base). Demonstrates: warm professional voice, clear principles before practices, fictional walkthrough to make process tangible, anticipating questions.
+Source: Notion (internal knowledge base).
 
 ### Who's this guide for?
 
@@ -76,7 +76,7 @@ Your main job is simply to **be there for the new hire**. Joining a new company 
 
 ## A Case for Using Remix — Technical Proposal
 
-Source: Notion (internal). Demonstrates: technical advocacy balanced with honest risk assessment, acknowledging bias upfront, structured with clear sections, personal voice in a professional context.
+Source: Notion (internal).
 
 Remix is a modern full-stack framework built on top of React and React Router. It's an attractive option for building the web and backend of our product. This document explains why I think so, and looks at some of the advantages and risks.
 
@@ -114,7 +114,7 @@ I asked ChatGPT to challenge me on this proposal and it wasn't much help. Human 
 
 ## About this Notion — Meta-Documentation
 
-Source: Notion (internal). Demonstrates: memorable simple principles, progressive depth, the document itself exemplifies what it teaches, warm even in process docs.
+Source: Notion (internal).
 
 This is Delocate's central hub – our control centre.
 
@@ -216,7 +216,7 @@ Ask in `#notion` on Slack, or hit up @Danny Smith.
 
 ## Definition of Done — Technical Narrative
 
-Source: Medium. Demonstrates: framing technical topics as stories, real checklist items, acknowledging controversy, connecting engineering practices to business outcomes.
+Source: Medium.
 
 Scrum defines the Definition of Done in pretty simple terms: it's the acceptance criteria that are common to every single user story.
 

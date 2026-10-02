@@ -1,87 +1,59 @@
 # Structure and Grammar
 
-Mechanical rules for document structure, formatting, and grammar. This file will grow over time.
+Mechanics: spelling, punctuation, formatting and document structure. Follow these when drafting for Danny. When the text is his own, fix genuine errors and leave his habits alone (see "Leave these alone" in `writing-like-danny.md`).
+
+Specific decisions on numbers, dates, capitalisation and individual words are in `references/styleguide.md`.
 
 ## Language
 
-**IMPORTANT**: Always use UK (British) English except when incorrect to do so (code, direct quotes, brand names, etc.).
+UK English always, except in code, direct quotes, and proper names: colour, organisation, realise, favourite, behaviour, centre, focussed, licence (noun) and license (verb), practice (noun) and practise (verb).
 
-Examples: colour, organisation, realise, favourite, behaviour, centre, licence (noun) / license (verb), practise (verb) / practice (noun).
-
-Prefer contractions (it's, won't, I'll, we'll) unless the context demands formality.
-
-## Paragraph Length
-
-Varies by context:
-
-- **Informal** (emails, Slack, notes): 2-3 sentences
-- **Informal long-form** (blog posts, articles): 3-5 sentences
-- **Semi-formal** (proposals, client docs): 3-5 sentences
-- **Technical** (docs, guides): Whatever serves clarity — sometimes 1 sentence is right
-
-Single-sentence paragraphs are fine for emphasis. Don't use them constantly.
-
-## Sentence Length
-
-- Target 15-20 words for digital content
-- Up to 25 for formal writing
-- Vary dramatically within a piece — the variation creates rhythm
-
-The variation matters more than the average. Machine-written prose sits at a steady 20-30 words a sentence and never breaks stride, which is what makes it dull even when every sentence is correct.
-
-Checkable test: any paragraph of more than four sentences should contain at least one sentence under ten words. If a whole page goes by without one, you've written a wall.
-
-## Document Structure
-
-### Headings
-
-- Use clear heading hierarchy (H1 → H2 → H3)
-- Don't skip levels
-- Headings should tell the reader what they'll get, not tease
-- Question headings can work well: "Why does this matter?"
-
-### Lists
-
-- Bullet points for unordered items
-- Numbered lists only when order matters (steps, rankings)
-- Keep list items parallel in structure
-- Don't use lists as a crutch — full paragraphs carry main arguments
-
-### Formatting
-
-- **Bold** for key concepts and important terms (1-3 per section, not more)
-- *Italics* for emphasis, titles, or introducing terms
-- Don't combine bold and italics
-- Horizontal rules (---) to separate major sections
+Use contractions (it's, won't, I'll, we'll) unless the document is formal enough that they would jar.
 
 ## Punctuation
 
-### Em Dashes
+**Oxford comma.** Use it when drafting: "clarity, consistency, and readability". Danny's policy is to use it, but he does not always, so never flag or change its absence in something he wrote.
 
-Use sparingly — one or two per paragraph maximum — and for emphasis only. Don't use them as a substitute for commas or parentheses in every sentence.
+**Dashes.** Always spaced, never closed up. He uses both the en dash ( – ) and the em dash ( — ) this way. In an existing document, match what is already there; in a new one, use the spaced em dash. He uses dashes freely for asides and afterthoughts. When drafting, use them where a spoken aside would fall, and reach for a comma, brackets or a full stop where those do the job.
 
-Plenty of good human writers love a dash; Emily Dickinson used more than any bot. What reads as machine-made is a piece where dashes have replaced every comma, bracket and full stop, so the punctuation has one texture from start to finish.
+**Brackets.** Good for asides, including a whole bracketed sentence. He uses them often.
 
-### Too Little Punctuation
+**Ellipsis.** Three dots, no space before. Often used to lead into a list or quote: "for a few reasons..."
 
-The more common failure now, and easy to miss because nothing on the page looks wrong. Several long sentences run together, joined with "and", barely a comma between them and no brackets anywhere. It reads flat and it's harder to follow than it should be.
+**Semicolons.** Rarely. A full stop is usually better.
 
-Fixes, in order of preference:
+**Colons.** To introduce a list, an explanation or an example.
 
-1. Split the sentence in two
-2. Add a parenthetical aside (they're good, use them)
-3. Add the comma that was always meant to be there
+**Quotation marks.** Double for direct quotes, single for 'scare quotes' or a term being introduced.
 
-Don't reach for semicolons to fix this — see below.
+## Emphasis
 
-### Semicolons
+- **Bold** for the phrase that carries the point, and for the lead phrase of a list item.
+- _Italics_ for spoken stress on a word, for titles, and for a term being introduced.
+- In considered writing he uses both generously. In functional writing, use bold only for a warning or a key term, and no italics for stress.
 
-Only where they're obviously the best choice; prefer full stops for digital content. Most readers don't notice good semicolons but do notice bad ones.
+## Paragraphs and sentences
 
-### Colons
+- Paragraph length follows the content. Short paragraphs (two to four sentences) in emails, notes and anything read on a screen; longer ones are fine where an argument needs room. A one-sentence paragraph is fine when the sentence deserves it.
+- There is no target sentence length. Let length follow what the sentence has to carry, and check the result reads well aloud.
 
-Use to introduce lists, explanations, or examples. Don't overuse for dramatic effect.
+## Headings
 
-### Oxford Comma
+- Use headings when a piece has sections a reader might navigate to. A short note or email needs none.
+- Sentence case in a new document; in an existing one, match its convention. Don't skip levels.
+- A heading says what the section covers, or asks the question it answers ("So when should you start thinking about organisational health?").
+- In his articles, headings sometimes carry an emoji. Only add one if the document already does this.
 
-Use it. "Clarity, consistency, and readability" not "clarity, consistency and readability."
+## Lists
+
+- Bullets for a set of items, numbers when order or count matters.
+- Keep items parallel in form.
+- For lists of principles or reasons, open each item with the idea in bold, then explain it in a sentence or more.
+- Reasoning stays in paragraphs. Do not convert an argument into bullets.
+
+## Document shape
+
+- Lead with the point or the situation. Background comes after the reader knows why it matters.
+- Guides and process documents: say who it is for and why it exists, give the principles before the procedure, then the steps.
+- Proposals: what is proposed and why, the advantages, the risks taken seriously, and a clear recommendation.
+- Horizontal rules separate major parts of a long document. Use them sparingly.
