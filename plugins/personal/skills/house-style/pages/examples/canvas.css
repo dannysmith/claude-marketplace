@@ -1,0 +1,263 @@
+/* EXAMPLE styles for fixed-format graphics: slides and social images. The playful register.
+   Copy this file as a starting point and cut it down, or read it for the ingredients (frame,
+   giant type, coral word, blobs, emoji, handwriting) and write your own. It needs reset.css,
+   tokens.css and base.css.
+
+   Each .canvas is a container, and everything inside is sized in cqi (1cqi = 1% of the canvas
+   width), so a canvas looks the same at any size. Set --ratio for the shape (default 16 / 9).
+   To export one at its real pixel size, give it a width: style="inline-size: 1200px". */
+
+.canvas {
+  container-type: inline-size;
+  position: relative;
+  aspect-ratio: var(--ratio, 16 / 9);
+  overflow: hidden;
+  background: var(--grey-800);
+  color: var(--white);
+
+  /* A darker frame around the canvas: the look of Danny's talk slides */
+  &[data-frame]::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1.6cqi solid var(--grey-950);
+    pointer-events: none;
+  }
+
+  &[data-surface='light'] {
+    background: var(--white);
+    color: var(--grey-950);
+
+    &[data-frame]::after {
+      border-color: var(--grey-200);
+    }
+  }
+
+  /* Full-bleed colour card: set --fill to pick the colour (default coral) */
+  &[data-surface='fill'] {
+    background: var(--fill, var(--coral-500));
+  }
+}
+
+.canvas-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5cqi;
+  padding: 8cqi 9cqi;
+
+  &[data-align='center'] {
+    align-items: center;
+    text-align: center;
+  }
+
+  &[data-align='end'] {
+    justify-content: flex-end;
+  }
+}
+
+/* ---------- Type ---------- */
+
+.canvas-title {
+  font-family: var(--font-display);
+  font-size: 8.5cqi;
+  font-weight: var(--font-weight-heavy);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.canvas-statement {
+  font-family: var(--font-display);
+  font-size: 6.2cqi;
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+/* The one coral word. Deeper coral on light so it holds up. */
+:is(.canvas-title, .canvas-statement) em {
+  font-style: normal;
+  color: var(--coral-500);
+
+  [data-surface='light'] & {
+    color: var(--coral-deep);
+  }
+}
+
+.canvas-kicker {
+  font-size: 2.6cqi;
+  font-weight: var(--font-weight-medium);
+}
+
+.canvas-label {
+  font-size: 1.7cqi;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--coral-500);
+}
+
+.canvas-text {
+  font-size: 3cqi;
+  line-height: 1.35;
+}
+
+.canvas-quote {
+  font-family: var(--font-display);
+  font-size: 4.2cqi;
+  font-weight: 300;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.canvas-note {
+  font-family: var(--font-handwriting);
+  font-size: 3.6cqi;
+  line-height: 1;
+  color: var(--orange-400);
+  rotate: -3deg;
+}
+
+/* ---------- Furniture ---------- */
+
+.canvas-handle {
+  position: absolute;
+  inset: auto 4cqi 3.6cqi auto;
+  font-size: 1.6cqi;
+  font-weight: var(--font-weight-bold);
+  opacity: 0.7;
+
+  & b {
+    color: var(--coral-500);
+  }
+
+  &[data-side='start'] {
+    inset-inline: 9cqi auto;
+  }
+}
+
+.canvas-emoji {
+  position: absolute;
+  font-size: 14cqi;
+  line-height: 1;
+}
+
+/* Organic blobs that bleed off the corners. Position and size each with inline styles;
+   colour with the fill. */
+.canvas-blob {
+  position: absolute;
+  inline-size: 30cqi;
+}
+
+/* A darker side panel, for agendas and running order */
+.canvas-panel {
+  position: absolute;
+  inset: 0 auto 0 0;
+  inline-size: 34cqi;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6cqi;
+  padding: 6cqi 4cqi;
+  background: var(--grey-950);
+  font-size: 2.4cqi;
+
+  & ol {
+    display: grid;
+    gap: 1.2cqi;
+    padding: 0;
+    list-style: none;
+    counter-reset: item;
+  }
+
+  & li {
+    display: flex;
+    align-items: center;
+    gap: 1.2cqi;
+    counter-increment: item;
+
+    &::before {
+      content: counter(item);
+      display: grid;
+      place-items: center;
+      inline-size: 3cqi;
+      block-size: 3cqi;
+      border-radius: var(--radius-full);
+      background: var(--coral-500);
+      color: var(--grey-950);
+      font-size: 1.6cqi;
+      font-weight: var(--font-weight-bold);
+    }
+
+    &[data-done] {
+      opacity: 0.45;
+    }
+  }
+}
+
+/* The window component, scaled up for a slide */
+.canvas .window {
+  font-size: 2.6cqi;
+  border-radius: 1cqi;
+}
+
+.canvas-avatar {
+  inline-size: 11cqi;
+  block-size: 11cqi;
+  border: 0.6cqi solid var(--white);
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+/* ---------- Presenting ----------
+   slides.html?present shows one slide at a time, fitted to the window (see the script there). */
+
+[data-present] {
+  display: grid;
+  place-items: center;
+  min-block-size: 100vb;
+  background: var(--grey-950);
+
+  & .sheet {
+    display: contents;
+  }
+
+  & .sheet > header,
+  & figcaption,
+  & .grid > figure:not([data-current]) {
+    display: none;
+  }
+
+  & .canvas {
+    inline-size: min(100vi, 100vb * 16 / 9);
+  }
+}
+
+/* ---------- The page that shows the examples ---------- */
+
+.sheet {
+  display: grid;
+  gap: var(--space-l);
+  max-inline-size: 90rem;
+  margin-inline: auto;
+  padding: var(--space-l) var(--space-m) var(--space-2xl);
+
+  & > header {
+    display: grid;
+    gap: var(--space-2xs);
+    max-inline-size: var(--measure);
+
+    & p {
+      color: var(--color-text-muted);
+    }
+  }
+
+  & figure {
+    display: grid;
+    gap: var(--space-2xs);
+  }
+}

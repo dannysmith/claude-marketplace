@@ -1,0 +1,45 @@
+@layer components {
+  /* Window
+     Code and terminal output in macOS window chrome. Always dark, in both modes.
+       <figure class="window" data-title="render.js"><pre><code>…</code></pre></figure>
+     In a terminal, mark the prompt with <span class="prompt">$</span>. */
+  .window {
+    color-scheme: dark;
+    border: var(--border-width-hairline) solid var(--grey-700);
+    border-radius: var(--radius-md);
+    background: var(--grey-950);
+    color: var(--grey-100);
+    overflow: hidden;
+
+    /* Title bar: three dots drawn as gradients, with the title centred over them */
+    &::before {
+      content: attr(data-title);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Sized in em so the whole bar scales when the window's font-size is changed */
+      block-size: 2.35em;
+      padding-inline: 5.3em;
+      background:
+        radial-gradient(circle at 1.2em 50%, var(--coral-500) 0.37em, transparent 0.43em),
+        radial-gradient(circle at 2.45em 50%, var(--yellow-500) 0.37em, transparent 0.43em),
+        radial-gradient(circle at 3.7em 50%, var(--green-500) 0.37em, transparent 0.43em),
+        var(--grey-800);
+      color: var(--grey-400);
+      font-size: 0.75em;
+      font-weight: var(--font-weight-medium);
+      text-box: trim-both cap alphabetic;
+    }
+
+    & pre {
+      border: none;
+      border-radius: 0;
+      background: none;
+    }
+
+    & .prompt {
+      color: var(--coral-500);
+      user-select: none;
+    }
+  }
+}

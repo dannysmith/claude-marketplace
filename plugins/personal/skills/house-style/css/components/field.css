@@ -1,0 +1,84 @@
+@layer components {
+  /* Field
+     A label, a control, help text and an error message as one unit.
+       <div class="field">
+         <label for="email">Email</label>
+         <input id="email" type="email" required aria-describedby="email-help">
+         <small id="email-help">We only use it for receipts.</small>
+         <small data-error>That doesn't look like an email address.</small>
+       </div>
+     The error shows once the user has had a go at the control and it fails the browser's own
+     validation (required, type, pattern, min, max). For server errors set aria-invalid="true". */
+  .field {
+    display: grid;
+    gap: var(--space-3xs);
+    align-content: start;
+
+    & small {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-muted);
+    }
+
+    &:has(:required) > label::after {
+      content: ' *';
+      color: var(--color-accent-text);
+    }
+
+    & [data-error] {
+      display: none;
+      color: var(--color-danger);
+    }
+
+    &:has(:user-invalid, [aria-invalid='true']) [data-error] {
+      display: block;
+    }
+  }
+
+  /* Input group
+     An input with an icon in front, a button after, or both. The wrapper draws the box
+     and the input inside goes bare.
+       <div class="input-group"><svg class="icon" viewBox="0 0 24 24">…</svg><input type="search"><button>Go</button></div> */
+  .input-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    min-block-size: var(--control-height);
+    padding-inline: 0.65em 3px;
+    border: var(--border-width-hairline) solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-background);
+    font-size: var(--font-size-sm);
+
+    &:has(input:focus-visible) {
+      outline: 2px solid var(--color-focus-ring);
+      border-color: var(--color-accent);
+    }
+
+    &:has(:user-invalid, [aria-invalid='true']) {
+      border-color: var(--color-danger);
+    }
+
+    & > svg {
+      inline-size: 1.15em;
+      block-size: 1.15em;
+      flex-shrink: 0;
+      color: var(--color-text-muted);
+    }
+
+    & input {
+      flex: 1;
+      min-inline-size: 0;
+      min-block-size: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: none;
+      outline: none;
+    }
+
+    & button {
+      min-block-size: calc(var(--control-height) - 8px);
+      border-radius: calc(var(--radius-sm) - 1px);
+    }
+  }
+}

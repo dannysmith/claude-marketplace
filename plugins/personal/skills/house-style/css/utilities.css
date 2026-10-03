@@ -1,0 +1,126 @@
+/* Utilities: a handful of single-purpose helpers. */
+
+/* Per-element knobs, set inline (style="--gap: var(--space-l)"). Registering them as non-inheriting
+   stops a value set on one element leaking into those nested inside it. The initial values are
+   in px because @property doesn't accept rem there. */
+@property --gap {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 16px;
+}
+
+@property --min {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 256px;
+}
+
+@layer utilities {
+  /* ======== PROSE ========
+     Reading rhythm for flowing content: articles, docs, help text, rendered markdown.
+     Everything outside .prose is interface and has no vertical margins. */
+  .prose {
+    max-inline-size: var(--measure);
+
+    & > * + * {
+      margin-block-start: 1em;
+    }
+
+    & > :is(h1, h2, h3, h4, h5, h6) {
+      margin-block-start: 1.75em;
+    }
+
+    /* A heading straight after another heading belongs to it */
+    & > :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+      margin-block-start: 0.5em;
+    }
+
+    & > :first-child {
+      margin-block-start: 0;
+    }
+
+    & li + li,
+    & li > :is(ul, ol) {
+      margin-block-start: 0.35em;
+    }
+
+    & dd + dt {
+      margin-block-start: 0.75em;
+    }
+  }
+
+  /* Long-form, bookish reading. Add to .prose for articles. */
+  .prose-serif {
+    font-family: var(--font-prose);
+    font-size: var(--font-size-md);
+    line-height: 1.7;
+  }
+
+  /* ======== LAYOUT ======== */
+
+  /* Vertical stack with even gaps. Set --gap to change the spacing. */
+  .stack {
+    display: grid;
+    gap: var(--gap);
+    align-content: start;
+  }
+
+  /* Horizontal group that wraps: button rows, tag lists, toolbars */
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    --gap: var(--space-2xs);
+
+    gap: var(--gap);
+  }
+
+  /* Responsive columns with no media queries. Set --min to change the column width. */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+    gap: var(--gap);
+  }
+
+  /* ======== TEXT ======== */
+
+  .muted {
+    color: var(--color-text-muted);
+  }
+
+  .handwriting {
+    font-family: var(--font-handwriting);
+    font-size: 1.4em;
+    line-height: var(--line-height-tight);
+  }
+
+  /* Big, heavy display type for titles and hero lines. Wrap a word in <em> to turn it coral. */
+  .display {
+    font-family: var(--font-display);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-heavy);
+    line-height: 1;
+    letter-spacing: -0.03em;
+
+    & em {
+      font-style: normal;
+      color: var(--color-accent);
+    }
+  }
+
+  /* ======== MISC ======== */
+
+  .list-reset {
+    list-style: none;
+    padding: 0;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

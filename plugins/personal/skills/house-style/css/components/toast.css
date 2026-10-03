@@ -1,0 +1,19 @@
+@layer components {
+  /* Toast
+     A short, temporary message. Position it yourself (usually fixed, bottom right).
+     <div class="toast" data-status="success"><span>Link copied</span><button data-variant="ghost" data-size="small">Undo</button></div> */
+  .toast {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    inline-size: fit-content;
+    max-inline-size: 28rem;
+    padding: var(--space-xs) var(--space-s);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-inline-start: var(--border-width-thick) solid var(--hue-vivid, var(--color-accent));
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-medium);
+    font-size: var(--font-size-sm);
+  }
+}

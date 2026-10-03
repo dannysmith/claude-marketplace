@@ -1,0 +1,731 @@
+/* Base element styles: what plain HTML looks like with no classes.
+   Interface-first: elements have no vertical margins, so they sit cleanly in flex and grid
+   layouts. Wrap flowing content (articles, docs, help text) in .prose to get reading rhythm. */
+
+@layer base {
+  html {
+    font-family: var(--font-ui);
+    font-weight: var(--font-weight-normal);
+    font-variant-ligatures: common-ligatures;
+    accent-color: var(--color-accent);
+    color: var(--color-text);
+    background-color: var(--color-background);
+  }
+
+  body {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--color-accent) 35%, transparent);
+  }
+
+  /* The reset draws the ring; interface controls want it closer than prose links do */
+  :where(button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline-offset: 2px;
+  }
+
+  /* ======== HEADINGS ======== */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+  }
+
+  h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-extrabold);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  h4 {
+    font-size: var(--font-size-md);
+  }
+
+  h5 {
+    font-size: var(--font-size-base);
+  }
+
+  /* The smallest heading becomes a quiet label */
+  h6 {
+    font-family: var(--font-ui);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  /* ======== INLINE TEXT ======== */
+
+  a {
+    color: var(--color-accent-text);
+    text-decoration-thickness: max(0.08em, 1px);
+    text-underline-offset: 0.15em;
+    text-decoration-skip-ink: auto;
+    transition: text-decoration-color var(--duration-fast) var(--ease-out);
+  }
+
+  a:not(:hover, :focus-visible) {
+    text-decoration-color: color-mix(in oklch, currentColor 40%, transparent);
+  }
+
+  strong,
+  b {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  small {
+    font-size: var(--font-size-sm);
+  }
+
+  mark {
+    background: var(--color-highlight);
+    color: inherit;
+    padding-inline: 0.15em;
+    border-radius: var(--radius-sm);
+  }
+
+  ins {
+    text-decoration-color: var(--color-success);
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--font-code);
+    font-size: 0.9em;
+  }
+
+  :not(pre) > code {
+    background: var(--color-code-background);
+    padding: 0.1em 0.35em;
+    border-radius: var(--radius-sm);
+  }
+
+  kbd {
+    padding: 0.1em 0.4em;
+    border: var(--border-width-hairline) solid var(--color-border-strong);
+    border-block-end-width: var(--border-width-base);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+  }
+
+  /* ======== ICONS ========
+     A stroked icon in the Lucide style, sized to the text beside it:
+     <svg class="icon" viewBox="0 0 24 24"><path d="…"/></svg> */
+  .icon {
+    inline-size: 1.15em;
+    block-size: 1.15em;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ======== BLOCKS ======== */
+
+  ul,
+  ol {
+    padding-inline-start: 1.25em;
+  }
+
+  li::marker {
+    color: var(--color-accent);
+  }
+
+  dt {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  dd {
+    margin-inline-start: 0;
+    color: var(--color-text-muted);
+  }
+
+  blockquote {
+    margin-inline: 0;
+    padding-inline-start: var(--space-s);
+    border-inline-start: var(--border-width-thick) solid var(--color-accent);
+    font-size: var(--font-size-md);
+  }
+
+  pre {
+    padding: var(--space-s);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    line-height: var(--line-height-normal);
+    overflow-x: auto;
+  }
+
+  hr {
+    border: none;
+    border-block-start: var(--border-width-hairline) solid var(--color-border);
+  }
+
+  figure {
+    margin-inline: 0;
+  }
+
+  figcaption {
+    margin-block-start: var(--space-2xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+
+  img,
+  video {
+    border-radius: var(--radius-md);
+  }
+
+  /* Style alt text when an image fails to load */
+  img[alt] {
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  /* ======== TABLES ======== */
+
+  table {
+    border-collapse: collapse;
+    inline-size: 100%;
+    font-size: var(--font-size-sm);
+    font-variant-numeric: tabular-nums;
+  }
+
+  caption {
+    caption-side: bottom;
+    padding-block-start: var(--space-2xs);
+    color: var(--color-text-muted);
+    text-align: start;
+  }
+
+  th,
+  td {
+    padding: var(--space-2xs) var(--space-xs);
+    border-block-end: var(--border-width-hairline) solid var(--color-border);
+    text-align: start;
+    vertical-align: middle;
+  }
+
+  th {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  thead th {
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+    border-block-end-color: var(--color-border-strong);
+  }
+
+  /* ======== DETAILS ======== */
+
+  details {
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2xs) var(--space-xs);
+    background: var(--color-surface);
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: var(--font-weight-medium);
+
+    &::marker {
+      color: var(--color-accent);
+    }
+  }
+
+  details:open > summary {
+    margin-block-end: var(--space-2xs);
+  }
+
+  /* Animate open and close. Give several <details> the same name="" attribute and the
+     browser keeps only one open at a time: an accordion with no script. */
+  details::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+      block-size var(--duration-normal) var(--ease-out),
+      content-visibility var(--duration-normal) allow-discrete;
+  }
+
+  details:open::details-content {
+    block-size: auto;
+  }
+
+  /* ======== BUTTONS ========
+     A plain <button> is the quiet default. Variants: data-variant="primary | ghost | danger".
+     Sizes: data-size="small". Give a link the same look with class="button". */
+
+  button,
+  .button,
+  input:is([type='button'], [type='submit'], [type='reset']),
+  ::file-selector-button {
+    display: inline-block;
+    align-content: center;
+    min-block-size: var(--control-height);
+    padding: 0 0.9em;
+    text-align: center;
+    border: var(--border-width-hairline) solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    /* Centre the capital letters rather than the whole line box, which sits text too high */
+    text-box: trim-both cap alphabetic;
+    transition:
+      background-color var(--duration-fast) var(--ease-out),
+      border-color var(--duration-fast) var(--ease-out);
+
+    &:hover:not(:disabled) {
+      background: var(--color-surface-hover);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* With an icon the button becomes a flex row */
+    &:has(svg) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+    }
+
+    & svg {
+      inline-size: 1.15em;
+      block-size: 1.15em;
+      flex-shrink: 0;
+    }
+  }
+
+  /* Filled variants share one rule: each sets --_fill */
+  :is(button, .button, input):is([data-variant='primary'], [data-variant='danger']) {
+    --_fill: var(--color-accent);
+
+    background: var(--_fill);
+    border-color: var(--_fill);
+    color: var(--color-accent-contrast);
+    font-weight: var(--font-weight-semibold);
+
+    &:hover:not(:disabled) {
+      background: oklch(from var(--_fill) calc(l - 0.05) c h);
+    }
+
+    &[data-variant='danger'] {
+      --_fill: var(--coral-600);
+
+      color: var(--white);
+    }
+  }
+
+  :is(button, .button, input)[data-variant='ghost'] {
+    background: transparent;
+    border-color: transparent;
+    color: var(--color-text-muted);
+
+    &:hover:not(:disabled) {
+      background: var(--color-surface-hover);
+      color: var(--color-text);
+    }
+  }
+
+  :is(button, .button, input)[data-size='small'] {
+    min-block-size: 1.75rem;
+    padding-inline: 0.65em;
+    font-size: var(--font-size-xs);
+  }
+
+  ::file-selector-button {
+    margin-inline-end: var(--space-xs);
+  }
+
+  /* ======== FORMS ======== */
+
+  /* Block labels only, not labels wrapping a checkbox or radio */
+  label:not(:has(input)) {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+  }
+
+  input:not(
+      [type='button'],
+      [type='submit'],
+      [type='reset'],
+      [type='checkbox'],
+      [type='radio'],
+      [type='range'],
+      [type='file'],
+      [type='color'],
+      [type='image'],
+      [type='hidden']
+    ),
+  select,
+  textarea {
+    min-block-size: var(--control-height);
+    padding: 0.4em 0.75em;
+    border: var(--border-width-hairline) solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-background);
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-snug);
+    transition: border-color var(--duration-fast) var(--ease-out);
+
+    &:hover:not(:disabled, :focus-visible) {
+      border-color: var(--color-text-muted);
+    }
+
+    &:focus-visible {
+      outline-offset: 0;
+      border-color: var(--color-accent);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Only flag a field once the user has had a go at it */
+    /* aria-invalid is for errors that come back from a server */
+    &:is(:user-invalid, [aria-invalid='true']) {
+      border-color: var(--color-danger);
+    }
+  }
+
+  ::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.7;
+  }
+
+  textarea {
+    inline-size: 100%;
+    resize: block;
+
+    &:not([rows]) {
+      min-block-size: 4lh;
+    }
+  }
+
+  /* A label wrapping a checkbox, radio or switch: the control sits in its own column with a
+     gap, so a long label wraps under itself rather than under the control. */
+  label:has(> input:is([type='checkbox'], [type='radio'])) {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6em;
+    inline-size: fit-content;
+    cursor: pointer;
+
+    &:has(:disabled) {
+      color: var(--color-text-muted);
+      cursor: not-allowed;
+    }
+  }
+
+  input:is([type='checkbox'], [type='radio']) {
+    flex-shrink: 0;
+    inline-size: 1rem;
+    block-size: 1rem;
+    /* Centres the control on the first line of its label */
+    margin: 0.15em 0 0;
+    cursor: inherit;
+  }
+
+  /* A switch is a checkbox that says so: <input type="checkbox" role="switch">.
+     Sized in em so it scales with the label beside it. */
+  input[type='checkbox'][role='switch'] {
+    appearance: none;
+    inline-size: 2.25em;
+    block-size: 1.3em;
+    margin-block-start: 0;
+    padding: 0.15em;
+    border-radius: var(--radius-full);
+    background: var(--color-border-strong);
+    box-shadow: inset 0 1px 2px oklch(0% 0 0 / 0.15);
+    transition: background-color var(--duration-normal) var(--ease-out);
+
+    &::before {
+      content: '';
+      display: block;
+      block-size: 100%;
+      aspect-ratio: 1;
+      border-radius: var(--radius-full);
+      background: var(--white);
+      box-shadow: 0 1px 3px oklch(0% 0 0 / 0.3);
+      transition: translate var(--duration-normal) var(--ease-out);
+    }
+
+    &:checked {
+      background: var(--color-accent);
+
+      &::before {
+        translate: 0.95em;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  /* Range and progress are drawn by hand: the native ones pick their own track colour
+     to contrast with accent-color, which gives a near-black track in light mode. */
+  input[type='range'] {
+    appearance: none;
+    inline-size: 100%;
+    block-size: 1rem;
+    background: transparent;
+    cursor: pointer;
+
+    &::-webkit-slider-runnable-track {
+      block-size: 0.25rem;
+      border-radius: var(--radius-full);
+      background: var(--color-border-strong);
+    }
+
+    &::-moz-range-track {
+      block-size: 0.25rem;
+      border-radius: var(--radius-full);
+      background: var(--color-border-strong);
+    }
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      inline-size: 1rem;
+      block-size: 1rem;
+      margin-block-start: -0.375rem;
+      border: none;
+      border-radius: var(--radius-full);
+      background: var(--color-accent);
+    }
+
+    &::-moz-range-thumb {
+      inline-size: 1rem;
+      block-size: 1rem;
+      border: none;
+      border-radius: var(--radius-full);
+      background: var(--color-accent);
+    }
+  }
+
+  progress {
+    appearance: none;
+    block-size: 0.5rem;
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--color-border);
+    overflow: hidden;
+
+    &::-webkit-progress-bar {
+      background: var(--color-border);
+    }
+
+    &::-webkit-progress-value {
+      background: var(--color-accent);
+    }
+
+    &::-moz-progress-bar {
+      background: var(--color-accent);
+    }
+  }
+
+  input[type='color'] {
+    inline-size: var(--control-height);
+    block-size: var(--control-height);
+    padding: 2px;
+    border: var(--border-width-hairline) solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-background);
+  }
+
+  progress,
+  meter {
+    inline-size: 100%;
+  }
+
+  /* ======== SELECT ========
+     Every single-choice select uses the customisable select where the browser has it: the
+     picker and options are ordinary styleable boxes, and options can hold markup (icons,
+     dots, badges). To mirror the chosen option's markup in the closed control, put
+     <button><selectedcontent></selectedcontent></button> first inside the select.
+     Other browsers show their native select with the input styling above. */
+  @supports (appearance: base-select) {
+    select:not([multiple], [size]) {
+      &,
+      &::picker(select) {
+        appearance: base-select;
+      }
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2xs);
+      cursor: pointer;
+
+      /* A drawn chevron in place of the default solid triangle */
+      &::picker-icon {
+        content: '';
+        inline-size: 0.45em;
+        block-size: 0.45em;
+        margin-block-end: 0.2em;
+        border: solid var(--color-text-muted);
+        border-width: 0 1.5px 1.5px 0;
+        rotate: 45deg;
+        transition: rotate var(--duration-normal) var(--ease-out);
+      }
+
+      &:open::picker-icon {
+        margin-block: 0.2em 0;
+        rotate: 225deg;
+      }
+
+      &::picker(select) {
+        margin-block: var(--space-3xs);
+        padding: var(--space-3xs);
+        border: var(--border-width-hairline) solid var(--color-border);
+        border-radius: var(--radius-md);
+        background: var(--color-surface);
+        box-shadow: var(--shadow-medium);
+      }
+
+      & button {
+        all: unset;
+        display: contents;
+      }
+
+      & selectedcontent,
+      & option {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2xs);
+      }
+
+      & option {
+        padding: 0.4em 0.65em;
+        border-radius: var(--radius-sm);
+        font-size: var(--font-size-sm);
+        cursor: pointer;
+
+        &:hover,
+        &:focus-visible {
+          background: var(--color-surface-hover);
+        }
+
+        &:checked {
+          background: var(--color-accent-subtle);
+          font-weight: var(--font-weight-medium);
+        }
+
+        /* The tick sits at the end of the row rather than the start */
+        &::checkmark {
+          order: 1;
+          margin-inline-start: auto;
+          color: var(--color-accent-text);
+        }
+      }
+
+      & optgroup {
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-text-muted);
+      }
+    }
+  }
+
+  fieldset {
+    padding: var(--space-s);
+    border: var(--border-width-hairline) solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  legend {
+    padding-inline: var(--space-2xs);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* ======== DIALOG AND POPOVER ========
+     Open a dialog from a button with no script:
+       <button commandfor="my-dialog" command="show-modal">…</button>
+       <dialog id="my-dialog" closedby="any">…</dialog>
+     closedby="any" lets a click on the backdrop close it. */
+
+  dialog,
+  [popover] {
+    border: var(--border-width-hairline) solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    box-shadow: var(--shadow-medium);
+
+    /* Fade and rise in, fade out. Display and overlay transition discretely so the
+       exit animation gets to play before the element leaves the top layer. */
+    opacity: 0;
+    translate: 0 0.5rem;
+    transition:
+      opacity var(--duration-normal) var(--ease-out),
+      translate var(--duration-normal) var(--ease-out),
+      overlay var(--duration-normal) allow-discrete,
+      display var(--duration-normal) allow-discrete;
+
+    &:is([open], :popover-open) {
+      opacity: 1;
+      translate: 0;
+
+      @starting-style {
+        opacity: 0;
+        translate: 0 0.5rem;
+      }
+    }
+  }
+
+  dialog {
+    /* The reset zeroes block margins on everything; a modal needs auto to centre */
+    margin: auto;
+    inline-size: min(100% - var(--space-l), 32rem);
+    padding: var(--space-m);
+    border-radius: var(--radius-md);
+
+    &::backdrop {
+      background: var(--color-overlay);
+    }
+  }
+
+  /* A popover opened by a button (popovertarget or commandfor) is anchored to that button:
+     it sits just below, lined up with the button's leading edge, and flips if there's no room. */
+  [popover] {
+    inset: auto;
+    margin: var(--space-3xs) 0;
+    padding: var(--space-3xs);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    position-area: block-end span-inline-end;
+    position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+  }
+}

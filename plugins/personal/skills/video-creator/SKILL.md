@@ -67,20 +67,15 @@ Defaults for anything the project and the prompt leave open. A project's own bra
 
 ### Colours
 
-Danny's palette, based on Notion's colours: a Brand Grey `#2f3437` canvas, `#191919` for frames and darker panels, white text, and coral `#ff7369` on key words. Pastel 400s and saturated 500s for shapes. `references/colours.md` has the full palette with what each shade is for, plus the danny.is and Flexoki palettes and when to use them. Use one palette per video.
+Danny's palette comes from the `house-style` skill in this plugin (`../house-style/`). Its `references/colour.md` explains what each shade is for and covers the danny.is and Flexoki palettes and when to use them; hex values are in its `css/tokens.css`. For video the usual recipe is a Slate `#2f3437` canvas, Charcoal `#191919` for frames and darker panels, white text, and coral `#ff7369` on key words, with pastel 400s and saturated 500s for shapes. Use one palette per video.
 
 ### Fonts
 
-Geist by default, with heavy weights for headlines. Also:
+Geist by default, with heavy weights for headlines, plus Figtree, Literata, Caveat and Operator Mono as `house-style`'s `references/typography.md` describes, including where to download them. For video specifically:
 
-- **Figtree**: a friendlier sans.
-- **Literata**: a serif for quotes and editorial pieces.
-- **Caveat**: handwriting for asides. Use it sparingly.
-- **Operator Mono**: code and terminals. It's installed locally, so use `local('Operator Mono')`, with Fira Code as the fallback.
+- Download the font files into the project (see Gotchas). Operator Mono is installed locally, so use `local('Operator Mono')` with Fira Code as the fallback.
 - **The system font** (SF Pro): for Mac app projects, to match the native UI.
 - **Inter**: when matching Danny's older Figma slides.
-
-All except Operator Mono and SF Pro are on Google Fonts.
 
 ### Typography
 
@@ -100,7 +95,7 @@ The Astro Editor and Taskdn homepages show the voice. Load `writing:guide` for n
 
 ### Aesthetic
 
-Start from the project's own homepage. Without one, borrow the flavour of Danny's own slides and social images (screenshots in `references/examples/`; look at them before designing). Take the ingredients, not the layouts:
+Start from the project's own homepage. Without one, borrow the flavour of Danny's own slides and social images (screenshots in `references/examples/`; look at them before designing). `house-style`'s `pages/examples/slides.html` and `social.html`, and their screenshots, show the same ingredients built in HTML. Take the ingredients, not the layouts:
 
 - A charcoal canvas inset in a darker frame.
 - Big, bold white type with coral highlights.

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Components · House style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&family=Geist:wght@100..900&display=swap">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/utilities.css">
+<link rel="stylesheet" href="../css/components/app-shell.css">
+<link rel="stylesheet" href="../css/components/avatar.css">
+<link rel="stylesheet" href="../css/components/badge.css">
+<link rel="stylesheet" href="../css/components/callout.css">
+<link rel="stylesheet" href="../css/components/card.css">
+<link rel="stylesheet" href="../css/components/empty-state.css">
+<link rel="stylesheet" href="../css/components/field.css">
+<link rel="stylesheet" href="../css/components/key-value.css">
+<link rel="stylesheet" href="../css/components/loading.css">
+<link rel="stylesheet" href="../css/components/menu.css">
+<link rel="stylesheet" href="../css/components/nav-list.css">
+<link rel="stylesheet" href="../css/components/segmented.css">
+<link rel="stylesheet" href="../css/components/tabs.css">
+<link rel="stylesheet" href="../css/components/toast.css">
+<link rel="stylesheet" href="../css/components/tooltip.css">
+<link rel="stylesheet" href="../css/components/window.css">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+<main class="doc-main">
+  <div class="doc-intro">
+    <h1>Components</h1>
+    <p>Small, optional pieces built on the tokens. Each lives in its own file in <code>css/components/</code>, so copy only what a project needs, change it freely, or use these as a reference and write your own. Open "Markup" under a demo to see its HTML.</p>
+    <p>Icons on this page are drawn with <code>&lt;use href="#i-…"&gt;</code> from a sprite that <code>page.js</code> injects. In a project, paste the icon's paths straight into the <code>&lt;svg class="icon"&gt;</code>, as the examples do.</p>
+  </div>
+
+  <section class="doc-section" id="status">
+    <h2>Messages and status</h2>
+    <div class="grid" style="--min: 26rem; --gap: var(--space-l)">
+      <article class="doc-block" id="callout">
+        <h3>Callout <span class="doc-label">callout.css</span></h3>
+        <p>A note set apart from the content around it. Body text stays in the normal text colour; the title and edge take the hue from <code>data-status</code> or <code>data-color</code>.</p>
+        <div class="doc-demo stack" style="--gap: var(--space-2xs)" data-markup>
+          <aside class="callout"><strong>Neutral</strong><p>With no colour set, a callout is a quiet grey note.</p></aside>
+          <aside class="callout" data-status="info"><strong>Info</strong><p>This recording is visible to anyone with the link.</p></aside>
+          <aside class="callout" data-status="success"><strong>Success</strong><p>Your recording finished processing.</p></aside>
+          <aside class="callout" data-status="warning"><strong>Warning</strong><p>This link expires in two days.</p></aside>
+          <aside class="callout" data-status="danger"><strong>Danger</strong><p>Deleting a tag removes it from every recording.</p></aside>
+          <aside class="callout" data-color="purple"><strong>Any hue</strong><p>Purple, through <code>data-color</code>.</p></aside>
+        </div>
+      </article>
+
+      <div class="stack" style="--gap: var(--space-l)">
+        <article class="doc-block" id="badge">
+          <h3>Badge and tag <span class="doc-label">badge.css</span></h3>
+          <p>A badge is a pill for state the system assigns. A tag is squarer, for labels people choose. The different shapes keep them apart when they sit side by side.</p>
+          <div class="doc-demo stack" style="--gap: var(--space-xs)" data-markup>
+            <div class="cluster">
+              <span class="badge">Draft</span>
+              <span class="badge" data-status="success"><svg class="icon" viewBox="0 0 24 24"><use href="#i-check"/></svg>Ready</span>
+              <span class="badge" data-status="warning">Processing</span>
+              <span class="badge" data-status="danger">Failed</span>
+              <span class="badge" data-status="info">Public</span>
+            </div>
+            <div class="cluster">
+              <span class="tag" data-color="pink">pink</span>
+              <span class="tag" data-color="coral">coral</span>
+              <span class="tag" data-color="orange">orange</span>
+              <span class="tag" data-color="yellow">yellow</span>
+              <span class="tag" data-color="green">green</span>
+              <span class="tag" data-color="blue">blue</span>
+              <span class="tag" data-color="purple">purple</span>
+              <span class="tag" data-color="brown">brown</span>
+              <span class="tag">neutral</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="doc-block" id="toast">
+          <h3>Toast <span class="doc-label">toast.css</span></h3>
+          <p>A short, temporary message. Position it yourself, usually fixed at the bottom right.</p>
+          <div class="doc-demo stack" style="--gap: var(--space-xs)" data-markup>
+            <div class="toast" data-status="success"><span>Link copied to the clipboard</span><button data-variant="ghost" data-size="small">Undo</button></div>
+            <div class="toast"><span>Saved</span></div>
+          </div>
+        </article>
+
+        <article class="doc-block" id="loading">
+          <h3>Spinner and skeleton <span class="doc-label">loading.css</span></h3>
+          <p>A spinner for a short wait with nothing to show. Skeletons where content will appear.</p>
+          <div class="doc-demo stack" data-markup>
+            <div class="cluster"><span class="spinner" role="status" aria-label="Loading"></span><span class="muted">Processing…</span><button disabled><span class="spinner"></span>Saving</button></div>
+            <div class="stack" style="--gap: var(--space-2xs)">
+              <span class="skeleton" style="inline-size: 40%; block-size: 1.25em"></span>
+              <span class="skeleton"></span>
+              <span class="skeleton" style="inline-size: 70%"></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section" id="controls">
+    <h2>Forms and controls</h2>
+    <div class="grid" style="--min: 26rem; --gap: var(--space-l)">
+      <article class="doc-block" id="field">
+        <h3>Field and input group <span class="doc-label">field.css</span></h3>
+        <p>A field is a label, control, help text and error as one unit. The error shows once the control has been touched and fails the browser's own validation, or when <code>aria-invalid="true"</code> is set for an error from a server. An input group adds an icon in front, a button after, or both.</p>
+        <div class="doc-demo stack" data-markup>
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input id="c-email" type="email" required placeholder="hi@danny.is" aria-describedby="c-email-help">
+            <small id="c-email-help">Type something that isn't an email and tab away to see the error.</small>
+            <small data-error>That doesn't look like an email address.</small>
+          </div>
+          <div class="field">
+            <label for="c-slug">Slug</label>
+            <input id="c-slug" type="text" value="weekly update" aria-invalid="true">
+            <small data-error>Slugs can't contain spaces.</small>
+          </div>
+          <div class="field">
+            <label for="c-search">Search</label>
+            <div class="input-group"><svg class="icon" viewBox="0 0 24 24"><use href="#i-search"/></svg><input id="c-search" type="search" placeholder="Search recordings"></div>
+          </div>
+          <div class="field">
+            <label for="c-invite">Invite</label>
+            <div class="input-group"><svg class="icon" viewBox="0 0 24 24"><use href="#i-mail"/></svg><input id="c-invite" type="email" placeholder="Invite by email"><button data-variant="primary" data-size="small">Send</button></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="stack" style="--gap: var(--space-l)">
+        <article class="doc-block" id="segmented">
+          <h3>Segmented control <span class="doc-label">segmented.css</span></h3>
+          <p>A few mutually exclusive options that are all worth seeing at once. Real radios, so it works in forms and with the keyboard.</p>
+          <div class="doc-demo" data-markup>
+            <fieldset class="segmented">
+              <label><input type="radio" name="c-view" checked> List</label>
+              <label><input type="radio" name="c-view"> Grid</label>
+              <label><input type="radio" name="c-view"> Timeline</label>
+            </fieldset>
+          </div>
+        </article>
+
+        <article class="doc-block" id="menu">
+          <h3>Menu <span class="doc-label">menu.css</span></h3>
+          <p>A list of actions in a popover, anchored to the button that opens it.</p>
+          <div class="doc-demo cluster" data-markup>
+            <button popovertarget="c-menu">Actions <svg class="icon" viewBox="0 0 24 24"><use href="#i-more"/></svg></button>
+            <div id="c-menu" popover class="menu">
+              <button><svg class="icon" viewBox="0 0 24 24"><use href="#i-tag"/></svg>Rename</button>
+              <button><svg class="icon" viewBox="0 0 24 24"><use href="#i-plus"/></svg>Duplicate</button>
+              <hr>
+              <button data-variant="danger"><svg class="icon" viewBox="0 0 24 24"><use href="#i-trash"/></svg>Delete</button>
+            </div>
+          </div>
+          <div class="doc-demo">
+            <div class="menu" style="inline-size: 12rem; padding: var(--space-3xs); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); box-shadow: var(--shadow-medium)">
+              <button><svg class="icon" viewBox="0 0 24 24"><use href="#i-tag"/></svg>Rename</button>
+              <button><svg class="icon" viewBox="0 0 24 24"><use href="#i-plus"/></svg>Duplicate</button>
+              <hr>
+              <button data-variant="danger"><svg class="icon" viewBox="0 0 24 24"><use href="#i-trash"/></svg>Delete</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="doc-block" id="tooltip">
+          <h3>Tooltip <span class="doc-label">tooltip.css</span></h3>
+          <p>Add <code>data-tooltip</code> to any element. Text only, shown on hover and keyboard focus. Keep the <code>aria-label</code>: screen readers don't reliably read the tooltip.</p>
+          <div class="doc-demo cluster" data-markup>
+            <button data-variant="ghost" aria-label="Delete" data-tooltip="Delete"><svg class="icon" viewBox="0 0 24 24"><use href="#i-trash"/></svg></button>
+            <button data-variant="ghost" aria-label="Settings" data-tooltip="Settings"><svg class="icon" viewBox="0 0 24 24"><use href="#i-settings"/></svg></button>
+          </div>
+        </article>
+
+        <article class="doc-block" id="tabs">
+          <h3>Tabs <span class="doc-label">tabs.css</span></h3>
+          <p>The underline slides to the selected tab. Moving <code>aria-selected</code> is up to your script.</p>
+          <div class="doc-demo" data-markup>
+            <div class="tabs" role="tablist">
+              <button role="tab" aria-selected="true">Overview</button>
+              <button role="tab" aria-selected="false">Files</button>
+              <button role="tab" aria-selected="false">Events</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section" id="content">
+    <h2>Content</h2>
+    <div class="grid" style="--min: 26rem; --gap: var(--space-l)">
+      <article class="doc-block" id="card">
+        <h3>Card and empty state <span class="doc-label">card.css, empty-state.css</span></h3>
+        <p>A card is a bordered surface for one thing. An empty state fills the space where a list will be, and is a good place for one playful touch.</p>
+        <div class="doc-demo grid" style="--min: 12rem" data-markup>
+          <article class="card">
+            <h4>Weekly update</h4>
+            <p class="muted">Twelve videos, three still processing.</p>
+            <div class="cluster"><span class="tag" data-color="blue">work</span><span class="tag" data-color="green">weekly</span></div>
+          </article>
+          <div class="empty-state">
+            <span style="font-size: 2rem">🎬</span>
+            <strong>No recordings yet</strong>
+            <span>Record something and it'll turn up here.</span>
+            <button data-variant="primary" data-size="small">New recording</button>
+          </div>
+        </div>
+      </article>
+
+      <div class="stack" style="--gap: var(--space-l)">
+        <article class="doc-block" id="key-value">
+          <h3>Key-value list <span class="doc-label">key-value.css</span></h3>
+          <p>Metadata as label and value pairs, on a real <code>&lt;dl&gt;</code>.</p>
+          <div class="doc-demo" data-markup>
+            <dl class="key-value">
+              <dt>Status</dt><dd><span class="badge" data-status="success">Ready</span></dd>
+              <dt>Length</dt><dd>4 min 12 s</dd>
+              <dt>Recorded</dt><dd>2 October 2026</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="doc-block" id="avatar">
+          <h3>Avatar <span class="doc-label">avatar.css</span></h3>
+          <p>An image, or initials when there isn't one. Set <code>--size</code> to change it.</p>
+          <div class="doc-demo cluster" data-markup>
+            <img class="avatar" src="../images/avatar.jpg" alt="Danny Smith" style="--size: 4rem">
+            <img class="avatar" src="../images/avatar.jpg" alt="Danny Smith">
+            <img class="avatar" src="../images/avatar.jpg" alt="Danny Smith" style="--size: 1.5rem">
+            <span class="avatar">DS</span>
+          </div>
+        </article>
+      </div>
+
+      <article class="doc-block" id="window">
+        <h3>Window <span class="doc-label">window.css</span></h3>
+        <p>Code and terminal output in macOS window chrome. Always dark, in both modes. Part of the brand: use it for code on slides and in docs.</p>
+        <div class="doc-demo stack" data-markup>
+          <figure class="window" data-title="render.js"><pre><code><span style="color: var(--grey-500)">// set every element from t</span>
+<span style="color: var(--coral-500)">const</span> <span style="color: var(--blue-500)">render</span> = (t) =&gt; <span style="color: var(--orange-500)">"frame at "</span> + t</code></pre></figure>
+          <figure class="window" data-title="Terminal"><pre><code><span class="prompt">$</span> tdn add "Write the styleguide" --due friday
+Created task-write-the-styleguide.md</code></pre></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="doc-section" id="navigation">
+    <h2>Navigation and layout</h2>
+    <div class="grid" style="--min: 26rem; --gap: var(--space-l)">
+      <article class="doc-block" id="nav-list">
+        <h3>Nav list <span class="doc-label">nav-list.css</span></h3>
+        <p>Sidebar or page navigation. Mark the current page with <code>aria-current="page"</code>.</p>
+        <div class="doc-demo" data-markup>
+          <nav class="nav-list" style="max-inline-size: 14rem">
+            <a href="#nav-list" aria-current="page"><svg class="icon" viewBox="0 0 24 24"><use href="#i-home"/></svg><span>Dashboard</span></a>
+            <a href="#nav-list"><svg class="icon" viewBox="0 0 24 24"><use href="#i-video"/></svg><span>Videos</span></a>
+            <a href="#nav-list"><svg class="icon" viewBox="0 0 24 24"><use href="#i-settings"/></svg><span>Settings</span></a>
+          </nav>
+        </div>
+      </article>
+
+      <article class="doc-block" id="app-shell">
+        <h3>App shell <span class="doc-label">app-shell.css</span></h3>
+        <p>Sidebar plus main area. The sidebar collapses to an icon rail from its toggle, and by itself when the shell is narrow, with no script. See it at full size in the <a href="examples/dashboard.html">dashboard example</a>.</p>
+        <div class="doc-demo" data-markup>
+          <div class="app-shell" style="min-block-size: 0; block-size: 14rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden">
+            <aside class="app-sidebar" style="--sidebar-width: 11rem">
+              <label class="app-sidebar-toggle"><input type="checkbox" data-sidebar-toggle aria-label="Collapse sidebar"><svg class="icon" viewBox="0 0 24 24"><use href="#i-panel"/></svg></label>
+              <nav class="nav-list">
+                <a href="#app-shell" aria-current="page"><svg class="icon" viewBox="0 0 24 24"><use href="#i-home"/></svg><span>Dashboard</span></a>
+                <a href="#app-shell"><svg class="icon" viewBox="0 0 24 24"><use href="#i-video"/></svg><span>Videos</span></a>
+              </nav>
+            </aside>
+            <main><h4>Main area</h4><p class="muted">Click the toggle to collapse the sidebar.</p></main>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<script src="page.js"></script>
+</body>
+</html>

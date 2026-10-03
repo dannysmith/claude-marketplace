@@ -1,0 +1,38 @@
+@layer components {
+  /* Spinner
+     <span class="spinner" role="status" aria-label="Loading"></span>. Sized by font-size. */
+  .spinner {
+    display: inline-block;
+    inline-size: 1em;
+    block-size: 1em;
+    border: 0.15em solid var(--color-border-strong);
+    border-block-start-color: var(--color-accent);
+    border-radius: var(--radius-full);
+    vertical-align: -0.125em;
+    animation: spin 0.7s linear infinite;
+  }
+
+  /* Skeleton
+     A placeholder while content loads. Size it with inline-size and block-size.
+     Several in a row pulse one after another. */
+  .skeleton {
+    display: block;
+    block-size: 1em;
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-hover);
+    animation: pulse 1.4s ease-in-out infinite;
+    animation-delay: calc(sibling-index() * 120ms);
+  }
+
+  @keyframes spin {
+    to {
+      rotate: 1turn;
+    }
+  }
+
+  @keyframes pulse {
+    50% {
+      opacity: 0.4;
+    }
+  }
+}

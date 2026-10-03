@@ -1,0 +1,45 @@
+@layer components {
+  /* Menu
+     A list of actions, usually in a popover. Items are buttons or links; <hr> separates groups.
+       <button popovertarget="more">More</button>
+       <div id="more" popover class="menu"><button>Rename</button><hr><button data-variant="danger">Delete</button></div> */
+  .menu {
+    min-inline-size: 11rem;
+
+    & > :is(a, button) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: var(--space-2xs);
+      inline-size: 100%;
+      min-block-size: 0;
+      padding: 0.45em 0.65em;
+      border: none;
+      border-radius: var(--radius-sm);
+      background: none;
+      color: var(--color-text);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-normal);
+      text-decoration: none;
+
+      &:hover:not(:disabled) {
+        background: var(--color-surface-hover);
+      }
+
+      &[data-variant='danger'] {
+        color: var(--color-danger);
+      }
+
+      & svg {
+        inline-size: 1.15em;
+        block-size: 1.15em;
+        flex-shrink: 0;
+        color: var(--color-text-muted);
+      }
+    }
+
+    & > hr {
+      margin: var(--space-3xs) calc(var(--space-3xs) * -1);
+    }
+  }
+}

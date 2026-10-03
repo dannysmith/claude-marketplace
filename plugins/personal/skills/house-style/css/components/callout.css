@@ -1,0 +1,18 @@
+@layer components {
+  /* Callout
+     <aside class="callout" data-status="info"><strong>Title</strong><p>Body</p></aside>
+     Body text stays in the normal text colour; only the title and edge take the hue. */
+  .callout {
+    display: grid;
+    gap: var(--space-3xs);
+    padding: var(--space-xs) var(--space-s);
+    border: var(--border-width-hairline) solid var(--hue-border, var(--color-border));
+    border-inline-start: var(--border-width-thick) solid var(--hue-vivid, var(--color-text-muted));
+    border-radius: var(--radius-sm);
+    background: var(--hue-surface, var(--color-surface));
+
+    & > strong:first-child {
+      color: var(--hue-text, var(--color-text));
+    }
+  }
+}

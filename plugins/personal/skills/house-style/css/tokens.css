@@ -1,0 +1,326 @@
+/* Design tokens: Danny's palette, the semantic colour roles built on it, and the type, space,
+   shape and motion scales. This file is the single source of truth for every value.
+
+   HOW THE COLOUR SYSTEM WORKS
+
+   1. Palette. Eight hues (pink, coral, orange, yellow, green, blue, purple, brown), each in six
+      steps, plus one cool grey ramp and three beiges. The step number says what it is for:
+        800  tinted background on dark         500  the hue itself: fills, shapes, big type
+        700  border on dark                    400  border on light, pastel, small text on dark
+        600  coloured text on light            300  tinted background on light
+      Coral-500 (#ff7369) is the brand accent. Slate is grey-800, Charcoal is grey-950.
+
+   2. Hue roles. Each hue also comes as four roles that adapt to light and dark:
+        --{hue}-surface, --{hue}-border, --{hue}-text, --{hue}-vivid
+      Put data-color="purple" (or data-status="danger | warning | success | info") on any element
+      and --hue-surface, --hue-border, --hue-text and --hue-vivid point at that hue, so a component
+      can be written once and coloured from its markup.
+
+   3. Semantic tokens (--color-*). What components and pages actually use. They switch between
+      light and dark with light-dark(), so nothing else needs a media query.
+
+   COLOUR MODE
+
+   Follows the system by default. To override, set on <html>:
+     data-theme="dark" | "light"    lock the mode
+     data-background="beige"        warm light background, for danny.is work */
+
+@layer tokens {
+  :root {
+    color-scheme: light dark;
+
+    /* ======= PALETTE ======= */
+
+    --white: #ffffff;
+
+    --pink-800: #533b4c;
+    --pink-700: #7e4b63;
+    --pink-600: #ad1a72;
+    --pink-500: #e255a1;
+    --pink-400: #fac8e4;
+    --pink-300: #f4dfeb;
+
+    --coral-800: #594141;
+    --coral-700: #834c47;
+    --coral-600: #e03e3e;
+    --coral-500: #ff7369;
+    --coral-400: #ffd4d4;
+    --coral-300: #fbe4e4;
+
+    --orange-800: #594a3a;
+    --orange-700: #7c542e;
+    --orange-600: #9f5c03;
+    --orange-500: #ffa344;
+    --orange-400: #fed9b7;
+    --orange-300: #faebdd;
+
+    --yellow-800: #59563b;
+    --yellow-700: #6b5d27;
+    --yellow-600: #846f00;
+    --yellow-500: #ffdc49;
+    --yellow-400: #feeebe;
+    --yellow-300: #fbf3db;
+
+    --green-800: #354c4b;
+    --green-700: #206b5f;
+    --green-600: #0f7b6c;
+    --green-500: #4dab9a;
+    --green-400: #c8eae3;
+    --green-300: #ddedea;
+
+    --blue-800: #364954;
+    --blue-700: #306383;
+    --blue-600: #0b6e99;
+    --blue-500: #529cca;
+    --blue-400: #c4e4f2;
+    --blue-300: #ddebf1;
+
+    --purple-800: #443f57;
+    --purple-700: #655381;
+    --purple-600: #6940a5;
+    --purple-500: #9a6dd7;
+    --purple-400: #e6d7f9;
+    --purple-300: #eae4f2;
+
+    --brown-800: #434040;
+    --brown-700: #71574b;
+    --brown-600: #64473a;
+    --brown-500: #937264;
+    --brown-400: #f1e0d8;
+    --brown-300: #f6ece8;
+
+    /* Coral for small text: deep on light backgrounds, soft on dark */
+    --coral-deep: #f14e48;
+    --coral-soft: #ffa197;
+
+    --grey-50: #f9fafb;
+    --grey-100: #f1f4f6;
+    --grey-200: #e5e8eb;
+    --grey-300: #d1d5d8;
+    --grey-400: #a6acaf;
+    --grey-500: #7b8185;
+    --grey-600: #585f63;
+    --grey-700: #3c4448;
+    --grey-800: #2f3437;
+    --grey-900: #202527;
+    --grey-950: #191919;
+
+    --beige-50: #fdf8ed;
+    --beige-100: #f8f1e3;
+    --beige-200: #f0e7d6;
+
+    /* Each hue in four roles that adapt to light and dark:
+         surface  tinted background           text   small text on that surface
+         border   edge of a tinted block      vivid  icons, titles and large text */
+    --pink-surface: light-dark(var(--pink-300), var(--pink-800));
+    --pink-border: light-dark(var(--pink-400), var(--pink-700));
+    --pink-text: light-dark(var(--pink-800), var(--pink-400));
+    --pink-vivid: light-dark(var(--pink-600), var(--pink-500));
+    --coral-surface: light-dark(var(--coral-300), var(--coral-800));
+    --coral-border: light-dark(var(--coral-400), var(--coral-700));
+    --coral-text: light-dark(var(--coral-800), var(--coral-400));
+    --coral-vivid: light-dark(var(--coral-600), var(--coral-500));
+    --orange-surface: light-dark(var(--orange-300), var(--orange-800));
+    --orange-border: light-dark(var(--orange-400), var(--orange-700));
+    --orange-text: light-dark(var(--orange-800), var(--orange-400));
+    --orange-vivid: light-dark(var(--orange-600), var(--orange-500));
+    --yellow-surface: light-dark(var(--yellow-300), var(--yellow-800));
+    --yellow-border: light-dark(var(--yellow-400), var(--yellow-700));
+    --yellow-text: light-dark(var(--yellow-800), var(--yellow-400));
+    --yellow-vivid: light-dark(var(--yellow-600), var(--yellow-500));
+    --green-surface: light-dark(var(--green-300), var(--green-800));
+    --green-border: light-dark(var(--green-400), var(--green-700));
+    --green-text: light-dark(var(--green-800), var(--green-400));
+    --green-vivid: light-dark(var(--green-600), var(--green-500));
+    --blue-surface: light-dark(var(--blue-300), var(--blue-800));
+    --blue-border: light-dark(var(--blue-400), var(--blue-700));
+    --blue-text: light-dark(var(--blue-800), var(--blue-400));
+    --blue-vivid: light-dark(var(--blue-600), var(--blue-500));
+    --purple-surface: light-dark(var(--purple-300), var(--purple-800));
+    --purple-border: light-dark(var(--purple-400), var(--purple-700));
+    --purple-text: light-dark(var(--purple-800), var(--purple-400));
+    --purple-vivid: light-dark(var(--purple-600), var(--purple-500));
+    --brown-surface: light-dark(var(--brown-300), var(--brown-800));
+    --brown-border: light-dark(var(--brown-400), var(--brown-700));
+    --brown-text: light-dark(var(--brown-800), var(--brown-400));
+    --brown-vivid: light-dark(var(--brown-600), var(--brown-500));
+
+    /* ======= SEMANTIC COLOUR ======= */
+
+    --color-background: light-dark(var(--white), var(--grey-950));
+    --color-surface: light-dark(var(--grey-50), var(--grey-800));
+    --color-surface-hover: light-dark(var(--grey-100), var(--grey-700));
+    --color-border: light-dark(var(--grey-200), var(--grey-700));
+    --color-border-strong: light-dark(var(--grey-300), var(--grey-600));
+    --color-text: light-dark(var(--grey-950), var(--grey-100));
+    --color-text-muted: light-dark(var(--grey-600), var(--grey-400));
+
+    /* Coral is the accent in both modes. Small coral text (links) uses --color-accent-text,
+       and anything sitting on a coral fill uses --color-accent-contrast (Charcoal: white on
+       coral is only 2.7:1). */
+    --color-accent: var(--coral-500);
+    --color-accent-text: light-dark(var(--coral-deep), var(--coral-soft));
+    --color-accent-contrast: var(--grey-950);
+    --color-accent-subtle: color-mix(in oklch, var(--color-accent) 14%, transparent);
+
+    --color-focus-ring: var(--color-accent);
+    --color-code-background: color-mix(in oklch, var(--color-text) 8%, transparent);
+    --color-highlight: light-dark(var(--yellow-400), color-mix(in oklch, var(--yellow-500) 35%, transparent));
+    --color-overlay: oklch(0% 0 0 / 0.5);
+
+    /* Status colours, for icons, titles and large text. For a whole tinted block
+       (callout, badge) set data-status or data-color on it instead: see the rules at the end of this file. */
+    --color-danger: var(--coral-vivid);
+    --color-warning: var(--orange-vivid);
+    --color-success: var(--green-vivid);
+    --color-info: var(--blue-vivid);
+
+    /* ======= TYPE ======= */
+
+    --font-display: 'Geist', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    --font-ui: 'Figtree', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    --font-prose: 'Literata', Georgia, 'Times New Roman', serif;
+    --font-code: 'Operator Mono', 'Fira Code', ui-monospace, 'SF Mono', Menlo, monospace;
+    --font-handwriting: 'Caveat', cursive;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 3rem;
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-heavy: 900;
+
+    --line-height-tight: 1.1;
+    --line-height-snug: 1.3;
+    --line-height-normal: 1.5;
+
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-wide: 0.06em;
+
+    --measure: 70ch;
+
+    /* ======= SPACE ======= */
+
+    --space-3xs: 0.25rem;
+    --space-2xs: 0.5rem;
+    --space-xs: 0.75rem;
+    --space-s: 1rem;
+    --space-m: 1.5rem;
+    --space-l: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 6rem;
+
+    /* ======= SHAPE ======= */
+
+    --border-width-hairline: 1px;
+    --border-width-base: 2px;
+    --border-width-thick: 4px;
+
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: calc(infinity * 1px);
+
+    /* Height shared by buttons, inputs and selects so they line up in a row */
+    --control-height: 2.25rem;
+
+    --shadow-small: 0 1px 2px oklch(0% 0 0 / 0.08), 0 1px 3px oklch(0% 0 0 / 0.1);
+    --shadow-medium: 0 2px 4px oklch(0% 0 0 / 0.08), 0 8px 24px oklch(0% 0 0 / 0.16);
+
+    /* ======= MOTION ======= */
+
+    --duration-fast: 120ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+    --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  :root[data-theme='light'] {
+    color-scheme: light;
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+  }
+
+  /* Beige only changes the light side: dark mode is the same either way */
+  :root[data-background='beige'] {
+    --color-background: light-dark(var(--beige-100), var(--grey-950));
+    --color-surface: light-dark(var(--beige-50), var(--grey-800));
+    --color-surface-hover: light-dark(var(--beige-200), var(--grey-700));
+    --color-border: light-dark(color-mix(in oklch, var(--grey-950) 12%, transparent), var(--grey-700));
+    --color-border-strong: light-dark(color-mix(in oklch, var(--grey-950) 24%, transparent), var(--grey-600));
+  }
+
+  /* data-color (or data-status) on any element points the --hue-* variables at one hue,
+     so a component can be written once and coloured from its markup. */
+  [data-color='pink'] {
+    --hue-surface: var(--pink-surface);
+    --hue-border: var(--pink-border);
+    --hue-text: var(--pink-text);
+    --hue-vivid: var(--pink-vivid);
+  }
+
+  [data-color='coral'],
+  [data-status='danger'] {
+    --hue-surface: var(--coral-surface);
+    --hue-border: var(--coral-border);
+    --hue-text: var(--coral-text);
+    --hue-vivid: var(--coral-vivid);
+  }
+
+  [data-color='orange'],
+  [data-status='warning'] {
+    --hue-surface: var(--orange-surface);
+    --hue-border: var(--orange-border);
+    --hue-text: var(--orange-text);
+    --hue-vivid: var(--orange-vivid);
+  }
+
+  [data-color='yellow'] {
+    --hue-surface: var(--yellow-surface);
+    --hue-border: var(--yellow-border);
+    --hue-text: var(--yellow-text);
+    --hue-vivid: var(--yellow-vivid);
+  }
+
+  [data-color='green'],
+  [data-status='success'] {
+    --hue-surface: var(--green-surface);
+    --hue-border: var(--green-border);
+    --hue-text: var(--green-text);
+    --hue-vivid: var(--green-vivid);
+  }
+
+  [data-color='blue'],
+  [data-status='info'] {
+    --hue-surface: var(--blue-surface);
+    --hue-border: var(--blue-border);
+    --hue-text: var(--blue-text);
+    --hue-vivid: var(--blue-vivid);
+  }
+
+  [data-color='purple'] {
+    --hue-surface: var(--purple-surface);
+    --hue-border: var(--purple-border);
+    --hue-text: var(--purple-text);
+    --hue-vivid: var(--purple-vivid);
+  }
+
+  [data-color='brown'] {
+    --hue-surface: var(--brown-surface);
+    --hue-border: var(--brown-border);
+    --hue-text: var(--brown-text);
+    --hue-vivid: var(--brown-vivid);
+  }
+}

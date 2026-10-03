@@ -1,0 +1,39 @@
+@layer components {
+  /* Tooltip
+     <button data-tooltip="Delete" aria-label="Delete">…</button>
+     Text only, shown on hover and keyboard focus, placed above and flipped below when there's
+     no room. Screen readers don't reliably read it, so keep the aria-label. */
+  [data-tooltip] {
+    anchor-name: --tooltip;
+    anchor-scope: --tooltip;
+
+    &::after {
+      content: attr(data-tooltip);
+      position: fixed;
+      position-anchor: --tooltip;
+      position-area: block-start;
+      position-try-fallbacks: flip-block;
+      z-index: 10;
+      inline-size: max-content;
+      max-inline-size: 16rem;
+      margin: var(--space-3xs);
+      padding: 0.25em 0.6em;
+      border-radius: var(--radius-sm);
+      background: light-dark(var(--grey-950), var(--grey-100));
+      color: light-dark(var(--grey-100), var(--grey-950));
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--line-height-snug);
+      white-space: normal;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity var(--duration-fast) var(--ease-out);
+    }
+
+    /* The delay stops tooltips flickering as the pointer crosses a toolbar */
+    &:is(:hover, :focus-visible)::after {
+      opacity: 1;
+      transition-delay: 400ms;
+    }
+  }
+}

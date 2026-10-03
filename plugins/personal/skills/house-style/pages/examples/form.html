@@ -1,0 +1,121 @@
+<!doctype html>
+<!--
+  EXAMPLE: a settings form, in the calm register.
+  An illustration of fields, validation, grouped options and actions working together, not a
+  template to reproduce. Copy it as a starting skeleton or read it for how a form is put together.
+  Uses: field (and input group), card, callout, segmented.
+  The form is real: submit it empty and the browser's own validation drives the error states.
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recording settings · Form example</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist:wght@100..900&display=swap">
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/utilities.css">
+<link rel="stylesheet" href="../../css/components/field.css">
+<link rel="stylesheet" href="../../css/components/card.css">
+<link rel="stylesheet" href="../../css/components/callout.css">
+<link rel="stylesheet" href="../../css/components/segmented.css">
+<style>
+/* Page-specific layout. Everything visual comes from the tokens. */
+body { padding: var(--space-xl) var(--space-s); }
+main { max-inline-size: 38rem; margin-inline: auto; }
+.section { --gap: var(--space-s); padding: var(--space-m); }
+.section > header { display: grid; gap: var(--space-3xs); }
+.actions { display: flex; justify-content: flex-end; gap: var(--space-2xs); }
+</style>
+</head>
+<body>
+<main class="stack" style="--gap: var(--space-m)">
+  <header class="stack" style="--gap: var(--space-3xs)">
+    <h1>Recording settings</h1>
+    <p class="muted">Weekly update, recorded 2 October 2026.</p>
+  </header>
+
+  <form class="stack" style="--gap: var(--space-m)" onsubmit="return false">
+    <section class="card stack section">
+      <header><h3>Details</h3><p class="muted">How the recording appears to people you share it with.</p></header>
+      <div class="field">
+        <label for="title">Title</label>
+        <input id="title" type="text" value="Weekly update" required>
+      </div>
+      <div class="field">
+        <label for="slug">Link</label>
+        <div class="input-group"><span class="muted">danny.is/v/</span><input id="slug" type="text" value="weekly update" aria-invalid="true" aria-describedby="slug-error"></div>
+        <small id="slug-error" data-error>Links can't contain spaces. Try "weekly-update".</small>
+      </div>
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="What's it about?" aria-describedby="description-help"></textarea>
+        <small id="description-help">Shown under the video. Markdown works.</small>
+      </div>
+      <div class="grid" style="--min: 12rem">
+        <div class="field">
+          <label for="visibility">Visibility</label>
+          <select id="visibility">
+            <button><selectedcontent></selectedcontent></button>
+            <option><span style="color: var(--blue-500)">●</span> Public</option>
+            <option selected><span style="color: var(--orange-500)">●</span> Unlisted</option>
+            <option><span style="color: var(--coral-500)">●</span> Private</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="publish">Publish on</label>
+          <input id="publish" type="date" value="2026-10-02">
+        </div>
+      </div>
+    </section>
+
+    <section class="card stack section">
+      <header><h3>Playback</h3></header>
+      <div class="field">
+        <label>Default speed</label>
+        <div><fieldset class="segmented" aria-label="Default speed">
+          <label><input type="radio" name="speed"> 1×</label>
+          <label><input type="radio" name="speed" checked> 1.25×</label>
+          <label><input type="radio" name="speed"> 1.5×</label>
+          <label><input type="radio" name="speed"> 2×</label>
+        </fieldset></div>
+      </div>
+      <div class="stack" style="--gap: var(--space-2xs)">
+        <label><input type="checkbox" role="switch" checked> Allow comments</label>
+        <label><input type="checkbox" role="switch"> Show the view count</label>
+        <label><input type="checkbox" role="switch" checked> Autoplay when the page opens</label>
+      </div>
+    </section>
+
+    <section class="card stack section">
+      <header><h3>Notifications</h3></header>
+      <fieldset class="stack" style="--gap: var(--space-2xs)">
+        <legend>Email me when</legend>
+        <label><input type="checkbox" checked> Someone watches it for the first time</label>
+        <label><input type="checkbox"> Someone leaves a comment</label>
+        <label><input type="checkbox"> Processing fails</label>
+      </fieldset>
+      <div class="field">
+        <label for="notify">Send to</label>
+        <input id="notify" type="email" required placeholder="hi@danny.is">
+        <small data-error>Enter an email address to send notifications to.</small>
+      </div>
+    </section>
+
+    <aside class="callout" data-status="danger">
+      <strong>Delete this recording</strong>
+      <p>It will be gone for good, along with its comments and view history.</p>
+      <div><button type="button" data-variant="danger" data-size="small">Delete recording</button></div>
+    </aside>
+
+    <div class="actions">
+      <button type="button" data-variant="ghost">Cancel</button>
+      <button data-variant="primary">Save changes</button>
+    </div>
+  </form>
+</main>
+</body>
+</html>

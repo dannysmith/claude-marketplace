@@ -1,0 +1,42 @@
+@layer components {
+  /* Tabs
+     <div class="tabs" role="tablist"><button role="tab" aria-selected="true">…</button>…</div>
+     Moving aria-selected to the clicked tab, and showing its panel, is up to your script. */
+  .tabs {
+    position: relative;
+    display: flex;
+    gap: var(--space-s);
+    border-block-end: var(--border-width-hairline) solid var(--color-border);
+    anchor-scope: --tab;
+
+    /* The underline is one element anchored to whichever tab is selected, so it slides */
+    &::after {
+      content: '';
+      position: absolute;
+      position-anchor: --tab;
+      inset: auto anchor(right) -1px anchor(left);
+      block-size: var(--border-width-base);
+      background: var(--color-accent);
+      transition: inset var(--duration-normal) var(--ease-out);
+    }
+
+    & [role='tab'] {
+      min-block-size: 0;
+      padding: var(--space-2xs) 0;
+      border: none;
+      border-radius: 0;
+      background: none;
+      color: var(--color-text-muted);
+
+      &:hover:not(:disabled) {
+        background: none;
+        color: var(--color-text);
+      }
+
+      &[aria-selected='true'] {
+        anchor-name: --tab;
+        color: var(--color-text);
+      }
+    }
+  }
+}

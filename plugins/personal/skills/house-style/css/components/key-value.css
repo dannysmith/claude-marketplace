@@ -1,0 +1,19 @@
+@layer components {
+  /* Key-value list
+     <dl class="key-value"><dt>Status</dt><dd>Ready</dd>…</dl> */
+  .key-value {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: var(--space-2xs) var(--space-m);
+    font-size: var(--font-size-sm);
+
+    & dt {
+      font-weight: var(--font-weight-normal);
+      color: var(--color-text-muted);
+    }
+
+    & dd {
+      color: var(--color-text);
+    }
+  }
+}

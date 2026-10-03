@@ -15,6 +15,7 @@ Danny's personal Claude Code plugin for productivity and development workflows.
 | --- | --- |
 | `/personal:dev <subcommand>` | Project development utilities - init, new, complete, renumber, prime |
 | `/personal:morning` | Morning planning session with briefing, tasks, and day planning |
+| `/personal:house-style` | Danny's default visual style: brand, palette, type, starter CSS, components and examples for pages, tools, slides and images |
 | `/personal:video-creator` | Short videos (promos, explainers, animated slides) authored as HTML and rendered with Playwright and ffmpeg |
 
 ### `/personal:dev` subcommands

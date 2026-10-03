@@ -1,0 +1,26 @@
+/* --size is set per element (style="--size: 4rem"). Registered as non-inheriting so it doesn't
+   leak into avatars nested inside; the initial value is in px because @property doesn't accept rem. */
+@property --size {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 40px;
+}
+
+@layer components {
+  /* Avatar
+     <img class="avatar" src="…" alt="Danny Smith">, or <span class="avatar">DS</span> for initials.
+     Set --size to change it. */
+  .avatar {
+    display: inline-grid;
+    place-items: center;
+    inline-size: var(--size);
+    block-size: var(--size);
+    border-radius: var(--radius-full);
+    background: var(--color-surface-hover);
+    color: var(--color-text-muted);
+    font-size: calc(var(--size) * 0.38);
+    font-weight: var(--font-weight-semibold);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+}

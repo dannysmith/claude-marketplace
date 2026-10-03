@@ -1,0 +1,33 @@
+@layer components {
+  /* Badge
+     System-assigned state: a pill. <span class="badge" data-status="success">Ready</span> */
+  .badge,
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.15em 0.6em;
+    border: var(--border-width-hairline) solid var(--hue-border, var(--color-border));
+    background: var(--hue-surface, var(--color-surface));
+    color: var(--hue-text, var(--color-text-muted));
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-snug);
+    white-space: nowrap;
+
+    & svg {
+      inline-size: 1em;
+      block-size: 1em;
+    }
+  }
+
+  .badge {
+    border-radius: var(--radius-full);
+  }
+
+  /* Tag
+     User-chosen label: squarer than a badge so the two read as different things. */
+  .tag {
+    border-radius: var(--radius-sm);
+  }
+}

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elements · House style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist:wght@100..900&display=swap">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/utilities.css">
+<!-- The only component here is the segmented control, used by the top bar. Nothing on the page itself uses components. -->
+<link rel="stylesheet" href="../css/components/segmented.css">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+<main class="doc-main">
+  <div class="doc-intro">
+    <h1>Elements</h1>
+    <p>What plain HTML looks like with only <code>reset.css</code>, <code>tokens.css</code> and <code>base.css</code> loaded, plus the layout helpers in <code>utilities.css</code>. No component classes are used on this page.</p>
+  </div>
+
+  <section class="doc-section" id="text">
+    <h2>Text</h2>
+    <div class="grid" style="--min: 26rem; --gap: var(--space-l)">
+      <div class="doc-block">
+        <h3>Headings</h3>
+        <div class="doc-demo stack">
+          <h1>Heading one: page title</h1>
+          <h2>Heading two: section</h2>
+          <h3>Heading three: sub-section</h3>
+          <h4>Heading four</h4>
+          <h5>Heading five</h5>
+          <h6>Heading six: a quiet label</h6>
+        </div>
+        <h3>Inline elements</h3>
+        <div class="doc-demo stack">
+          <p>A <a href="#text">link in a sentence</a>, some <strong>strong text</strong>, some <em>emphasis</em>, and <small>small print</small>.</p>
+          <p><mark>Highlighted text</mark>, <del>deleted text</del>, <ins>inserted text</ins>, and <s>struck text</s>.</p>
+          <p>Inline <code>code</code>, a keyboard shortcut <kbd>⌘</kbd> <kbd>K</kbd>, and sample output <samp>OK</samp>.</p>
+          <p>An abbreviation like <abbr title="HyperText Markup Language">HTML</abbr>, H<sub>2</sub>O, E = mc<sup>2</sup>, and a <q>short inline quote</q> from <cite>a cited work</cite>.</p>
+          <p class="muted">Muted text, with <code>.muted</code>, for metadata: <time datetime="2026-10-02">2 October 2026</time> · 4 min 12 s.</p>
+        </div>
+        <h3>Table</h3>
+        <div class="doc-demo">
+          <table>
+            <caption>Recordings this week</caption>
+            <thead><tr><th>Title</th><th>Length</th><th>Views</th></tr></thead>
+            <tbody>
+              <tr><td>Weekly update</td><td>4:12</td><td>1,204</td></tr>
+              <tr><td>Styleguide walkthrough</td><td>12:40</td><td>86</td></tr>
+              <tr><td>Bug report for Sam</td><td>0:58</td><td>3</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="doc-block">
+        <h3>Flowing content, inside <code>.prose</code></h3>
+        <p>Elements have no vertical margins by default, which suits interfaces. Wrap articles, docs and rendered markdown in <code>.prose</code> for reading rhythm.</p>
+        <div class="doc-demo">
+          <article class="prose">
+            <h2>Managing tasks as plain files</h2>
+            <p>Taskdn is a system for managing tasks and projects as <strong>plain markdown files</strong>. It includes a desktop app, a CLI and an <a href="#text">Obsidian plugin</a>, <em>among other things</em>.</p>
+            <h3>Why bother</h3>
+            <p>Because files outlive apps. You can <mark>search them with anything</mark>, keep them in git, and read them in twenty years.</p>
+            <ul>
+              <li>One file per task</li>
+              <li>Frontmatter for the structured bits
+                <ul><li>Status, dates, project</li><li>Anything else you like</li></ul>
+              </li>
+            </ul>
+            <ol><li>Install the CLI</li><li>Point it at a folder</li></ol>
+            <blockquote><p>Remember that your major characteristic as a human being is to work with others.</p></blockquote>
+            <pre><code>$ tdn add "Write the styleguide" --due friday
+Created task-write-the-styleguide.md</code></pre>
+            <hr>
+            <dl>
+              <dt>Area</dt><dd>A part of life you look after indefinitely.</dd>
+              <dt>Project</dt><dd>Something with an end.</dd>
+            </dl>
+            <figure>
+              <svg viewBox="0 0 640 160" role="img" aria-label="Placeholder illustration" style="border-radius: var(--radius-md); background: var(--color-surface)"><circle cx="110" cy="85" r="55" fill="var(--coral-500)"/><circle cx="185" cy="70" r="40" fill="var(--orange-400)"/><rect x="300" y="45" width="230" height="14" rx="7" fill="var(--color-border-strong)"/><rect x="300" y="75" width="180" height="14" rx="7" fill="var(--color-border)"/><rect x="300" y="105" width="200" height="14" rx="7" fill="var(--color-border)"/></svg>
+              <figcaption>A figure with a caption underneath it.</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section" id="buttons">
+    <h2>Buttons</h2>
+    <div class="doc-block">
+      <p>A plain <code>&lt;button&gt;</code> is the quiet default. Use one primary per view. Variants and sizes are data attributes; give a link the same look with <code>class="button"</code>.</p>
+      <div class="doc-demo stack" data-markup>
+        <div class="cluster">
+          <button data-variant="primary">Primary</button>
+          <button>Default</button>
+          <button data-variant="ghost">Ghost</button>
+          <button data-variant="danger">Danger</button>
+          <a class="button" href="#buttons">Link as button</a>
+          <button disabled>Disabled</button>
+        </div>
+        <div class="cluster">
+          <button data-variant="primary" data-size="small">Primary</button>
+          <button data-size="small">Default</button>
+          <button data-variant="ghost" data-size="small">Ghost</button>
+          <button data-variant="danger" data-size="small">Danger</button>
+        </div>
+        <div class="cluster">
+          <button data-variant="primary"><svg class="icon" viewBox="0 0 24 24"><use href="#i-plus"/></svg>New recording</button>
+          <button><svg class="icon" viewBox="0 0 24 24"><use href="#i-settings"/></svg>Settings</button>
+          <button data-variant="ghost" aria-label="Delete"><svg class="icon" viewBox="0 0 24 24"><use href="#i-trash"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="doc-section" id="forms">
+    <h2>Form controls</h2>
+    <div class="doc-block">
+      <p>Native controls with no classes. Selects use the customisable select where the browser has it. For a label, control, help text and error as one unit, see the <a href="components.html#field">field component</a>.</p>
+      <form class="doc-demo grid" style="--min: 18rem; --gap: var(--space-l)" onsubmit="return false">
+        <div class="stack" style="--gap: var(--space-xs)">
+          <label for="e-text">Text</label><input id="e-text" type="text" value="Weekly update, 2 October">
+          <label for="e-place">With a placeholder</label><input id="e-place" type="text" placeholder="Give it a title…">
+          <label for="e-pass">Password</label><input id="e-pass" type="password" value="hunter2hunter2">
+          <label for="e-dis">Disabled</label><input id="e-dis" type="text" value="Can't touch this" disabled>
+          <label for="e-invalid">Invalid (<code>aria-invalid="true"</code>)</label><input id="e-invalid" type="text" value="weekly update" aria-invalid="true">
+          <div class="grid" style="--min: 7rem">
+            <div class="stack" style="--gap: var(--space-3xs)"><label for="e-num">Number</label><input id="e-num" type="number" value="42"></div>
+            <div class="stack" style="--gap: var(--space-3xs)"><label for="e-date">Date</label><input id="e-date" type="date" value="2026-10-02"></div>
+          </div>
+        </div>
+        <div class="stack" style="--gap: var(--space-xs)">
+          <label for="e-select">Select</label>
+          <select id="e-select"><option>Public</option><option>Unlisted</option><option>Private</option></select>
+          <label for="e-rich">Select with markup in the options</label>
+          <select id="e-rich">
+            <button><selectedcontent></selectedcontent></button>
+            <option><span style="color: var(--blue-500)">●</span> Public</option>
+            <option selected><span style="color: var(--orange-500)">●</span> Unlisted</option>
+            <option><span style="color: var(--coral-500)">●</span> Private</option>
+          </select>
+          <label for="e-area">Textarea</label><textarea id="e-area" placeholder="Describe the recording…"></textarea>
+          <label for="e-file">File</label><input id="e-file" type="file">
+          <label for="e-range">Range</label><input id="e-range" type="range" value="60">
+          <label for="e-prog">Progress</label><progress id="e-prog" value="40" max="100"></progress>
+        </div>
+        <div class="stack">
+          <fieldset class="stack" style="--gap: var(--space-2xs)">
+            <legend>Checkboxes</legend>
+            <label><input type="checkbox" checked> Email me when processing finishes</label>
+            <label><input type="checkbox"> Email me about comments, even the long rambling ones that wrap</label>
+            <label><input type="checkbox" disabled> A disabled option</label>
+          </fieldset>
+          <fieldset class="stack" style="--gap: var(--space-2xs)">
+            <legend>Radios</legend>
+            <label><input type="radio" name="e-vis" checked> Public</label>
+            <label><input type="radio" name="e-vis"> Private</label>
+          </fieldset>
+          <fieldset class="stack" style="--gap: var(--space-2xs)">
+            <legend>Switches (<code>role="switch"</code>)</legend>
+            <label><input type="checkbox" role="switch" checked> Autoplay next video</label>
+            <label><input type="checkbox" role="switch"> Show captions</label>
+            <label><input type="checkbox" role="switch" disabled> A disabled switch</label>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="doc-section" id="disclosure">
+    <h2>Dialogs, popovers and details</h2>
+    <div class="grid" style="--min: 24rem; --gap: var(--space-l)">
+      <div class="doc-block">
+        <h3>Dialog and popover</h3>
+        <p>Both open with no script. The dialog is centred and closes on a backdrop click; a popover is anchored to the button that opened it and flips to stay on screen.</p>
+        <div class="doc-demo cluster" data-markup>
+          <button commandfor="e-dialog" command="show-modal">Open dialog</button>
+          <button popovertarget="e-popover">Open popover</button>
+          <dialog id="e-dialog" closedby="any">
+            <form method="dialog" class="stack">
+              <h3>Delete this recording?</h3>
+              <p class="muted">It will be gone for good, along with its comments and view history.</p>
+              <div class="cluster" style="justify-content: flex-end"><button>Cancel</button><button data-variant="danger">Delete</button></div>
+            </form>
+          </dialog>
+          <div id="e-popover" popover><p style="padding: var(--space-2xs)">A popover holds anything: a note, a form, a <a href="components.html#menu">menu</a>.</p></div>
+        </div>
+        <div class="doc-demo">
+          <dialog open style="position: static; inline-size: auto">
+            <div class="stack">
+              <h3>Delete this recording?</h3>
+              <p class="muted">The dialog again, shown inline so it can be judged without clicking.</p>
+              <div class="cluster" style="justify-content: flex-end"><button>Cancel</button><button data-variant="danger">Delete</button></div>
+            </div>
+          </dialog>
+        </div>
+      </div>
+      <div class="doc-block">
+        <h3>Details and accordion</h3>
+        <p>Give several <code>&lt;details&gt;</code> the same <code>name</code> and only one stays open. The height animates.</p>
+        <div class="doc-demo stack" style="--gap: var(--space-3xs)" data-markup>
+          <details name="e-accordion" open><summary>An accordion is details with a shared name</summary><p>Opening one closes the others, with no script.</p></details>
+          <details name="e-accordion"><summary>Second panel</summary><p>Each panel is an ordinary details element.</p></details>
+          <details name="e-accordion"><summary>Third panel</summary><p>Find-in-page opens the right panel for you, too.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="page.js"></script>
+</body>
+</html>

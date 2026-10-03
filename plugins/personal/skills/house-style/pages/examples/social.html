@@ -1,0 +1,102 @@
+<!doctype html>
+<!--
+  EXAMPLE: social sharing images, in the playful register.
+  The same ingredients as the slides at the sizes social platforms want. The styles are in
+  canvas.css, next to this file. Each canvas scales with its width. To export one, give its
+  .canvas the real pixel width from its caption (style="inline-size: 1200px") and screenshot
+  that element.
+-->
+<html lang="en-GB" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social images example</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist:wght@100..900&display=swap">
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/utilities.css">
+<link rel="stylesheet" href="canvas.css">
+</head>
+<body>
+<svg hidden>
+  <defs>
+    <path id="blob-a" d="M40 140c-16-44 20-96 62-100s76 30 78 70-30 76-70 78-58-12-70-48z"/>
+    <path id="blob-b" d="M48 150c-20-40 8-110 52-118s80 40 76 84-40 70-76 66-40-8-52-32z"/>
+    <path id="blob-c" d="M30 120c-10-40 20-90 64-92s84 34 80 78-44 72-80 70-54-16-64-56z"/>
+  </defs>
+</svg>
+
+<main class="sheet">
+  <header>
+    <h1>Social images</h1>
+    <p>Link previews and post images. One idea per image, readable at thumbnail size, with the handle in a corner.</p>
+  </header>
+
+  <div class="grid" style="--min: 30rem; --gap: var(--space-m)">
+    <figure>
+      <div class="canvas" style="--ratio: 1200 / 630">
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -9cqi; bottom: -18cqi; inline-size: 32cqi"><use href="#blob-b" fill="var(--orange-400)"/></svg>
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -14cqi; bottom: -21cqi; inline-size: 28cqi"><use href="#blob-a" fill="var(--coral-500)"/></svg>
+        <div class="canvas-body" style="padding-inline-end: 22cqi">
+          <p class="canvas-label">Article</p>
+          <h2 class="canvas-statement">Files outlive apps: managing tasks as <em>plain markdown</em></h2>
+        </div>
+        <span class="canvas-handle" data-side="start">danny.is</span>
+      </div>
+      <figcaption>Link preview for an article. 1200 × 630.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas" data-frame style="--ratio: 1200 / 630">
+        <div class="canvas-body" style="padding-inline-end: 30cqi">
+          <p class="canvas-label">Reflection prompt</p>
+          <h2 class="canvas-statement">To be or not to be<em>.</em> That is the question<em>?</em></h2>
+        </div>
+        <span class="canvas-emoji" style="right: 9cqi; top: 50%; translate: 0 -50%">💭</span>
+        <span class="canvas-handle"><b>@</b>dannysmith</span>
+      </div>
+      <figcaption>Post image: framed canvas, emoji as the illustration, coral on the punctuation. 1200 × 630.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas" data-surface="fill" style="--ratio: 1200 / 630">
+        <div class="canvas-body" data-align="center">
+          <p class="canvas-note" style="color: var(--grey-950); position: absolute; inset: 9cqi auto auto 8cqi; rotate: -6deg; font-size: 5cqi">This week's topic</p>
+          <h2 class="canvas-statement" style="color: var(--grey-950)">What is the thing?</h2>
+        </div>
+        <span class="canvas-handle" style="color: var(--grey-950)">@dannysmith</span>
+      </div>
+      <figcaption>Recurring series: full-bleed coral, Charcoal type, a handwritten label. 1200 × 630.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas" data-surface="light" style="--ratio: 1200 / 630">
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="left: -9cqi; top: -15cqi; inline-size: 24cqi"><use href="#blob-c" fill="var(--green-400)"/></svg>
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -10cqi; bottom: -18cqi"><use href="#blob-a" fill="var(--purple-400)"/></svg>
+        <div class="canvas-body" data-align="center">
+          <span class="canvas-emoji" style="position: static; font-size: 9cqi">🧰</span>
+          <h2 class="canvas-title">The <em>toolbox</em></h2>
+          <p class="canvas-text" style="color: var(--grey-600)">Best practices for remote teams</p>
+        </div>
+      </div>
+      <figcaption>Light variant, for when it will sit on a dark feed. 1200 × 630.</figcaption>
+    </figure>
+
+    <figure style="max-inline-size: 30rem">
+      <div class="canvas" style="--ratio: 1; border-block-start: 3cqi solid var(--coral-500)">
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -12cqi; bottom: -14cqi; inline-size: 44cqi"><use href="#blob-a" fill="var(--coral-500)"/></svg>
+        <div class="canvas-body" style="justify-content: flex-start; padding-block-start: 12cqi; gap: 4cqi">
+          <p class="canvas-quote" style="font-size: 6.4cqi">Never claim more than the thing does.</p>
+          <p class="canvas-kicker" style="font-size: 3.6cqi"><span style="color: var(--coral-500)">—</span> a note to self</p>
+        </div>
+        <span class="canvas-handle" data-side="start" style="font-size: 2.8cqi"><b>@</b>dannysmith</span>
+      </div>
+      <figcaption>Square quote card. 1080 × 1080.</figcaption>
+    </figure>
+  </div>
+</main>
+</body>
+</html>

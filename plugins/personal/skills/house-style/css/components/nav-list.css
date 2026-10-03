@@ -1,0 +1,37 @@
+@layer components {
+  /* Nav list
+     Sidebar or menu navigation. Mark the current page with aria-current="page".
+     <nav class="nav-list"><a href="…" aria-current="page">Dashboard</a>…</nav> */
+  .nav-list {
+    display: grid;
+    gap: 2px;
+
+    & a {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xs);
+      padding: 0.4em 0.65em;
+      border-radius: var(--radius-sm);
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+      text-decoration: none;
+
+      &:hover {
+        background: var(--color-surface-hover);
+        color: var(--color-text);
+      }
+
+      &[aria-current='page'] {
+        background: var(--color-accent-subtle);
+        color: var(--color-accent-text);
+        font-weight: var(--font-weight-semibold);
+      }
+
+      & svg {
+        inline-size: 1.15em;
+        block-size: 1.15em;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

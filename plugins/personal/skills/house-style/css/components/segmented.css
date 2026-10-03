@@ -1,0 +1,61 @@
+@layer components {
+  /* Segmented control
+     A few mutually exclusive options. Real radios, so it works in forms and with the keyboard.
+       <fieldset class="segmented">
+         <label><input type="radio" name="view" checked> List</label>
+         <label><input type="radio" name="view"> Grid</label>
+       </fieldset> */
+  .segmented {
+    position: relative;
+    display: inline-flex;
+    padding: 2px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-hover);
+    anchor-scope: --segment;
+
+    /* One thumb, anchored to the checked option, so it slides between them */
+    &::before {
+      content: '';
+      position: absolute;
+      position-anchor: --segment;
+      inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
+      border-radius: calc(var(--radius-sm) - 1px);
+      background: var(--color-background);
+      box-shadow: var(--shadow-small);
+      transition: inset var(--duration-normal) var(--ease-out);
+    }
+
+    & label {
+      position: relative;
+      display: block;
+      flex: 1;
+      padding: 0.6em 0.9em;
+      text-box: trim-both cap alphabetic;
+      border-radius: calc(var(--radius-sm) - 1px);
+      color: var(--color-text-muted);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--line-height-snug);
+      text-align: center;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:has(:checked) {
+        anchor-name: --segment;
+        color: var(--color-text);
+      }
+
+      &:has(:focus-visible) {
+        outline: 2px solid var(--color-focus-ring);
+        outline-offset: 2px;
+      }
+    }
+
+    & input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

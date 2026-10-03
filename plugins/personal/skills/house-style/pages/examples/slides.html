@@ -1,0 +1,173 @@
+<!doctype html>
+<!--
+  EXAMPLE: slides, in the playful register.
+  Eight slides showing how the brand works when it isn't a user interface: a Slate canvas,
+  giant type with one coral word, blobs off the corners, large emoji, the odd handwritten note.
+  Take the ingredients, not the layouts. The styles are in canvas.css, next to this file.
+
+  The page shows every slide on one sheet. Add ?present to the URL to step through them one at
+  a time with the arrow keys or a click. Each slide scales with its width, so to export one give
+  its .canvas a width of 1920px and screenshot it.
+-->
+<html lang="en-GB" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slides example</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fira+Code:wght@300..700&family=Geist:wght@100..900&display=swap">
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/utilities.css">
+<link rel="stylesheet" href="../../css/components/window.css">
+<link rel="stylesheet" href="canvas.css">
+</head>
+<body>
+<!-- Three blob shapes, reused across slides with <use> -->
+<svg hidden>
+  <defs>
+    <path id="blob-a" d="M40 140c-16-44 20-96 62-100s76 30 78 70-30 76-70 78-58-12-70-48z"/>
+    <path id="blob-b" d="M48 150c-20-40 8-110 52-118s80 40 76 84-40 70-76 66-40-8-52-32z"/>
+    <path id="blob-c" d="M30 120c-10-40 20-90 64-92s84 34 80 78-44 72-80 70-54-16-64-56z"/>
+  </defs>
+</svg>
+
+<main class="sheet">
+  <header>
+    <h1>Slides</h1>
+    <p>Examples of the playful register, for talks, workshops and video. They show the ingredients; the layouts are yours to make.</p>
+  </header>
+
+  <div class="grid" style="--min: 30rem; --gap: var(--space-m)">
+    <figure>
+      <div class="canvas">
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -5cqi; bottom: -12cqi; inline-size: 34cqi"><use href="#blob-b" fill="var(--orange-400)"/></svg>
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -11cqi; bottom: -15cqi"><use href="#blob-a" fill="var(--coral-500)"/></svg>
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="left: -8cqi; top: -14cqi; inline-size: 22cqi"><use href="#blob-c" fill="var(--coral-400)"/></svg>
+        <div class="canvas-body">
+          <h2 class="canvas-title">Remote <em>strategy</em> workshop</h2>
+          <p class="canvas-note">bring biscuits →</p>
+        </div>
+        <span class="canvas-handle" data-side="start"><b>@</b>dannysmith</span>
+      </div>
+      <figcaption>Title: blobs off three corners, one coral word, a handwritten aside.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas" data-frame>
+        <div class="canvas-body">
+          <p class="canvas-kicker">10 mins</p>
+          <h2 class="canvas-title">Take a <em>break</em></h2>
+        </div>
+        <span class="canvas-emoji" style="right: 12cqi; top: 50%; translate: 0 -50%">☕️</span>
+        <span class="canvas-handle"><b>@</b>dannysmith</span>
+      </div>
+      <figcaption>Holding slide: the canvas inset in a darker frame, with a large emoji as the illustration.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas" data-surface="fill" style="--fill: var(--orange-500)">
+        <div class="canvas-body" data-align="center">
+          <h2 class="canvas-statement">What are we even doing here?</h2>
+        </div>
+        <span class="canvas-handle">@dannysmith</span>
+      </div>
+      <figcaption>Statement: a full-bleed colour card. Use one occasionally, for the line that matters.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas">
+        <div class="canvas-panel">
+          <strong style="font-family: var(--font-display); font-size: 3.4cqi">📜 Agenda</strong>
+          <ol>
+            <li data-done>Get ready</li>
+            <li>How async works</li>
+            <li>Writing it down</li>
+            <li>Q&amp;A</li>
+          </ol>
+        </div>
+        <div class="canvas-body" style="left: 34cqi" data-align="center">
+          <p class="canvas-label">Part two</p>
+          <h2 class="canvas-statement">How async works</h2>
+        </div>
+        <span class="canvas-handle"><b>@</b>dannysmith</span>
+      </div>
+      <figcaption>Section: a darker side panel carries the running order.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas">
+        <div class="canvas-body" style="padding-block: 6cqi">
+          <p class="canvas-label">One function</p>
+          <figure class="window" data-title="video.js"><pre><code><span style="color: var(--grey-500)">// set every element from the time alone</span>
+<span style="color: var(--coral-500)">window</span>.<span style="color: var(--blue-500)">render</span> = (t) =&gt; {
+  title.style.opacity = <span style="color: var(--blue-500)">ease</span>(t, <span style="color: var(--orange-500)">0</span>, <span style="color: var(--orange-500)">0.6</span>)
+}</code></pre></figure>
+        </div>
+      </div>
+      <figcaption>Code: the window component, scaled up. Coral, orange and blue do the syntax colouring.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas" style="border-inline-start: 2cqi solid var(--coral-500)">
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -10cqi; bottom: -22cqi"><use href="#blob-a" fill="var(--coral-500)"/></svg>
+        <div class="canvas-body">
+          <p class="canvas-quote">A fundamental concern for others in our individual and community lives would go a long way in making the world the better place we so passionately dreamt of.</p>
+          <p class="canvas-kicker"><span style="color: var(--coral-500)">—</span> Nelson Mandela</p>
+        </div>
+      </div>
+      <figcaption>Quote: light-weight Geist, a coral bar down the leading edge.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas" data-surface="light" data-frame>
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -10cqi; top: -16cqi"><use href="#blob-a" fill="var(--blue-400)"/></svg>
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="left: -9cqi; bottom: -17cqi; inline-size: 24cqi"><use href="#blob-b" fill="var(--yellow-400)"/></svg>
+        <div class="canvas-body">
+          <p class="canvas-label" style="color: var(--coral-deep)">Reflection prompt</p>
+          <h2 class="canvas-statement">Remote management can be hard. <em>What skills do remote managers need?</em></h2>
+        </div>
+      </div>
+      <figcaption>Light surface: the same recipe on white, with pastel blobs and the deeper coral.</figcaption>
+    </figure>
+
+    <figure>
+      <div class="canvas">
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -8cqi; top: -15cqi; inline-size: 24cqi"><use href="#blob-c" fill="var(--coral-400)"/></svg>
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -7cqi; bottom: -18cqi"><use href="#blob-b" fill="var(--orange-400)"/></svg>
+        <svg class="canvas-blob" viewBox="0 0 200 200" style="right: -13cqi; bottom: -22cqi"><use href="#blob-a" fill="var(--coral-500)"/></svg>
+        <div class="canvas-body">
+          <div style="display: flex; align-items: center; gap: 3cqi">
+            <h2 class="canvas-title"><em>Danny</em> Smith</h2>
+            <img class="canvas-avatar" src="../../images/avatar.jpg" alt="">
+          </div>
+          <p class="canvas-text" style="font-weight: 600"><span style="color: var(--coral-500)">@</span>dannysmith<br>hi<span style="color: var(--coral-500)">@</span>danny.is<br>danny.is</p>
+        </div>
+      </div>
+      <figcaption>End card: held at the end, with the handles.</figcaption>
+    </figure>
+  </div>
+</main>
+<script>
+// ?present: one slide at a time, fitted to the window. Arrow keys, space or a click to move.
+if (new URLSearchParams(location.search).has('present')) {
+  const slides = [...document.querySelectorAll('.grid > figure')]
+  let current = 0
+  const show = (n) => {
+    current = Math.max(0, Math.min(slides.length - 1, n))
+    slides.forEach((slide, i) => slide.toggleAttribute('data-current', i === current))
+  }
+  document.body.toggleAttribute('data-present', true)
+  document.querySelector('.grid').style.display = 'contents'
+  addEventListener('keydown', (e) => {
+    if (['ArrowRight', 'ArrowDown', ' '].includes(e.key)) show(current + 1)
+    if (['ArrowLeft', 'ArrowUp'].includes(e.key)) show(current - 1)
+  })
+  addEventListener('click', () => show(current + 1))
+  show(0)
+}
+</script>
+</body>
+</html>

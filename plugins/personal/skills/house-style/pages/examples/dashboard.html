@@ -1,0 +1,85 @@
+<!doctype html>
+<!--
+  EXAMPLE: a small app screen in the calm register.
+  An illustration of how the pieces fit together, not a template to reproduce. Copy it as a
+  starting skeleton, or just read it to see how layout, tokens and components combine.
+  Uses: app-shell, nav-list, avatar, card, callout, badge (and tag), menu, tooltip.
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recordings · Dashboard example</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist:wght@100..900&display=swap">
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/tokens.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/utilities.css">
+<link rel="stylesheet" href="../../css/components/app-shell.css">
+<link rel="stylesheet" href="../../css/components/nav-list.css">
+<link rel="stylesheet" href="../../css/components/avatar.css">
+<link rel="stylesheet" href="../../css/components/card.css">
+<link rel="stylesheet" href="../../css/components/callout.css">
+<link rel="stylesheet" href="../../css/components/badge.css">
+<link rel="stylesheet" href="../../css/components/menu.css">
+<link rel="stylesheet" href="../../css/components/tooltip.css">
+<style>
+/* Page-specific layout. Everything visual comes from the tokens. */
+.brand { font-family: var(--font-display); font-weight: var(--font-weight-extrabold); padding-inline-start: 0.4em; white-space: nowrap; }
+.brand b { color: var(--color-accent); }
+.row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-xs); }
+.stat { font-family: var(--font-display); font-size: var(--font-size-2xl); font-weight: var(--font-weight-extrabold); line-height: 1; }
+.me { display: flex; align-items: center; gap: var(--space-2xs); margin-block-start: auto; padding-inline-start: 0.25em; font-size: var(--font-size-sm); white-space: nowrap; }
+main { max-inline-size: 72rem; }
+</style>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="app-sidebar">
+    <div class="row" style="flex-wrap: nowrap">
+      <span class="brand" data-collapse="hide"><b>●</b> recordings</span>
+      <label class="app-sidebar-toggle" data-tooltip="Collapse sidebar"><input type="checkbox" data-sidebar-toggle aria-label="Collapse sidebar"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></svg></label>
+    </div>
+    <nav class="nav-list">
+      <a href="#" aria-current="page"><svg class="icon" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span>Dashboard</span></a>
+      <a href="#"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg><span>Videos</span></a>
+      <a href="#"><svg class="icon" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/></svg><span>Tags</span></a>
+      <a href="#"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9l2.2 2.2m9.8 9.8 2.2 2.2m0-14.2-2.2 2.2m-9.8 9.8-2.2 2.2"/></svg><span>Settings</span></a>
+    </nav>
+    <div class="me"><img class="avatar" src="../../images/avatar.jpg" alt="" style="--size: 1.75rem"><span data-collapse="hide">Danny Smith</span></div>
+  </aside>
+
+  <main class="stack" style="--gap: var(--space-m)">
+    <div class="row">
+      <h1>Dashboard</h1>
+      <div class="cluster">
+        <input type="search" placeholder="Search" aria-label="Search recordings">
+        <button data-variant="primary"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></svg>New recording</button>
+      </div>
+    </div>
+
+    <div class="grid" style="--min: 11rem">
+      <div class="card"><h6>Videos</h6><span class="stat">128</span></div>
+      <div class="card"><h6>Views this week</h6><span class="stat">1,204</span></div>
+      <div class="card"><h6>Storage</h6><span class="stat">42 GB</span><progress value="42" max="100" aria-label="Storage used"></progress></div>
+    </div>
+
+    <aside class="callout" data-status="warning"><strong>Three videos are still processing</strong><p>They'll appear in the list once they're ready.</p></aside>
+
+    <table>
+      <thead><tr><th>Title</th><th>Tags</th><th>Status</th><th>Length</th><th><span class="visually-hidden">Actions</span></th></tr></thead>
+      <tbody>
+        <tr><td><a href="#">Weekly update</a></td><td><span class="tag" data-color="blue">work</span></td><td><span class="badge" data-status="success">Ready</span></td><td>4:12</td>
+          <td style="text-align: end"><button data-variant="ghost" data-size="small" popovertarget="row-menu" aria-label="Actions"><svg class="icon" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button></td></tr>
+        <tr><td><a href="#">Styleguide walkthrough</a></td><td><span class="tag" data-color="purple">design</span></td><td><span class="badge" data-status="warning">Processing</span></td><td>12:40</td><td></td></tr>
+        <tr><td><a href="#">Bug report for Sam</a></td><td><span class="tag" data-color="orange">bugs</span></td><td><span class="badge" data-status="danger">Failed</span></td><td>0:58</td><td></td></tr>
+        <tr><td><a href="#">Draft intro</a></td><td><span class="tag">misc</span></td><td><span class="badge">Private</span></td><td>2:03</td><td></td></tr>
+      </tbody>
+    </table>
+    <div id="row-menu" popover class="menu"><button>Rename</button><button>Duplicate</button><hr><button data-variant="danger">Delete</button></div>
+  </main>
+</div>
+</body>
+</html>
